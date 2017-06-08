@@ -48,6 +48,7 @@ public class Study {
 
     public class Experiment {
 
+        // Experiment properties
         public String name;                 // Name of the study
         public int num_question;            // number of question being asked.
         public int num_present_question; // number of question show (at a time) to participant.

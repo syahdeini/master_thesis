@@ -1,5 +1,6 @@
 package com.example.syahdeini.quizapp;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.Toast;
 
 public class QuizActivity extends AppCompatActivity {
 
+    private static Context context;
     private QuestionLibrary mQuestionLibrary = new QuestionLibrary();
 
     private TextView mScoreView;
@@ -23,20 +25,23 @@ public class QuizActivity extends AppCompatActivity {
     private int totalQuestion = 4;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
+        context = getApplicationContext();
         //End of Button Listener for button1
-
         mScoreView = (TextView)findViewById(R.id.score);
         mQuestionView = (TextView)findViewById(R.id.question);
         mButtonChoice1 = (Button)findViewById(R.id.choice1);
         mButtonChoice2 = (Button)findViewById(R.id.choice2);
         mButtonChoice3 = (Button)findViewById(R.id.choice3);
 
+        InputReader ir = new InputReader();
+        ir.read(context);
         if(mQuestionNumber < totalQuestion)
         {
+            System.err.println("JAJJAJAJA");
             updateQuestion();
             // finish quiz app
         }
