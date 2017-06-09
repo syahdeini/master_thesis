@@ -8,68 +8,15 @@ import java.util.List;
  */
 
 public class Study {
-    public class Question{
-        public String id;
-        public String text;
-        public String link_answer;
-        public String answer;
-
-        public Question(String id, String text, String link_answer){
-            this.id = id;
-            this.text = text;
-            this.link_answer=link_answer;
-        }
-
-        public Question(String id, String text, String link_answer, String answer){
-            this(id,text,link_answer);
-            this.answer = answer;
-        }
-
-    }
-
-    public class Category{
-        public static final int RANDOM = 1;
-        public static final int MC = 2;
-        private List<Question> questions = new ArrayList<Question>();
-        public int question_type;
-        public int seed;
-
-        public boolean setQuestion(String id, String text, String link_answer){
-            Question question = new Question(id, text, link_answer);
-            questions.add(question);
-            return true;
-        }
-
-        public List<Question> getQuestions()
-        {
-            return questions;
-        }
-    }
-
-    public class Experiment {
-
-        // Experiment properties
-        public String name;                 // Name of the study
-        public int num_question;            // number of question being asked.
-        public int num_present_question; // number of question show (at a time) to participant.
-        public int TTS;                     // time (second) to see the question.
-
-        public Experiment(String name, int num_question, int num_presented_question, int TTS){
-            this.name = name;
-            this.num_question = num_question;
-            this.num_present_question = num_presented_question;
-            this.TTS = TTS;
-        }
-    }
 
     public String pre_text;
     public String post_text;
     public String reseracher;
 
     // The general experiment properties
-    public int num;
-    public String name;
-    public String id;
+    public int num_exp;         // number of experiment
+    public String study_name; // optional
+    public String study_id;   //optional
 
     public List<Category> categories = new ArrayList<Category>();
 

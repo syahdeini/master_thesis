@@ -24,9 +24,16 @@ public class InputReader {
 
     public void read(Context context) {
         try {
+            // Reading the string
             InputStream is = context.getAssets().open("file.json");
             BufferedReader reader = new BufferedReader(new InputStreamReader(is));
             String userJson=  reader.readLine();
+
+            // Object json
+            JSONObject jsonObj = new JSONObject(userJson);
+            // You can use jsonObj.get("age")
+
+            // Translate to GSON
             Gson gson = new Gson();
             UserSimple userObject = gson.fromJson(userJson, UserSimple.class); // jadilah dia sebuah object
             System.out.println("jajajaj");

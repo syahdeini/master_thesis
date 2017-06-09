@@ -1,0 +1,63 @@
+{
+  'study':
+  {
+      'pre_text':'PRETEXT INPUT',
+      'post_text':'POSTTEXT INPUT',
+      'num_exp': 1,
+      'study_name':'my study',
+      'study_id':123
+  },
+  'experiment':
+  [
+    {
+      'name':'Experiment',
+      'num_quesstion':1,
+      'num_presented_question':1,
+      'TTS':10,
+    }
+  ],
+  'category':
+  {
+    'total_question':2,
+    'question_order':'RANDOM',
+    'question':
+     [
+      {
+        'question_id':'Q1',
+        'text':'What is the name of the biggest animal in the world',
+        'link-answer':'https://en.wikipedia.org/wiki/Whale',
+      },
+      {
+        'question_id':'Q2',
+        'text':'What is the name of the smartest animal in the world',
+        'link-answer':'https://en.wikipedia.org/wiki/Elephant',
+        'answer':'elephant',
+      }
+    ],
+  },
+  'post_exp':
+  {
+    'total_question':2,
+    'questions':
+            [
+              {
+                'question_id':'PQ1',
+                'text':'Are you feel tired',
+                'type':'TEXT',
+              },
+              {
+                'question_id':'PQ2',
+                'text':'What is your gender ?',
+                'type':'MC',
+                'options':[
+                  {
+                    'Male',
+                    'Female',
+                  }
+                ]
+              }
+            ]
+  }
+
+
+}
