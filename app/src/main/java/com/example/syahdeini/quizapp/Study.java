@@ -1,6 +1,7 @@
 package com.example.syahdeini.quizapp;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -39,6 +40,19 @@ public class Study {
         experiments.add(_exp);
         return true;
     }
+
+    public Boolean setExperiments(Experiment[] exps)
+    {
+        this.experiments = Arrays.asList(exps);
+        return true;
+    }
+
+    public Boolean setCategory(Category[] cats)
+    {
+        this.categories = Arrays.asList(cats);
+        return true;
+    }
+
 
     public List<Experiment> getExperiments(){
         // get the studies
