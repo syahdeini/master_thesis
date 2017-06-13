@@ -1,6 +1,7 @@
 package com.example.syahdeini.quizapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,6 +19,7 @@ public class QuizActivity extends AppCompatActivity {
     private Button mButtonChoice1;
     private Button mButtonChoice2;
     private Button mButtonChoice3;
+    private Button mButtonQuit;
 
     private String mAnswer;;
     private int mScore = 0;
@@ -36,9 +38,11 @@ public class QuizActivity extends AppCompatActivity {
         mButtonChoice1 = (Button)findViewById(R.id.choice1);
         mButtonChoice2 = (Button)findViewById(R.id.choice2);
         mButtonChoice3 = (Button)findViewById(R.id.choice3);
+        mButtonQuit = (Button)findViewById(R.id.quit);
 
         InputReader ir = new InputReader();
-        ir.read(context);
+        Study st = ir.read(context,"");
+
         if(mQuestionNumber < totalQuestion)
         {
             System.err.println("JAJJAJAJA");
@@ -102,6 +106,14 @@ public class QuizActivity extends AppCompatActivity {
                     Toast.makeText(QuizActivity.this, "wrong", Toast.LENGTH_SHORT).show();
                     updateQuestion();
                 }
+            }
+        });
+
+        mButtonQuit.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(QuizActivity.this,secondActivity.class));
             }
         });
         //End of Button Listener for button3

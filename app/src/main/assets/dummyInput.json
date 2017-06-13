@@ -17,28 +17,46 @@
     }
   ],
   'category':
-  {
-    'total_question':2,
-    'question_order':'RANDOM',
-    'question':
-    [
-      {
-        'question_id':'Q1',
-        'text':'What is the name of the biggest animal in the world',
-        'link_answer':'https://en.wikipedia.org/wiki/Whale'
-      },
-      {
-        'question_id':'Q2',
-        'text':'What is the name of the smartest animal in the world',
-        'link_answer':'https://en.wikipedia.org/wiki/Elephant',
-        'answer':'elephant'
-      }
-    ]
-  },
+  [
+    {
+      'id':'123',
+      'name':'politics',
+      'total_question':2,
+      'question_order':'RANDOM',
+      'questions':
+      [
+        {
+          'question_id':'Q1',
+          'text':'What is the name of the biggest animal in the world',
+          'link_answer':'https://en.wikipedia.org/wiki/Whale'
+        },
+        {
+          'question_id':'Q2',
+          'text':'What is the name of the smartest animal in the world',
+          'link_answer':'https://en.wikipedia.org/wiki/Elephant',
+          'answer':'elephant'
+        }
+      ]
+    },
+    {
+      'id':'345',
+      'name':'news',
+      'total_question':1,
+      'question_order':'RANDOM',
+      'questions':
+      [
+        {
+          'question_id':'Q12',
+          'text':'Who is the prime minister of UK',
+          'link_answer':'https://en.wikipedia.org/wiki/Theresa_May'
+        }
+      ]
+    }
+  ],
   'post_exp':
   {
     'total_question':2,
-    'question':
+    'questions':
     [
       {
         'question_id':'PQ1',

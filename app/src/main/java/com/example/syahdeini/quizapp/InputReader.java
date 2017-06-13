@@ -26,58 +26,70 @@ import java.util.List;
 
 public class InputReader {
     Gson gson = new Gson();
+    Context _context;
 
-//    public Object jsonToObject(JSONObject jo,Object o,String key)
-//    {
-//        try {
-//            String temp = jo.get(key).toString();
-//            Object s = gson.fromJson(temp,o.getClass());
-//            return s;
-//        } catch (Exception e)
-//        {
-//            System.err.println(e.getMessage());
-//        }
-//
-//    }
+    public String readFile(String filepath)
+    {
 
-    public void read(Context context) {
         try {
-
-            // Reading the string
-            InputStream is = context.getAssets().open("dummyInput.json");
+            InputStream is = _context.getAssets().open(filepath);
             BufferedReader reader = new BufferedReader(new InputStreamReader(is));
             String textJson = "";
             String line = reader.readLine().trim();
-            while(line != null)
-            {
+            while (line != null) {
                 line.trim();
                 textJson += line;
                 line = reader.readLine();
             }
+            return textJson;
+        }catch (Exception e)
+        {
+            return e.getMessage();
+        }
+    }
 
+    public Study getStudyObj(String jsontext)
+    {
+
+        try {
             // Object json
-            JSONObject jsonObj = new JSONObject(textJson);
+            JSONObject jsonObj = new JSONObject(jsontext);
             String temp = jsonObj.get("study").toString();
-            Study s = gson.fromJson(temp,Study.class);
+            Study st = gson.fromJson(temp, Study.class);
 
             temp = jsonObj.get("experiment").toString();
-            Experiment[] o = gson.fromJson(temp,Experiment[].class);
+            Experiment[] exs = gson.fromJson(temp, Experiment[].class);
 
             temp = jsonObj.get("category").toString();
-            Category cat = gson.fromJson(temp,Category.class);
-
-            temp = jsonObj.getJSONObject("category").get("question").toString();
-            Question[] ques = gson.fromJson(temp,Question[].class);
-            cat.setQuestion(ques);
+            Category[] cat = gson.fromJson(temp, Category[].class);
 
             temp = jsonObj.get("post_exp").toString();
-            PostQuestion pe = gson.fromJson(temp,PostQuestion.class);
+            PostQuestion pe = gson.fromJson(temp, PostQuestion.class);
 
-            temp = jsonObj.getJSONObject("post_exp").get("question").toString();
-            Question[] pe_q = gson.fromJson(temp,Question[].class);
+            st.setCategory(cat);
+            st.setExperiments(exs);
+            st.postques = pe;
+            return st;
 
+        }catch (Exception e)
+        {
+            System.err.println(e.getMessage());
+        }
+        return new Study();
+    }
+
+    public Study read(Context context, String filepath) {
+        try {
+
+            filepath = "dummyInput.json";
+            this._context = context;
+            // Reading the string
+            String jsontext = readFile(filepath);
+            Study st = getStudyObj(jsontext);
+            return st;
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }
+        return new Study();
     }
 }

@@ -20,6 +20,7 @@ public class Question {
     public int num_link_visited;
     public ArrayList<String> visited_link;
     public int num_app_visited;
+    public boolean already_ask;
 
     public static final int RANDOM = 1;
     public static final int MC = 2;

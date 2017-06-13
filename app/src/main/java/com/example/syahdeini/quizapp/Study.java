@@ -3,6 +3,7 @@ package com.example.syahdeini.quizapp;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by syahdeini on 05/06/17.
@@ -19,11 +20,19 @@ public class Study {
     public String study_name; // optional
     public String study_id;   //optional
 
-    public List<Category> categories = new ArrayList<Category>();
+
+    private Random randomGenerator;
+    private List<Category> categories = new ArrayList<Category>();
 
     // It is possible to make more than one study
     private List<Experiment> experiments = new ArrayList<Experiment>();
 
+    public PostQuestion postques = new PostQuestion();
+
+
+    public Experiment active_exp;
+    public Category active_catg;
+    public Question active_quest;
 
     public int num_categories(){
         return categories.size();
@@ -32,6 +41,7 @@ public class Study {
     public int num_experiments(){
         return experiments.size();
     }
+
 
     // experimets setter and getter
     public Boolean setExperiments(String name, int num_question, int num_present_question, int TTS)
@@ -53,10 +63,24 @@ public class Study {
         return true;
     }
 
-
     public List<Experiment> getExperiments(){
         // get the studies
         return experiments;
     };
+
+    public void setRandCategory(){
+        int temp_idx = randomGenerator.nextInt(categories.size());
+        this.active_catg = this.categories.get(temp_idx);
+    }
+
+    public void setRandQuestion() throws SelfException {
+        if(this.active_catg==null) this.setRandCategory();
+        this.active_quest = this.active_catg.getRandQuestion();
+    }
+
+    public void startExperiment() throws SelfException {
+        setRandCategory();
+        setRandQuestion();
+    }
 };
 
