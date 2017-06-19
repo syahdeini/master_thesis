@@ -24,11 +24,11 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-public class InputReader {
-    Gson gson = new Gson();
-    Context _context;
+public final class InputReader {
+    static Gson gson = new Gson();
+    static Context _context;
 
-    public String readFile(String filepath)
+    public static String readFile(String filepath)
     {
 
         try {
@@ -48,7 +48,7 @@ public class InputReader {
         }
     }
 
-    public Study getStudyObj(String jsontext)
+    public static Study getStudyObj(String jsontext)
     {
 
         try {
@@ -78,11 +78,11 @@ public class InputReader {
         return new Study();
     }
 
-    public Study read(Context context, String filepath) {
+    public static Study read(Context context, String filepath) {
         try {
 
-            filepath = "dummyInput.json";
-            this._context = context;
+            if(filepath.length()<1)filepath = "dummyInput.json";
+            _context = context;
             // Reading the string
             String jsontext = readFile(filepath);
             Study st = getStudyObj(jsontext);

@@ -1,5 +1,6 @@
 package com.example.syahdeini.quizapp;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -9,7 +10,7 @@ import java.util.Random;
  * Created by syahdeini on 05/06/17.
  */
 
-public class Study {
+public class Study  implements Serializable{
 
     public String pre_text;
     public String post_text;
@@ -21,7 +22,7 @@ public class Study {
     public String study_id;   //optional
 
 
-    private Random randomGenerator;
+    private Random randomGenerator = new Random();
     private List<Category> categories = new ArrayList<Category>();
 
     // It is possible to make more than one study
@@ -78,7 +79,7 @@ public class Study {
         this.active_quest = this.active_catg.getRandQuestion();
     }
 
-    public void startExperiment() throws SelfException {
+    public void startRandExperiment() throws SelfException {
         setRandCategory();
         setRandQuestion();
     }

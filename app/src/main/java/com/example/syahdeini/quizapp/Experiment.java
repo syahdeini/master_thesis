@@ -1,10 +1,12 @@
 package com.example.syahdeini.quizapp;
 
+import java.io.Serializable;
+
 /**
  * Created by syahdeini on 08/06/17.
  */
 
-public class Experiment {
+public class Experiment implements Serializable{
 
     // Experiment properties
     public String name;                 // Name of the study

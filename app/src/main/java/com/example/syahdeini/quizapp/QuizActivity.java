@@ -16,6 +16,7 @@ public class QuizActivity extends AppCompatActivity {
 
     private TextView mScoreView;
     private TextView mQuestionView;
+    private Button mNextButton;
     private Button mButtonChoice1;
     private Button mButtonChoice2;
     private Button mButtonChoice3;
@@ -25,6 +26,7 @@ public class QuizActivity extends AppCompatActivity {
     private int mScore = 0;
     private int mQuestionNumber = 0;
     private int totalQuestion = 4;
+    private Study st;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -33,100 +35,54 @@ public class QuizActivity extends AppCompatActivity {
 
         context = getApplicationContext();
         //End of Button Listener for button1
-        mScoreView = (TextView)findViewById(R.id.score);
-        mQuestionView = (TextView)findViewById(R.id.question);
-        mButtonChoice1 = (Button)findViewById(R.id.choice1);
-        mButtonChoice2 = (Button)findViewById(R.id.choice2);
-        mButtonChoice3 = (Button)findViewById(R.id.choice3);
-        mButtonQuit = (Button)findViewById(R.id.quit);
+//        mScoreView = (TextView)findViewById(R.id.score);
+//        mQuestionView = (TextView)findViewById(R.id.question);
+//        mButtonChoice1 = (Button)findViewById(R.id.choice1);
+//        mButtonChoice2 = (Button)findViewById(R.id.choice2);
+//        mButtonChoice3 = (Button)findViewById(R.id.choice3);
+//        mButtonQuit = (Button)findViewById(R.id.quit);
+//        InputReader ir = new InputReader();
+//        Study st = ir.read(context,"");
 
-        InputReader ir = new InputReader();
-        Study st = ir.read(context,"");
 
-        if(mQuestionNumber < totalQuestion)
-        {
-            System.err.println("JAJJAJAJA");
-            updateQuestion();
-            // finish quiz app
+        mQuestionView = (TextView) findViewById(R.id.question);
+        mNextButton = (Button) findViewById(R.id.nextButton);
+
+        // get object from intent
+        Intent i = getIntent();
+        st = (Study)i.getSerializableExtra("studyObject");
+
+        try {
+            st.startRandExperiment();
+        } catch (SelfException e) {
+            e.printStackTrace();
         }
-        //Start of Button Listener for button1
-        mButtonChoice1.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                //My logic for Button goes in here
-                if (mButtonChoice1.getText() == mAnswer){
-                    mScore = mScore + 1;
-                    updateScore(mScore);
-                    updateQuestion();
-                    Toast.makeText(QuizActivity.this, "correct", Toast.LENGTH_SHORT).show();
-                }
-                else
-                {
-                    Toast.makeText(QuizActivity.this, "wrong", Toast.LENGTH_SHORT).show();
-                    updateQuestion();
-                }
-            }
-        });
-        //End of Button Listener for button1
+        System.out.println("DEBUG");
+        updateQuestion();
 
 
-        //Start of Button Listener for button2
-        mButtonChoice2.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                //My logic for Button goes in here
-                if (mButtonChoice2.getText() == mAnswer){
-                    mScore = mScore + 1;
-                    updateScore(mScore);
-                    updateQuestion();
-                    Toast.makeText(QuizActivity.this, "correct", Toast.LENGTH_SHORT).show();
-                }
-                else
-                {
-                    Toast.makeText(QuizActivity.this, "wrong", Toast.LENGTH_SHORT).show();
-                    updateQuestion();
-                }
-            }
-        });
-        //End of Button Listener for button2
-
-        //Start of Button Listener for button3
-        mButtonChoice3.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                //My logic for Button goes in here
-                if (mButtonChoice3.getText() == mAnswer){
-                    mScore = mScore + 1;
-                    updateScore(mScore);
-                    updateQuestion();
-                    Toast.makeText(QuizActivity.this, "correct", Toast.LENGTH_SHORT).show();
-                }
-                else
-                {
-                    Toast.makeText(QuizActivity.this, "wrong", Toast.LENGTH_SHORT).show();
-                    updateQuestion();
-                }
-            }
-        });
-
-        mButtonQuit.setOnClickListener(new View.OnClickListener(){
+        mNextButton.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(QuizActivity.this,secondActivity.class));
+                Intent i = new Intent(QuizActivity.this,AnswerActivity.class);
+                Bundle bundle  = new Bundle();
+                bundle.putSerializable("studyObject",st);
+                i.putExtras(bundle);
+                startActivity(i);
             }
         });
-        //End of Button Listener for button3
     }
 
     private void updateQuestion(){
-        mQuestionView.setText(mQuestionLibrary.getQuestion(mQuestionNumber));
-        mButtonChoice1.setText(mQuestionLibrary.getChoice1(mQuestionNumber));
-        mButtonChoice2.setText(mQuestionLibrary.getChoice2(mQuestionNumber));
-        mButtonChoice3.setText(mQuestionLibrary.getChoice3(mQuestionNumber));
+          mQuestionView.setText(st.active_quest.text);
+//        mQuestionView.setText(mQuestionLibrary.getQuestion(mQuestionNumber));
+//        mButtonChoice1.setText(mQuestionLibrary.getChoice1(mQuestionNumber));
+//        mButtonChoice2.setText(mQuestionLibrary.getChoice2(mQuestionNumber));
+//        mButtonChoice3.setText(mQuestionLibrary.getChoice3(mQuestionNumber));
+//        mAnswer = mQuestionLibrary.getCorrectAnswer(mQuestionNumber);
+//        mQuestionNumber++;
 
-        mAnswer = mQuestionLibrary.getCorrectAnswer(mQuestionNumber);
-        mQuestionNumber++;
     }
 
     private void updateScore(int mScore) {

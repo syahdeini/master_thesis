@@ -1,5 +1,6 @@
 package com.example.syahdeini.quizapp;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,7 +8,7 @@ import java.util.List;
  * Created by syahdeini on 08/06/17.
  */
 
-public class Question {
+public class Question implements Serializable {
     public String id;
     public String text;
     public String link_answer;

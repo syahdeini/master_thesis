@@ -1,5 +1,6 @@
 package com.example.syahdeini.quizapp;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -9,7 +10,7 @@ import java.util.Random;
  * Created by syahdeini on 08/06/17.
  */
 
-public class Category {
+public class Category implements Serializable{
         public String name;
         public int id;
         public List<Question> questions = new ArrayList<Question>();
@@ -17,7 +18,7 @@ public class Category {
         public int total_question;
         public int seed;
         public String question_order;
-        private Random randomGenerator;
+        private Random randomGenerator = new Random();
 
 
         public Category()
