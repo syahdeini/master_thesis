@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">QuizApp</string>
     <string name="title_activity_second">secondActivity</string>
+    <string name="title_activity_post">PostActivity</string>
 </resources>

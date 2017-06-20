@@ -24,7 +24,11 @@
             android:label="@string/title_activity_second"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".AnswerActivity" />
-        <activity android:name=".FillAnswerActivity"></activity>
+        <activity android:name=".FillAnswerActivity" />
+        <activity
+            android:name=".PostActivity"
+            android:label="@string/title_activity_post"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
