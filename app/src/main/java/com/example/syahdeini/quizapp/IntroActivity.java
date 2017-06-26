@@ -37,7 +37,7 @@ public class IntroActivity extends AppCompatActivity {
             public void onClick(View v) {
                 counter++;
                 if(counter>1){
-                    Intent i = new Intent(IntroActivity.this,QuizActivity.class);
+                    Intent i = new Intent(IntroActivity.this,chooceCategoryActivity.class);
                     Bundle bundle  = new Bundle();
                     bundle.putSerializable("studyObject",st);
                     i.putExtras(bundle);

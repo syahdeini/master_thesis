@@ -28,6 +28,11 @@
         <activity
             android:name=".PostActivity"
             android:label="@string/title_activity_post"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".EndActivity" />
+        <activity
+            android:name=".chooceCategoryActivity"
+            android:label="@string/title_activity_chooce_category"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

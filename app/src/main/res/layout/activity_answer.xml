@@ -16,15 +16,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginBottom="40dp">
+        android:layout_marginBottom="40dp"
+        android:id="@+id/answerLayout"
+        >
 
-        <TextView
+     <!--   <TextView
             android:id="@+id/TextAnswer1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="25dp"
             android:text="answer"
-       />
+       />-->
     </LinearLayout>
 
     <LinearLayout
@@ -43,14 +45,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <RadioButton
-                android:id="@+id/radioButton"
+                android:id="@+id/radioButtonForget"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="I have forgotten what I need to look up; I need to see the questions again"
          />
 
             <RadioButton
-                android:id="@+id/radioButton2"
+                android:id="@+id/radioButtonAnswer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="I am ready to answer the question"

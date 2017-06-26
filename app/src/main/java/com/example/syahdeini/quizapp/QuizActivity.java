@@ -6,8 +6,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 public class QuizActivity extends AppCompatActivity {
 
@@ -16,6 +20,7 @@ public class QuizActivity extends AppCompatActivity {
 
     private TextView mScoreView;
     private TextView mQuestionView;
+    private LinearLayout questionLayout;
     private Button mNextButton;
     private Button mButtonChoice1;
     private Button mButtonChoice2;
@@ -45,20 +50,22 @@ public class QuizActivity extends AppCompatActivity {
 //        Study st = ir.read(context,"");
 
 
-        mQuestionView = (TextView) findViewById(R.id.question);
+//        mQuestionView = (TextView) findViewById(R.id.question);
         mNextButton = (Button) findViewById(R.id.nextButton);
-
+        questionLayout = (LinearLayout) findViewById(R.id.questionLayout);
         // get object from intent
         Intent i = getIntent();
         st = (Study)i.getSerializableExtra("studyObject");
+        final String back_flag = i.getStringExtra("BACK");
+
 
         try {
-            st.startRandExperiment();
+            if(back_flag==null)
+            st.runExperiment("experiment1");
         } catch (SelfException e) {
-            e.printStackTrace();
+            Notification.short_toast(getApplicationContext(),"Fail Start experiment!");
         }
-        System.out.println("DEBUG");
-        updateQuestion();
+        updateView();
 
 
         mNextButton.setOnClickListener(new View.OnClickListener(){
@@ -69,13 +76,28 @@ public class QuizActivity extends AppCompatActivity {
                 Bundle bundle  = new Bundle();
                 bundle.putSerializable("studyObject",st);
                 i.putExtras(bundle);
+
+                if(back_flag!=null)
+                {
+                    i.putExtra("BACK",back_flag);
+                }
                 startActivity(i);
             }
         });
     }
 
-    private void updateQuestion(){
-          mQuestionView.setText(st.active_quest.text);
+    private void updateView(){
+          for(int i=0;i<st.active_exp.num_presented_question;i++)
+          {
+              TextView _question = new TextView(this);
+              _question.setText("Question "+String.valueOf(i+1)+" : "+st.active_quest.get(i).text);
+//              _question.setLineSpacing(2,2);
+              _question.setPadding(0,8,0,0);
+              questionLayout.addView(_question);
+          }
+
+
+//          mQuestionView.setText(st.active_quest.text);
 //        mQuestionView.setText(mQuestionLibrary.getQuestion(mQuestionNumber));
 //        mButtonChoice1.setText(mQuestionLibrary.getChoice1(mQuestionNumber));
 //        mButtonChoice2.setText(mQuestionLibrary.getChoice2(mQuestionNumber));

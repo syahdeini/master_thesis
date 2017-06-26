@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.CancellationException;
 
 /**
  * Created by syahdeini on 05/06/17.
@@ -33,7 +34,7 @@ public class Study  implements Serializable{
 
     public Experiment active_exp;
     public Category active_catg;
-    public Question active_quest;
+    public List<Question> active_quest = new ArrayList<Question>() {};
 
     public int num_categories(){
         return categories.size();
@@ -64,6 +65,21 @@ public class Study  implements Serializable{
         return true;
     }
 
+    public void setActive_catg(String categoryName)
+    {
+        for(Category cat: this.categories)
+        {
+            if(cat.name.equals(categoryName))
+                this.active_catg = cat;
+        }
+        this.active_catg = this.categories.get(0);
+    }
+
+    public List<Category> getCategories()
+    {
+        return this.categories;
+    }
+
     public List<Experiment> getExperiments(){
         // get the studies
         return experiments;
@@ -76,12 +92,81 @@ public class Study  implements Serializable{
 
     public void setRandQuestion() throws SelfException {
         if(this.active_catg==null) this.setRandCategory();
-        this.active_quest = this.active_catg.getRandQuestion();
+        for(int i=0;i<this.active_exp.num_presented_question;i++)
+            this.active_quest.add(this.active_catg.getRandQuestion());
+    }
+
+    // Only return one question
+    public Question getPostQuestion()throws SelfException {
+        if(this.postques.is_finish_question())
+        {
+            throw new SelfException("question is empty");
+        }
+        return this.postques.getQuestion();
     }
 
     public void startRandExperiment() throws SelfException {
+        int temp_idx = randomGenerator.nextInt(experiments.size());
+        this.active_exp = this.experiments.get(temp_idx);
         setRandCategory();
         setRandQuestion();
     }
+
+    public Category getCategory(String categoryName) throws SelfException
+    {
+        for(int i=0;i<this.categories.size();i++)
+        {
+            if(this.categories.get(i).name.equals(categoryName))
+                return this.categories.get(i);
+        }
+        throw new SelfException("Category not found");
+    }
+
+    public void startExperiment(String experiment_name) throws SelfException{
+        Experiment selected_exp=null;
+        for(int i=0;i<this.experiments.size();i++)
+        {
+            if(this.experiments.get(i).name.equals(experiment_name))
+            {
+                selected_exp = this.experiments.get(i);
+                break;
+            }
+        }
+        if(selected_exp==null)
+            throw new SelfException("experiment not found");
+        this.active_exp = selected_exp;
+
+//        if(categoryName.equals("RANDOM"))
+//            setRandCategory();
+//        else
+//            this.active_catg = getCategory(categoryName);
+        setRandQuestion();
+    }
+
+
+    public boolean isExperimentIsStillGoing()
+    {
+        if(this.active_exp!=null && (this.active_catg.questions.size() >= this.active_exp.num_presented_question))
+            return true;
+        return false;
+    }
+
+    public void setQuestions()
+    {
+        this.active_quest.clear();
+        for(int i=0;i<this.active_exp.num_presented_question;i++)
+            this.active_quest.add(this.active_catg.getQuestion());
+    }
+
+    public void runExperiment(String experimentName) throws SelfException
+    {
+        if(this.isExperimentIsStillGoing())
+        {
+            setQuestions();
+        }
+        else
+            startExperiment(experimentName);
+    }
+
 };
 

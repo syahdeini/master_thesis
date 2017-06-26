@@ -1,6 +1,8 @@
 package com.example.syahdeini.quizapp;
 
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
@@ -9,56 +11,78 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
 public class AnswerActivity extends AppCompatActivity {
     private Study st;
-    private TextView textAnswer;
+//    private TextView textAnswer;
     private Button mButtonNext;
+    private RadioButton radioBack;
+    private RadioButton radioNext;
 
     WebView webview;
+    LinearLayout answerLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_answer);
         Intent i = getIntent();
         st = (Study)i.getSerializableExtra("studyObject");
-
+        String back_flag = i.getStringExtra("BACK");
         mButtonNext = (Button) findViewById(R.id.button2);
-
-        textAnswer = (TextView) findViewById(R.id.TextAnswer1);
+        radioBack = (RadioButton) findViewById(R.id.radioButtonForget);
+        radioNext = (RadioButton) findViewById(R.id.radioButtonAnswer);
+        answerLayout = (LinearLayout) findViewById(R.id.answerLayout);
+        if(back_flag!=null)
+        {
+            radioBack.setVisibility(View.GONE);
+        }
+//        textAnswer = (TextView) findViewById(R.id.TextAnswer1);
 //        textAnswer.setText(Html.fromHtml("<a href=\""+st.active_quest.link_answer+"\">"+"link for question 1"+"</a>"));
-        textAnswer.setText(Html.fromHtml("link for question 1"));
-        textAnswer.setClickable(true);
-        textAnswer.setMovementMethod(LinkMovementMethod.getInstance());
-
+//        textAnswer.setText(Html.fromHtml("link for question 1"));
+//        textAnswer.setClickable(true);
+//        textAnswer.setMovementMethod(LinkMovementMethod.getInstance());
         webview = new WebView(this);
-        textAnswer.setOnClickListener(new View.OnClickListener(){
-
-            @Override
-            public void onClick(View v) {
-
-                setContentView(webview);
-
-                webview.loadUrl(st.active_quest.link_answer);
-
-            }
-        });
+        setView();
 
         mButtonNext.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(AnswerActivity.this,FillAnswerActivity.class);
-                Bundle bundle  = new Bundle();
-                bundle.putSerializable("studyObject",st);
-                i.putExtras(bundle);
-                startActivity(i);
+
+                if (radioBack.isChecked()) {
+                    Intent i = new Intent(AnswerActivity.this, QuizActivity.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putSerializable("studyObject", st);
+                    i.putExtras(bundle);
+                    i.putExtra("BACK","y");
+                    startActivity(i);
+
+                } else if (radioNext.isChecked()) {
+                    Intent i = new Intent(AnswerActivity.this, FillAnswerActivity.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putSerializable("studyObject", st);
+                    i.putExtras(bundle);
+                    startActivity(i);
+                } else
+                {
+                    Context context = getApplicationContext();
+                    CharSequence text = "You have not made any choice!";
+                    int duration = Toast.LENGTH_SHORT;
+
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();
+                }
 
             }
         });
+
+
 
 
     }
@@ -84,5 +108,43 @@ public class AnswerActivity extends AppCompatActivity {
         }
         return super.onKeyDown(keyCode,event);
 //        return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+    }
+
+    public void setView()
+    {
+//        for(Question que: st.active_quest)
+        for(int j=0;j<st.active_quest.size();j++)
+        {
+            TextView _tv = new TextView(this);
+
+//            _tv.setText(Html.fromHtml("<a href=\""+st.active_quest.get(j).link_answer+"\">"+"link for question 1"+"</a>"));
+            _tv.setText(Html.fromHtml("link for question "+String.valueOf(j+1)));
+            _tv.setLinkTextColor(Color.BLUE);
+            _tv.setTextSize(25);
+            _tv.setPadding(0,10,0,0);
+            _tv.setClickable(true);
+            _tv.setMovementMethod(LinkMovementMethod.getInstance());
+            _tv.setId(j);
+            _tv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    setContentView(webview);
+                    Question q =  st.active_quest.get(v.getId());
+                    webview.loadUrl(q.link_answer);
+
+                }
+            });
+
+
+
+            answerLayout.addView(_tv);
+
+
+        }
+
     }
 }

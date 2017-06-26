@@ -13,6 +13,7 @@ public class Question implements Serializable {
     public String text;
     public String link_answer;
     public String answer;
+    public String question_type;
     public List<String> options;
     public int TTS;
     public int TTLA;
@@ -26,14 +27,29 @@ public class Question implements Serializable {
     public static final int RANDOM = 1;
     public static final int MC = 2;
 
+    public Question()
+    {
+
+    }
+
     public Question(String id, String text, String link_answer){
         this.id = id;
         this.text = text;
         this.link_answer=link_answer;
     }
 
+
+    public Question(String id, String text, String question_type, List<String> options){
+        this.id = id;
+        this.text = text;
+        this.link_answer=link_answer;
+        this.question_type = question_type;
+        this.options = options;
+    }
+
     public Question(String id, String text, String link_answer, String answer){
         this(id,text,link_answer);
         this.answer = answer;
     }
+
 }

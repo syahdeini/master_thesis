@@ -20,10 +20,17 @@ public class Category implements Serializable{
         public String question_order;
         private Random randomGenerator = new Random();
 
-
         public Category()
         {
+        }
 
+
+        public Boolean is_finish_question(){
+            if(questions.size()<1)
+            {
+                return true;
+            }
+            return false;
         }
 
         public Question getRandQuestion() throws SelfException {
@@ -36,6 +43,13 @@ public class Category implements Serializable{
             Question q  = questions.get(temp_idx);
             asked_questions.add(q);
             questions.remove(temp_idx);
+            return q;
+        }
+
+        public Question getQuestion(){
+            Question q = this.questions.get(0);
+            this.questions.remove(0);
+            this.asked_questions.add(q);
             return q;
         }
 
