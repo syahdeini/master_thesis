@@ -6,10 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.syahdeini.quizapp.FillAnswerActivity">
-
-
-
-
 <!--    <TextView
         android:id="@+id/editText3"
         android:layout_width="match_parent"
@@ -43,22 +39,28 @@
             android:orientation="vertical"
             android:id="@+id/layoutEditText"
             >
-<!--        <EditText
-            android:id="@+id/editText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            tools:layout_editor_absoluteX="36dp"
-            tools:layout_editor_absoluteY="83dp" />
-        <EditText
-            android:id="@+id/editText2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            tools:layout_editor_absoluteX="36dp"
-            tools:layout_editor_absoluteY="83dp" /> -->
+            <LinearLayout
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="0px"
+                android:layout_height="0px"/>
+
+            <!--        <EditText
+                        android:id="@+id/editText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        tools:layout_editor_absoluteX="36dp"
+                        tools:layout_editor_absoluteY="83dp" />`
+                    <EditText
+                        android:id="@+id/editText2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        tools:layout_editor_absoluteX="36dp"
+                        tools:layout_editor_absoluteY="83dp" /> -->
         </LinearLayout>
         <Button
             android:id="@+id/buttonNext"

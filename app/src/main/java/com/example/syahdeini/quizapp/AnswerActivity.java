@@ -9,6 +9,7 @@ import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -97,8 +98,6 @@ public class AnswerActivity extends AppCompatActivity {
                         webview.goBack();
 //                        webview.loadUrl("about:blank");
                     } else {
-//                        finish();
-                        ;
                         Intent intent = getIntent();
                         finish();
                         startActivity(intent);
@@ -120,12 +119,17 @@ public class AnswerActivity extends AppCompatActivity {
         for(int j=0;j<st.active_quest.size();j++)
         {
             TextView _tv = new TextView(this);
-
 //            _tv.setText(Html.fromHtml("<a href=\""+st.active_quest.get(j).link_answer+"\">"+"link for question 1"+"</a>"));
-            _tv.setText(Html.fromHtml("link for question "+String.valueOf(j+1)));
+            _tv.setText(Html.fromHtml("answer link for question "+String.valueOf(j+1)));
+            _tv.setTextColor(Color.RED);
             _tv.setLinkTextColor(Color.BLUE);
             _tv.setTextSize(25);
-            _tv.setPadding(0,10,0,0);
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT);
+            params.setMargins(5,30,0,25);
+            if(j==st.active_quest.size()-1)
+                params.setMargins(5,50,0,5);
+            _tv.setLayoutParams(params);
             _tv.setClickable(true);
             _tv.setMovementMethod(LinkMovementMethod.getInstance());
             _tv.setId(j);
@@ -138,10 +142,7 @@ public class AnswerActivity extends AppCompatActivity {
 
                 }
             });
-
-
-
-            answerLayout.addView(_tv);
+      answerLayout.addView(_tv);
 
 
         }

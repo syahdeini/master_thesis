@@ -12,17 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".QuizActivity" />
-        <activity android:name=".IntroActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".secondActivity"
-            android:label="@string/title_activity_second"
-            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".IntroActivity"/>
         <activity android:name=".AnswerActivity" />
         <activity android:name=".FillAnswerActivity" />
         <activity
@@ -33,7 +23,14 @@
         <activity
             android:name=".chooceCategoryActivity"
             android:label="@string/title_activity_chooce_category"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".expInitialActivity" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+        <activity android:name=".expSetPropActivity"></activity>
     </application>
 
 </manifest>

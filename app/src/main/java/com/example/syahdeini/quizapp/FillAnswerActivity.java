@@ -7,30 +7,33 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+
 import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+import org.apache.commons.lang3.time.StopWatch;
+
+import java.util.Timer;
 
 public class FillAnswerActivity extends AppCompatActivity {
 
     private Button buttonNext;
     private EditText answerText;
-
     private  Study st;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fill_answer);
         buttonNext = (Button) findViewById(R.id.buttonNext);
-//        answerText = (EditText) findViewById(R.id.editText);
-        // get object from intent
         Intent i = getIntent();
         st = (Study) i.getSerializableExtra("studyObject");
+        st.startLogging();
         updateView();
-
 
         buttonNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if (st.isExperimentIsStillGoing()) {
                     Intent i = new Intent(FillAnswerActivity.this, QuizActivity.class);
                     Bundle bundle = new Bundle();
@@ -44,48 +47,48 @@ public class FillAnswerActivity extends AppCompatActivity {
                     i.putExtras(bundle);
                     startActivity(i);
                 }
+                st.logTTLA();
             }
         });
-
-//        answerText.setOnClickListener(new View.OnClickListener() {
-//
-//            @Override
-//            public void onClick(View v) {
-//                long tStart = System.currentTimeMillis();
-//
-//                System.out.println("ASHDASIHDIASHDASHD");
-//            }
-//        });
-//
-//        answerText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-//            @Override
-//            public void onFocusChange(View v, boolean hasFocus) {
-//                if (!hasFocus) {
-//                    System.out.println("ASDASD");
-//                }
-//            }
-//        });
     }
-
-//        answerText.
-//        https://stackoverflow.com/questions/8063439/android-edittext-finished-typing-event
-
-//                setOnClickListener(new View.OnFocusChangeListener()
-//        {
-//
-//            @Override
-//            public void onFocusChange(View v, boolean hasFocus) {
-//                System.out.print("ASDASD");
-//            }
-//        });
 
         public void updateView() {
             LinearLayout linLay = (LinearLayout) findViewById(R.id.layoutEditText);
+
             for (int i = 0; i < st.active_exp.num_presented_question; i++)
             {
+                LinearLayout layoutHorizontal = new LinearLayout(this);
+                LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT);
+                layoutHorizontal.setLayoutParams(lp);
+//                layoutHorizontal.setOrientation(VErTI);
+                TextView tempTextView = new TextView(this);
+                tempTextView.setText("answer "+Integer.toString(i+1));
                 EditText ed = new EditText(this);
+                ed.setLayoutParams(lp);
                 ed.setId(i);
-                linLay.addView(ed);
+
+//                ed.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        stopwatch.start();
+//                    }
+//                });
+
+                ed.setOnFocusChangeListener(new View.OnFocusChangeListener(){
+                    @Override
+                    public void onFocusChange(View v, boolean hasFocus) {
+//                        if (!startWatch) {
+//                        Long ja = stopwatch.getNanoTime();
+//                        } else {
+//                            startWatch = false;
+//                        }
+                    }
+                });
+
+                layoutHorizontal.addView(tempTextView);
+                layoutHorizontal.addView(ed);
+                linLay.addView(layoutHorizontal);
             }
         }
 

@@ -62,15 +62,15 @@ public class chooceCategoryActivity extends AppCompatActivity {
                 else {
                     RadioButton selectedRd = (RadioButton) findViewById(rdId);
                     st.setActive_catg((String) selectedRd.getText());
-                    System.out.println("HAHAHA");
+
+                    Intent i = new Intent(chooceCategoryActivity.this,QuizActivity.class);
+                    Bundle bundle  = new Bundle();
+                    bundle.putSerializable("studyObject",st);
+                    i.putExtras(bundle);
+                    startActivity(i);
                 }
 
 
-                Intent i = new Intent(chooceCategoryActivity.this,QuizActivity.class);
-                Bundle bundle  = new Bundle();
-                bundle.putSerializable("studyObject",st);
-                i.putExtras(bundle);
-                startActivity(i);
 
             }
         });

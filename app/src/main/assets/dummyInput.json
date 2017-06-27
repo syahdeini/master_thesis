@@ -27,24 +27,24 @@
       [
         {
           'question_id':'Q1',
-          'text':'What is the name of the biggest animal in the world',
+          'text':'What is the name of the biggest animal in the world ?',
           'link_answer':'https://en.wikipedia.org/wiki/Whale'
         },
         {
           'question_id':'Q2',
-          'text':'What is the name of the smartest animal in the world',
+          'text':'What is the name of the smartest animal in the world ?',
           'link_answer':'https://en.wikipedia.org/wiki/Elephant',
           'answer':'elephant'
         },
         {
           'question_id':'Q3',
-          'text':'When is the Byzantine–Bulgarian wars happened',
+          'text':'When is the Byzantine–Bulgarian wars happened ?',
           'link_answer':'https://en.wikipedia.org/wiki/Byzantine%E2%80%93Bulgarian_wars',
           'answer':''
         },
         {
           'question_id':'Q4',
-          'text':'When the iranian revolution happened',
+          'text':'When the iranian revolution happened ?',
           'link_answer':'https://en.wikipedia.org/wiki/Iranian_Revolution',
           'answer':''
         }
@@ -59,22 +59,22 @@
       [
         {
           'question_id':'Q12',
-          'text':'Who is the prime minister of UK',
+          'text':'Who is the prime minister of UK ?',
           'link_answer':'https://en.wikipedia.org/wiki/Theresa_May'
         },
         {
           'question_id':'Q13',
-          'text':'what is the name of the village where René Descartes was born',
+          'text':'what is the name of the village where René Descartes was born ?',
           'link_answer':'https://en.wikipedia.org/wiki/Ren%C3%A9_Descartes'
         },
         {
           'question_id':'Q14',
-          'text':'How many book that paulo coelho had written so far',
+          'text':'How many book that paulo coelho had written so far ?',
           'link_answer':'https://en.wikipedia.org/wiki/Paulo_Coelho'
         },
         {
           'question_id':'Q15',
-          'text':'What is the most famous book writen by paulo coelho',
+          'text':'What is the most famous book writen by paulo coelho ?',
           'link_answer':'https://en.wikipedia.org/wiki/Paulo_Coelho'
         }
       ]
@@ -87,7 +87,7 @@
     [
       {
         'question_id':'PQ1',
-        'text':'Are you feel tired',
+        'text':'Are you feel tired ?',
         'question_type':'TEXT'
       },
       {

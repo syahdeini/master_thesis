@@ -1,5 +1,7 @@
 package com.example.syahdeini.quizapp;
 
+import org.apache.commons.lang3.time.StopWatch;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,10 +20,10 @@ public class Study  implements Serializable{
     public String reseracher;
 
     // The general experiment properties
-    public int num_exp;         // number of experiment
     public String study_name; // optional
     public String study_id;   //optional
-
+    public String participantId;
+  ;
 
     private Random randomGenerator = new Random();
     private List<Category> categories = new ArrayList<Category>();
@@ -31,18 +33,9 @@ public class Study  implements Serializable{
 
     public PostQuestion postques = new PostQuestion();
 
-
     public Experiment active_exp;
     public Category active_catg;
     public List<Question> active_quest = new ArrayList<Question>() {};
-
-    public int num_categories(){
-        return categories.size();
-    }
-
-    public int num_experiments(){
-        return experiments.size();
-    }
 
 
     // experimets setter and getter
@@ -65,14 +58,15 @@ public class Study  implements Serializable{
         return true;
     }
 
+
     public void setActive_catg(String categoryName)
     {
+        this.active_catg = this.categories.get(0);
         for(Category cat: this.categories)
         {
             if(cat.name.equals(categoryName))
                 this.active_catg = cat;
         }
-        this.active_catg = this.categories.get(0);
     }
 
     public List<Category> getCategories()
@@ -82,21 +76,33 @@ public class Study  implements Serializable{
 
     public List<Experiment> getExperiments(){
         // get the studies
-        return experiments;
+        return this.experiments;
     };
 
+    public List<String> getExperimentsName(){
+        List<String> temp = new ArrayList<String>();
+        for(Experiment exp: this.experiments)
+        {
+            temp.add(exp.name);
+        }
+        return temp;
+    }
+
+    // set random category
     public void setRandCategory(){
         int temp_idx = randomGenerator.nextInt(categories.size());
         this.active_catg = this.categories.get(temp_idx);
     }
 
+
+    // set random question
     public void setRandQuestion() throws SelfException {
         if(this.active_catg==null) this.setRandCategory();
         for(int i=0;i<this.active_exp.num_presented_question;i++)
             this.active_quest.add(this.active_catg.getRandQuestion());
     }
 
-    // Only return one question
+    // Used on post-question session, Only return one question
     public Question getPostQuestion()throws SelfException {
         if(this.postques.is_finish_question())
         {
@@ -105,6 +111,7 @@ public class Study  implements Serializable{
         return this.postques.getQuestion();
     }
 
+    // Starting random experiment
     public void startRandExperiment() throws SelfException {
         int temp_idx = randomGenerator.nextInt(experiments.size());
         this.active_exp = this.experiments.get(temp_idx);
@@ -112,6 +119,7 @@ public class Study  implements Serializable{
         setRandQuestion();
     }
 
+    // get category from list of categories
     public Category getCategory(String categoryName) throws SelfException
     {
         for(int i=0;i<this.categories.size();i++)
@@ -122,6 +130,7 @@ public class Study  implements Serializable{
         throw new SelfException("Category not found");
     }
 
+    // start experiment by specifying experiment name
     public void startExperiment(String experiment_name) throws SelfException{
         Experiment selected_exp=null;
         for(int i=0;i<this.experiments.size();i++)
@@ -136,37 +145,91 @@ public class Study  implements Serializable{
             throw new SelfException("experiment not found");
         this.active_exp = selected_exp;
 
-//        if(categoryName.equals("RANDOM"))
-//            setRandCategory();
-//        else
-//            this.active_catg = getCategory(categoryName);
+        // this is bad need to have a participant
+        this.participantId="P"+Integer.toString(randomGenerator.nextInt());
+        // set random question
         setRandQuestion();
+
     }
 
 
+    // Check if the experiment is still on the progress
     public boolean isExperimentIsStillGoing()
     {
-        if(this.active_exp!=null && (this.active_catg.questions.size() >= this.active_exp.num_presented_question))
+        if(this.active_catg.questions.size() >= this.active_exp.num_presented_question)
             return true;
         return false;
     }
 
-    public void setQuestions()
+    // Update question linearly to active_quest
+    public void updateQuestions()
     {
         this.active_quest.clear();
         for(int i=0;i<this.active_exp.num_presented_question;i++)
             this.active_quest.add(this.active_catg.getQuestion());
     }
 
+    // run experiment
     public void runExperiment(String experimentName) throws SelfException
     {
-        if(this.isExperimentIsStillGoing())
+
+        if(this.active_exp==null) // if the experiment is not yet intialize
         {
-            setQuestions();
+            startExperiment(experimentName);
+        }
+        else if(this.isExperimentIsStillGoing())
+        {
+            updateQuestions();
         }
         else
-            startExperiment(experimentName);
+            throw new SelfException("Question is already finish");
     }
 
+
+    public String getFilename()
+    {
+        return this.study_name+"_"+this.participantId+".ser";
+    }
+
+    public void startLogging()
+    {
+        for(Question ques: this.active_quest)
+        {
+            ques.startlogging();
+        }
+    }
+
+
+    public void logTTLA()
+    {
+        for(Question ques: this.active_quest)
+        {
+            ques.logTTLA();
+        }
+    }
+
+    public void logTTLQ()
+    {
+        for(Question ques: this.active_quest)
+        {
+            ques.logTTLQ();
+        }
+    }
+
+    public void logTTLFA()
+    {
+        for(Question ques: this.active_quest)
+        {
+            ques.logTTLFA();
+        }
+    }
+
+    public void log(String log)
+    {
+        switch(log){
+            case "TTLA":
+                logTTLA();
+        }
+    }
 };
 

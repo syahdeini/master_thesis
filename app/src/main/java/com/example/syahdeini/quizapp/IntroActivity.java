@@ -28,7 +28,10 @@ public class IntroActivity extends AppCompatActivity {
         context = getApplicationContext();
         counter = 0;
 
-        st = InputReader.read(context,"");
+        Intent i = getIntent();
+        st = (Study)i.getSerializableExtra("studyObject");
+
+//        st = InputReader.read(context,"");
         updateQuestion();
 
         button.setOnClickListener(new View.OnClickListener(){
