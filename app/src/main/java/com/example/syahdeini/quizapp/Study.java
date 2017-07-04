@@ -152,7 +152,6 @@ public class Study  implements Serializable{
 
     }
 
-
     // Check if the experiment is still on the progress
     public boolean isExperimentIsStillGoing()
     {
@@ -191,45 +190,28 @@ public class Study  implements Serializable{
         return this.study_name+"_"+this.participantId+".ser";
     }
 
-    public void startLogging()
+
+    public void log(String log,StopWatch stopWatch)
     {
+
         for(Question ques: this.active_quest)
         {
-            ques.startlogging();
+            switch(log){
+                case "TTLQ":
+                    ques.logTTLQ(stopWatch);
+                    break;
+                case "TTLA":
+                    ques.logTTLA(stopWatch);
+                    break;
+                case "TTLB":
+                    ques.logTTLB(stopWatch);
+                }
         }
     }
 
-
-    public void logTTLA()
+    public void updateTTLFA(Integer id, Long dTime)
     {
-        for(Question ques: this.active_quest)
-        {
-            ques.logTTLA();
-        }
-    }
-
-    public void logTTLQ()
-    {
-        for(Question ques: this.active_quest)
-        {
-            ques.logTTLQ();
-        }
-    }
-
-    public void logTTLFA()
-    {
-        for(Question ques: this.active_quest)
-        {
-            ques.logTTLFA();
-        }
-    }
-
-    public void log(String log)
-    {
-        switch(log){
-            case "TTLA":
-                logTTLA();
-        }
+        active_quest.get(id).TTLFA+= dTime;
     }
 };
 

@@ -11,12 +11,15 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.apache.commons.lang3.time.StopWatch;
 import org.w3c.dom.Text;
 
 public class AnswerActivity extends AppCompatActivity {
@@ -25,67 +28,29 @@ public class AnswerActivity extends AppCompatActivity {
     private Button mButtonNext;
     private RadioButton radioBack;
     private RadioButton radioNext;
-
-    WebView webview;
+    private StopWatch stopwatchTTLB = new StopWatch();
+    private StopWatch stopWatchLink = new StopWatch();
+    private WebView webview;
     LinearLayout answerLayout;
+    private int activeAnswerLink;
+    private LinearLayout webViewframelayout;
+    String back_flag;
+    private String currentUrl = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        webview = new WebView(this);
         setContentView(R.layout.activity_answer);
         Intent i = getIntent();
         st = (Study)i.getSerializableExtra("studyObject");
-        String back_flag = i.getStringExtra("BACK");
-        mButtonNext = (Button) findViewById(R.id.button2);
-        radioBack = (RadioButton) findViewById(R.id.radioButtonForget);
-        radioNext = (RadioButton) findViewById(R.id.radioButtonAnswer);
-        answerLayout = (LinearLayout) findViewById(R.id.answerLayout);
-        if(back_flag!=null)
-        {
-            radioBack.setVisibility(View.GONE);
-        }
-//        textAnswer = (TextView) findViewById(R.id.TextAnswer1);
-//        textAnswer.setText(Html.fromHtml("<a href=\""+st.active_quest.link_answer+"\">"+"link for question 1"+"</a>"));
-//        textAnswer.setText(Html.fromHtml("link for question 1"));
-//        textAnswer.setClickable(true);
-//        textAnswer.setMovementMethod(LinkMovementMethod.getInstance());
-        webview = new WebView(this);
+        back_flag = i.getStringExtra("BACK");
+
+        stopwatchTTLB.start();
+
         setView();
-
-        mButtonNext.setOnClickListener(new View.OnClickListener(){
-
-            @Override
-            public void onClick(View v) {
-
-                if (radioBack.isChecked()) {
-                    Intent i = new Intent(AnswerActivity.this, QuizActivity.class);
-                    Bundle bundle = new Bundle();
-                    bundle.putSerializable("studyObject", st);
-                    i.putExtras(bundle);
-                    i.putExtra("BACK","y");
-                    startActivity(i);
-
-                } else if (radioNext.isChecked()) {
-                    Intent i = new Intent(AnswerActivity.this, FillAnswerActivity.class);
-                    Bundle bundle = new Bundle();
-                    bundle.putSerializable("studyObject", st);
-                    i.putExtras(bundle);
-                    startActivity(i);
-                } else
-                {
-                    Context context = getApplicationContext();
-                    CharSequence text = "You have not made any choice!";
-                    int duration = Toast.LENGTH_SHORT;
-
-                    Toast toast = Toast.makeText(context, text, duration);
-                    toast.show();
-                }
-
-            }
-        });
-
-
-
-
+        // set answer link view
+        setWebView();
+        setEventListener();
     }
 
     @Override
@@ -96,7 +61,6 @@ public class AnswerActivity extends AppCompatActivity {
                 case KeyEvent.KEYCODE_BACK:
                     if (webview.canGoBack()) {
                         webview.goBack();
-//                        webview.loadUrl("about:blank");
                     } else {
                         Intent intent = getIntent();
                         finish();
@@ -106,20 +70,30 @@ public class AnswerActivity extends AppCompatActivity {
             }
         }
         return super.onKeyDown(keyCode,event);
-//        return true;
     }
+
 
     @Override
     public void onBackPressed() {
     }
 
+    // set answer link view
     public void setView()
     {
-//        for(Question que: st.active_quest)
+        mButtonNext = (Button) findViewById(R.id.button2);
+        radioBack = (RadioButton) findViewById(R.id.radioButtonForget);
+        // set the back to GONE if it's already back
+        if(back_flag!=null)
+        {
+            radioBack.setVisibility(View.GONE);
+        }
+
+        radioNext = (RadioButton) findViewById(R.id.radioButtonAnswer);
+        answerLayout = (LinearLayout) findViewById(R.id.answerLayout);
         for(int j=0;j<st.active_quest.size();j++)
         {
             TextView _tv = new TextView(this);
-//            _tv.setText(Html.fromHtml("<a href=\""+st.active_quest.get(j).link_answer+"\">"+"link for question 1"+"</a>"));
+            // TextView style
             _tv.setText(Html.fromHtml("answer link for question "+String.valueOf(j+1)));
             _tv.setTextColor(Color.RED);
             _tv.setLinkTextColor(Color.BLUE);
@@ -133,19 +107,110 @@ public class AnswerActivity extends AppCompatActivity {
             _tv.setClickable(true);
             _tv.setMovementMethod(LinkMovementMethod.getInstance());
             _tv.setId(j);
+
+            // listener if the link answer is selected
             _tv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    setContentView(webview);
+                    activeAnswerLink = v.getId();
+                    setContentView(webViewframelayout);
                     Question q =  st.active_quest.get(v.getId());
                     webview.loadUrl(q.link_answer);
-
                 }
             });
       answerLayout.addView(_tv);
-
-
         }
+    }
 
+    public void setWebView()
+    {
+        // set event listener on webview
+        webview.setWebViewClient(new WebViewClient(){
+            @Override
+            // after the page is finished the link is tracked
+            public void onPageFinished(WebView view, String url)
+            {
+                // first time
+                if(currentUrl.length()==0) {
+                    stopWatchLink.start();
+                }
+                else if(!currentUrl.equals(url))
+                {
+                    Long timeGap = stopWatchLink.getTime();
+                    st.active_quest.get(activeAnswerLink).time_visited_links.add(timeGap);
+                    stopWatchLink.reset();
+                    stopWatchLink.start();
+                    st.active_quest.get(activeAnswerLink).visited_link.add(url);
+                }
+                currentUrl = url;
+            }
+        });
+
+        webViewframelayout = new LinearLayout(this);
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT);
+        webViewframelayout.setLayoutParams(params);
+        webViewframelayout.setOrientation(LinearLayout.VERTICAL);
+        params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                600);
+        webview.setLayoutParams(params);
+        Button Backbutton = new Button(this);
+        params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT);
+        Backbutton.setLayoutParams(params);
+        Backbutton.setText("Home");
+        Backbutton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                setContentView(R.layout.activity_answer);
+                setView();
+                // set answer link view
+//                setWebView();
+                setEventListener();
+            }
+        });
+
+        webViewframelayout.addView(webview);
+        webViewframelayout.addView(Backbutton);
+    }
+
+    public void setEventListener()
+    {
+        // radioButton checking
+        mButtonNext.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                System.out.println("HAHAHA");
+                if (radioBack.isChecked()) {
+                    Intent i = new Intent(AnswerActivity.this, QuizActivity.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putSerializable("studyObject", st);
+                    i.putExtras(bundle);
+                    i.putExtra("BACK","y");
+                    startActivity(i);
+                } else if (radioNext.isChecked()) {
+                    Intent i = new Intent(AnswerActivity.this, FillAnswerActivity.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putSerializable("studyObject", st);
+                    i.putExtras(bundle);
+                    startActivity(i);
+                    updateLog();
+                } else
+                {
+                    Context context = getApplicationContext();
+                    CharSequence text = "You have not made any choice!";
+                    int duration = Toast.LENGTH_SHORT;
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();
+                }
+            }
+        });
+    }
+
+    public void updateLog()
+    {
+        st.log("TTLB",stopwatchTTLB);
     }
 }

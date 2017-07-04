@@ -53,7 +53,7 @@ public class Category implements Serializable{
             return q;
         }
 
-        public boolean setQuestion(String id, String text, String link_answer){
+        public boolean setQuestion(Integer id, String text, String link_answer){
             Question question = new Question(id, text, link_answer);
             questions.add(question);
             return true;

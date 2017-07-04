@@ -31,11 +31,8 @@ public class PostActivity extends AppCompatActivity {
 
         setView();
 
-
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
-
-
     }
     private void setListener()
     {

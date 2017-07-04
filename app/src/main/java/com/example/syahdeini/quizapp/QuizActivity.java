@@ -32,7 +32,10 @@ public class QuizActivity extends AppCompatActivity {
     private int mQuestionNumber = 0;
     private int totalQuestion = 4;
     private Study st;
-//    private StopWatch stopWatch;
+
+    private StopWatch stopWatchTTLQ = new StopWatch();
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -53,9 +56,8 @@ public class QuizActivity extends AppCompatActivity {
         } catch (SelfException e) {
             Notification.short_toast(getApplicationContext(),"Fail Start experiment!");
         }
-        st.startLogging();
         updateView();
-
+        stopWatchTTLQ.start();
 
         mNextButton.setOnClickListener(new View.OnClickListener(){
 
@@ -88,9 +90,7 @@ public class QuizActivity extends AppCompatActivity {
 
     private void updateLog()
     {
-//          logger.setTTLA(st);
-//          System.out.print("aSDASd");
-        st.logTTLQ();
+            st.log("TTLQ",stopWatchTTLQ);stopWatchTTLQ.stop();
     }
 
     private void updateScore(int mScore) {

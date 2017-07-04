@@ -11,7 +11,7 @@ import java.util.List;
  */
 
 public class Question implements Serializable {
-    public String id;
+    public Integer id;
     public String text;
     public String link_answer;
     public String answer;
@@ -21,12 +21,13 @@ public class Question implements Serializable {
     public Long TTLA;
     public Long TTLQ;
     public Long TTLFA;
+    public long TTLB;
     public int num_notif;
     public int num_link_visited;
     public ArrayList<String> visited_link;
+    public ArrayList<Long> time_visited_links;
     public int num_app_visited;
     public boolean already_ask;
-    private StopWatch stopwatch = new StopWatch();
 
 
     public static final int RANDOM = 1;
@@ -34,17 +35,19 @@ public class Question implements Serializable {
 
     public Question()
     {
-
+        this.TTLFA = 0L;
+        this.visited_link = new ArrayList<String>();
+        this.time_visited_links = new ArrayList<Long>();
     }
 
-    public Question(String id, String text, String link_answer){
+    public Question(Integer id, String text, String link_answer){
         this.id = id;
         this.text = text;
         this.link_answer=link_answer;
     }
 
 
-    public Question(String id, String text, String question_type, List<String> options){
+    public Question(Integer id, String text, String question_type, List<String> options){
         this.id = id;
         this.text = text;
         this.link_answer=link_answer;
@@ -52,24 +55,29 @@ public class Question implements Serializable {
         this.options = options;
     }
 
-    public Question(String id, String text, String link_answer, String answer){
+    public Question(Integer id, String text, String link_answer, String answer){
         this(id,text,link_answer);
         this.answer = answer;
     }
-    public void startlogging(){ this.stopwatch.start();}
-    public void logTTLQ()
+//    public void startlogging(){ this.stopwatch.start();}
+    public void logTTLQ(StopWatch stopWatch)
     {
-        this.TTLQ=stopwatch.getNanoTime()/1000;
+        this.TTLQ=stopWatch.getTime();
     }
 
-    public void logTTLA()
+    public void logTTLA(StopWatch stopWatch)
     {
-        this.TTLA=stopwatch.getNanoTime()/1000;
+        this.TTLA=stopWatch.getTime();
     }
 
-    public void logTTLFA()
+    public void logTTLFA(StopWatch stopWatch)
     {
-        this.TTLFA = stopwatch.getNanoTime()/1000;
+        this.TTLFA = stopWatch.getTime();
+    }
+
+    public void logTTLB(StopWatch stopWatch)
+    {
+        this.TTLB = stopWatch.getTime();
     }
 
 }
