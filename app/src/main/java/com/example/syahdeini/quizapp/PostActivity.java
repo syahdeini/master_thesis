@@ -56,7 +56,12 @@ public class PostActivity extends AppCompatActivity {
     }
     private void setView()
     {
-        current_question = st.postques.getQuestion();
+        try {
+            current_question = st.postques.getQuestion();
+        }
+        catch(Exception e) {
+        Notification.short_toast(getApplicationContext(), e.getMessage());
+    }
         if(current_question.question_type.equals("MC")) {
             setContentView(R.layout.content_post_mc);
             RadioGroup radioGroup =  (RadioGroup) findViewById(R.id.radioGroup);

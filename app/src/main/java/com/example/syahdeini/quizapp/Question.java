@@ -16,18 +16,22 @@ public class Question implements Serializable {
     public String link_answer;
     public String answer;
     public String question_type;
+    public String represent_id;
     public List<String> options;
-    public Long TTS;
     public Long TTLA;
     public Long TTLQ;
+    public long TTLQ2;
+    public boolean lookback;
     public Long TTLFA;
     public long TTLB;
+    public long TTLB2;
     public int num_notif;
     public int num_link_visited;
-    public ArrayList<String> visited_link;
+    public ArrayList<String> visited_links;
+    public ArrayList<String> visited_links2;
     public ArrayList<Long> time_visited_links;
+    public ArrayList<Long> time_visited_links2;
     public int num_app_visited;
-    public boolean already_ask;
 
 
     public static final int RANDOM = 1;
@@ -36,8 +40,11 @@ public class Question implements Serializable {
     public Question()
     {
         this.TTLFA = 0L;
-        this.visited_link = new ArrayList<String>();
+        this.visited_links = new ArrayList<String>();
         this.time_visited_links = new ArrayList<Long>();
+        this.visited_links2 = new ArrayList<String>();
+        this.time_visited_links2 = new ArrayList<Long>();
+        this.lookback=false;
     }
 
     public Question(Integer id, String text, String link_answer){
@@ -65,6 +72,11 @@ public class Question implements Serializable {
         this.TTLQ=stopWatch.getTime();
     }
 
+    public void logTTLQ2(StopWatch stopWatch)
+    {
+        this.TTLQ2=stopWatch.getTime(); this.lookback=true;
+    }
+
     public void logTTLA(StopWatch stopWatch)
     {
         this.TTLA=stopWatch.getTime();
@@ -80,4 +92,8 @@ public class Question implements Serializable {
         this.TTLB = stopWatch.getTime();
     }
 
+    public void logTTLB2(StopWatch stopWatch)
+    {
+        this.TTLB2 = stopWatch.getTime();
+    }
 }

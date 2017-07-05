@@ -32,6 +32,7 @@ public class QuizActivity extends AppCompatActivity {
     private int mQuestionNumber = 0;
     private int totalQuestion = 4;
     private Study st;
+    private String back_flag="";
 
     private StopWatch stopWatchTTLQ = new StopWatch();
 
@@ -48,7 +49,7 @@ public class QuizActivity extends AppCompatActivity {
         // get object from intent
         Intent i = getIntent();
         st = (Study)i.getSerializableExtra("studyObject");
-        final String back_flag = i.getStringExtra("BACK");
+        back_flag = i.getStringExtra("BACK");
 
         try {
             if(back_flag==null)
@@ -66,6 +67,7 @@ public class QuizActivity extends AppCompatActivity {
 
                 Intent i = new Intent(QuizActivity.this,AnswerActivity.class);
                 Bundle bundle  = new Bundle();
+                updateLog();
                 bundle.putSerializable("studyObject",st);
                 i.putExtras(bundle);
                 if(back_flag!=null)
@@ -73,7 +75,6 @@ public class QuizActivity extends AppCompatActivity {
                     i.putExtra("BACK",back_flag);
                 }
                 startActivity(i);
-                updateLog();
             }
         });
     }
@@ -90,7 +91,13 @@ public class QuizActivity extends AppCompatActivity {
 
     private void updateLog()
     {
-            st.log("TTLQ",stopWatchTTLQ);stopWatchTTLQ.stop();
+        String logStr;
+        if (back_flag==null)
+            logStr="TTLQ";
+        else
+            logStr="TTLQ2"; // look back time track
+
+        st.log(logStr,stopWatchTTLQ);stopWatchTTLQ.stop();
     }
 
     private void updateScore(int mScore) {

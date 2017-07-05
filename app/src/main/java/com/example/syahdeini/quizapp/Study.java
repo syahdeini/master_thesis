@@ -95,11 +95,10 @@ public class Study  implements Serializable{
     }
 
 
-    // set random question
-    public void setRandQuestion() throws SelfException {
-        if(this.active_catg==null) this.setRandCategory();
-        for(int i=0;i<this.active_exp.num_presented_question;i++)
-            this.active_quest.add(this.active_catg.getRandQuestion());
+    public String generateRepresentId()
+    {
+        return this.study_name+"_"+this.active_exp.name+"_"+Integer.toString(randomGenerator.nextInt())
+                        + Integer.toString(randomGenerator.nextInt());
     }
 
     // Used on post-question session, Only return one question
@@ -116,7 +115,10 @@ public class Study  implements Serializable{
         int temp_idx = randomGenerator.nextInt(experiments.size());
         this.active_exp = this.experiments.get(temp_idx);
         setRandCategory();
-        setRandQuestion();
+        if(this.active_exp.questionOrder=="RANDOM")
+            setRandQuestion();
+        else
+            updateQuestions();
     }
 
     // get category from list of categories
@@ -160,12 +162,30 @@ public class Study  implements Serializable{
         return false;
     }
 
-    // Update question linearly to active_quest
-    public void updateQuestions()
+    // set question linearly to active_quest
+    public void updateQuestions() throws SelfException
     {
+        // use this if linear style, use setRandQuestion for random style question
         this.active_quest.clear();
+        String represent_id =generateRepresentId();
         for(int i=0;i<this.active_exp.num_presented_question;i++)
-            this.active_quest.add(this.active_catg.getQuestion());
+        {
+            Question _q = this.active_catg.getQuestion();
+            _q.represent_id = represent_id;
+            this.active_quest.add(_q);
+        }
+    }
+
+    // set random question
+    public void setRandQuestion() throws SelfException {
+        if(this.active_catg==null)
+            this.setRandCategory();
+        String represent_id =generateRepresentId();
+        for(int i=0;i<this.active_exp.num_presented_question;i++) {
+            Question _q = this.active_catg.getRandQuestion();
+            _q.represent_id = represent_id;
+            this.active_quest.add(_q);
+        }
     }
 
     // run experiment
@@ -178,7 +198,10 @@ public class Study  implements Serializable{
         }
         else if(this.isExperimentIsStillGoing())
         {
-            updateQuestions();
+            if(this.active_exp.questionOrder=="RANDOM")
+                setRandQuestion();
+            else
+                updateQuestions();
         }
         else
             throw new SelfException("Question is already finish");
@@ -200,11 +223,17 @@ public class Study  implements Serializable{
                 case "TTLQ":
                     ques.logTTLQ(stopWatch);
                     break;
+                case "TTLQ2":
+                    ques.logTTLQ2(stopWatch);
                 case "TTLA":
                     ques.logTTLA(stopWatch);
                     break;
                 case "TTLB":
                     ques.logTTLB(stopWatch);
+                    break;
+                case "TTLB2":
+                    ques.logTTLB2(stopWatch);
+                    break;
                 }
         }
     }

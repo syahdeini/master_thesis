@@ -46,7 +46,12 @@ public class Category implements Serializable{
             return q;
         }
 
-        public Question getQuestion(){
+        public Question getQuestion() throws SelfException {
+            if(questions.size()<1)
+            {
+                throw new SelfException("The question is below 1");
+            }
+
             Question q = this.questions.get(0);
             this.questions.remove(0);
             this.asked_questions.add(q);

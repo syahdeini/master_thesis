@@ -33,9 +33,10 @@ public class AnswerActivity extends AppCompatActivity {
     private WebView webview;
     LinearLayout answerLayout;
     private int activeAnswerLink;
+    private int previousAnswerLink;
     private LinearLayout webViewframelayout;
     String back_flag;
-    private String currentUrl = "";
+    private String prevUrl = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,18 +45,18 @@ public class AnswerActivity extends AppCompatActivity {
         Intent i = getIntent();
         st = (Study)i.getSerializableExtra("studyObject");
         back_flag = i.getStringExtra("BACK");
-
         stopwatchTTLB.start();
-
-        setView();
-        // set answer link view
-        setWebView();
+        setView();         // set answer link view
+        setWebView();      // set webview and the listener
         setEventListener();
     }
+
+
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event)
     {
+        // handling if the user press back key
         if(event.getAction()==KeyEvent.ACTION_DOWN) {
             switch (keyCode) {
                 case KeyEvent.KEYCODE_BACK:
@@ -89,7 +90,9 @@ public class AnswerActivity extends AppCompatActivity {
         }
 
         radioNext = (RadioButton) findViewById(R.id.radioButtonAnswer);
+        webview.loadUrl("");
         answerLayout = (LinearLayout) findViewById(R.id.answerLayout);
+        // Adding the answer links and link it to webview
         for(int j=0;j<st.active_quest.size();j++)
         {
             TextView _tv = new TextView(this);
@@ -115,7 +118,7 @@ public class AnswerActivity extends AppCompatActivity {
                     activeAnswerLink = v.getId();
                     setContentView(webViewframelayout);
                     Question q =  st.active_quest.get(v.getId());
-                    webview.loadUrl(q.link_answer);
+                     webview.loadUrl(q.link_answer);
                 }
             });
       answerLayout.addView(_tv);
@@ -124,28 +127,6 @@ public class AnswerActivity extends AppCompatActivity {
 
     public void setWebView()
     {
-        // set event listener on webview
-        webview.setWebViewClient(new WebViewClient(){
-            @Override
-            // after the page is finished the link is tracked
-            public void onPageFinished(WebView view, String url)
-            {
-                // first time
-                if(currentUrl.length()==0) {
-                    stopWatchLink.start();
-                }
-                else if(!currentUrl.equals(url))
-                {
-                    Long timeGap = stopWatchLink.getTime();
-                    st.active_quest.get(activeAnswerLink).time_visited_links.add(timeGap);
-                    stopWatchLink.reset();
-                    stopWatchLink.start();
-                    st.active_quest.get(activeAnswerLink).visited_link.add(url);
-                }
-                currentUrl = url;
-            }
-        });
-
         webViewframelayout = new LinearLayout(this);
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT);
@@ -165,8 +146,6 @@ public class AnswerActivity extends AppCompatActivity {
             public void onClick(View v) {
                 setContentView(R.layout.activity_answer);
                 setView();
-                // set answer link view
-//                setWebView();
                 setEventListener();
             }
         });
@@ -182,8 +161,10 @@ public class AnswerActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                System.out.println("HAHAHA");
+                update_visited_links("");
+
                 if (radioBack.isChecked()) {
+                    updateLog();
                     Intent i = new Intent(AnswerActivity.this, QuizActivity.class);
                     Bundle bundle = new Bundle();
                     bundle.putSerializable("studyObject", st);
@@ -191,12 +172,12 @@ public class AnswerActivity extends AppCompatActivity {
                     i.putExtra("BACK","y");
                     startActivity(i);
                 } else if (radioNext.isChecked()) {
+                    updateLog();
                     Intent i = new Intent(AnswerActivity.this, FillAnswerActivity.class);
                     Bundle bundle = new Bundle();
                     bundle.putSerializable("studyObject", st);
                     i.putExtras(bundle);
                     startActivity(i);
-                    updateLog();
                 } else
                 {
                     Context context = getApplicationContext();
@@ -207,10 +188,57 @@ public class AnswerActivity extends AppCompatActivity {
                 }
             }
         });
+
+        // set event listener on webview
+        webview.setWebViewClient(new WebViewClient(){
+            @Override
+//             after the page is finished the link is tracked
+            public void onPageFinished(WebView view, String url)
+            {
+                // first time
+                if(prevUrl.length()==0) {
+                    stopWatchLink.start();
+                }
+                else if(!prevUrl.equals(url))
+                {
+                    // update all visited link using previousAnswerLink
+                    update_visited_links("");
+                }
+                prevUrl = url;
+                previousAnswerLink=activeAnswerLink;
+            }
+        });
+    }
+
+    public void update_visited_links(String url)
+    {
+
+        Long timeGap = stopWatchLink.getTime();
+        if(url.length()==0) // this is for the last url
+            url = prevUrl;
+
+        if(back_flag!=null) {
+            st.active_quest.get(previousAnswerLink).time_visited_links2.add(timeGap);
+            st.active_quest.get(previousAnswerLink).visited_links2.add(url);
+        }
+        else {
+            st.active_quest.get(previousAnswerLink).time_visited_links.add(timeGap);
+            st.active_quest.get(previousAnswerLink).visited_links.add(url);
+        }
+        stopWatchLink.reset();
+        stopWatchLink.start();
+
     }
 
     public void updateLog()
     {
-        st.log("TTLB",stopwatchTTLB);
+        String logStr;
+        if (back_flag==null)
+            logStr="TTLB";
+        else
+            logStr="TTLB2"; // look back time track
+
+        st.log(logStr,stopwatchTTLB);
+        stopwatchTTLB.stop();
     }
 }
