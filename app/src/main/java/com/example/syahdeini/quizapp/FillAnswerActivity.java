@@ -1,6 +1,7 @@
 package com.example.syahdeini.quizapp;
 
 import android.content.Intent;
+import android.support.v4.content.SharedPreferencesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -23,13 +24,12 @@ import java.util.Timer;
 public class FillAnswerActivity extends AppCompatActivity {
 
     private Button buttonNext;
-    private EditText answerText;
     private  Study st;
     private StopWatch stopwatchTTLA;
     private Integer activeView_id = -1;
     // This to log
     private HashMap<Integer,StopWatch> stopWatchTTLFA = new HashMap<Integer, StopWatch>();
-
+    private ArrayList<EditText> answerText = new ArrayList<EditText>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +45,8 @@ public class FillAnswerActivity extends AppCompatActivity {
         buttonNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                updateLog();
+                saveAnswer();
                 if (st.isExperimentIsStillGoing()) {
                     Intent i = new Intent(FillAnswerActivity.this, QuizActivity.class);
                     Bundle bundle = new Bundle();
@@ -59,7 +60,6 @@ public class FillAnswerActivity extends AppCompatActivity {
                     i.putExtras(bundle);
                     startActivity(i);
                 }
-                updateLog();
             }
         });
     }
@@ -78,6 +78,8 @@ public class FillAnswerActivity extends AppCompatActivity {
                 ed.setId(i);
                 StopWatch tempStopWatch = new StopWatch();
                 stopWatchTTLFA.put(i,tempStopWatch);
+
+                // listener when the user change their focus
                 ed.setOnFocusChangeListener(new View.OnFocusChangeListener(){
                     @Override
                     public void onFocusChange(View v, boolean hasFocus) {
@@ -87,9 +89,7 @@ public class FillAnswerActivity extends AppCompatActivity {
                             // the focus view time should start
                             // get the old activeView_id
                             if(activeView_id!=-1) {
-                                long deltaTime = stopWatchTTLFA.get(activeView_id).getTime();
-                                stopWatchTTLFA.get(activeView_id).stop();
-                                st.active_quest.get(activeView_id).TTLFA+=deltaTime;
+                                updateTTLFA();
                             }
                             activeView_id = activeView.getId();
                             stopWatchTTLFA.get(activeView_id).reset();
@@ -100,14 +100,29 @@ public class FillAnswerActivity extends AppCompatActivity {
                 layoutHorizontal.addView(tempTextView);
                 layoutHorizontal.addView(ed);
                 linLay.addView(layoutHorizontal);
+                answerText.add(ed);
             }
         }
 
+    public void saveAnswer()
+    {
+        for (int i = 0; i < st.active_exp.num_presented_question; i++)
+        {
+            st.active_quest.get(i).participantAnswer=answerText.get(i).getText().toString();
+        }
+    }
+    public void updateTTLFA()
+    {
+        long deltaTime = stopWatchTTLFA.get(activeView_id).getTime();
+        stopWatchTTLFA.get(activeView_id).stop();
+        st.active_quest.get(activeView_id).TTLFA+=deltaTime;
+    }
     public void updateLog()
     {
         // this is basically for saving log
         st.log("TTLA",stopwatchTTLA);
         stopwatchTTLA.stop();
+        updateTTLFA();
     }
 
     // Avoid back button

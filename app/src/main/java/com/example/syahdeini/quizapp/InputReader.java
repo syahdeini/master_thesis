@@ -1,6 +1,8 @@
 package com.example.syahdeini.quizapp;
 
 /**
+ * This class is used to read the file (readFile), parse the string into JSON and to Object (getStudyObj)
+ * the main class is read() which will call another methods
  * Created by syahdeini on 05/06/17.
  */
 
@@ -28,6 +30,7 @@ public final class InputReader {
     static Gson gson = new Gson();
     static Context _context;
 
+    // Reading the file and return a string of text
     public static String readFile(String filepath)
     {
 
@@ -48,6 +51,7 @@ public final class InputReader {
         }
     }
 
+    // use to convert the string into object
     public static Study getStudyObj(String jsontext)
     {
 
@@ -66,7 +70,7 @@ public final class InputReader {
             temp = jsonObj.get("post_exp").toString();
             PostQuestion pe = gson.fromJson(temp, PostQuestion.class);
 
-            st.setCategory(cat);
+            st.setCategories(cat);
             st.setExperiments(exs);
             st.postques = pe;
             return st;
@@ -78,6 +82,8 @@ public final class InputReader {
         return new Study();
     }
 
+    // this is basically use to read the file
+    // main function
     public static Study read(Context context, String filepath) {
         try {
 

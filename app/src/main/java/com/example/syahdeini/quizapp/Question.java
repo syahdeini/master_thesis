@@ -15,6 +15,7 @@ public class Question implements Serializable {
     public String text;
     public String link_answer;
     public String answer;
+    public String participantAnswer;
     public String question_type;
     public String represent_id;
     public List<String> options;
@@ -45,6 +46,7 @@ public class Question implements Serializable {
         this.visited_links2 = new ArrayList<String>();
         this.time_visited_links2 = new ArrayList<Long>();
         this.lookback=false;
+        this.participantAnswer="";
     }
 
     public Question(Integer id, String text, String link_answer){

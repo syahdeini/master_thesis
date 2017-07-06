@@ -10,19 +10,22 @@ import java.util.Random;
 import java.util.concurrent.CancellationException;
 
 /**
+ * Study is the main object of the application.
+ * it consist of experiment, category (which consist of questions) and post question
+ * the main class is runExperiment, which will initialize and check if the experiment is still going
  * Created by syahdeini on 05/06/17.
  */
 
 public class Study  implements Serializable{
 
-    public String pre_text;
-    public String post_text;
-    public String reseracher;
+    public String pre_text;  // introduction text
+    public String post_text; // introduction text
+    public String reseracher;  // the name of the researcher
 
     // The general experiment properties
     public String study_name; // optional
     public String study_id;   //optional
-    public String participantId;
+    public String participantId;    // the Id of participant
   ;
 
     private Random randomGenerator = new Random();
@@ -39,6 +42,8 @@ public class Study  implements Serializable{
 
 
     // experimets setter and getter
+    // set experiment by set name, number of question and number of presented question
+    // TTS is the maximum time the participant allowed to see the question
     public Boolean setExperiments(String name, int num_question, int num_present_question, int TTS)
     {
         Experiment _exp = new Experiment(name,num_question,num_present_question,TTS);
@@ -46,19 +51,22 @@ public class Study  implements Serializable{
         return true;
     }
 
+    // this is for put an experiments
     public Boolean setExperiments(Experiment[] exps)
     {
         this.experiments = Arrays.asList(exps);
         return true;
     }
 
-    public Boolean setCategory(Category[] cats)
+    // this is for put a categories
+    public Boolean setCategories(Category[] cats)
     {
         this.categories = Arrays.asList(cats);
         return true;
     }
 
 
+    // use to set the active_catg, called in chooseCategory
     public void setActive_catg(String categoryName)
     {
         this.active_catg = this.categories.get(0);
@@ -69,16 +77,18 @@ public class Study  implements Serializable{
         }
     }
 
+    // getter for private properties (categories and experiments)
+    // use to get categories
     public List<Category> getCategories()
     {
         return this.categories;
     }
 
-    public List<Experiment> getExperiments(){
-        // get the studies
-        return this.experiments;
+    public List<Experiment> getExperiments(){ return this.experiments;
     };
 
+    // use the get the name of all experiments,
+    // it used when the reseracher pick which experiment will be used (in set properties of experiment)
     public List<String> getExperimentsName(){
         List<String> temp = new ArrayList<String>();
         for(Experiment exp: this.experiments)
@@ -88,13 +98,13 @@ public class Study  implements Serializable{
         return temp;
     }
 
-    // set random category
+    // set random category. experiment.question_order RANDOM
     public void setRandCategory(){
         int temp_idx = randomGenerator.nextInt(categories.size());
         this.active_catg = this.categories.get(temp_idx);
     }
 
-
+    // use to generate the ID when the questions are repsented at the same time
     public String generateRepresentId()
     {
         return this.study_name+"_"+this.active_exp.name+"_"+Integer.toString(randomGenerator.nextInt())
@@ -155,6 +165,7 @@ public class Study  implements Serializable{
     }
 
     // Check if the experiment is still on the progress
+    // there is a question still need to be asked
     public boolean isExperimentIsStillGoing()
     {
         if(this.active_catg.questions.size() >= this.active_exp.num_presented_question)
@@ -188,6 +199,7 @@ public class Study  implements Serializable{
         }
     }
 
+    // the main method
     // run experiment
     public void runExperiment(String experimentName) throws SelfException
     {
@@ -214,6 +226,7 @@ public class Study  implements Serializable{
     }
 
 
+    // use to logging
     public void log(String log,StopWatch stopWatch)
     {
 
