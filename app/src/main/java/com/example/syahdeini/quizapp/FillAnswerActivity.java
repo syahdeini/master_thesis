@@ -113,6 +113,7 @@ public class FillAnswerActivity extends AppCompatActivity {
     }
     public void updateTTLFA()
     {
+        if(activeView_id==-1)return;
         long deltaTime = stopWatchTTLFA.get(activeView_id).getTime();
         stopWatchTTLFA.get(activeView_id).stop();
         st.active_quest.get(activeView_id).TTLFA+=deltaTime;

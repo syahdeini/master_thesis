@@ -26,7 +26,7 @@ public class Study  implements Serializable{
     public String study_name; // optional
     public String study_id;   //optional
     public String participantId;    // the Id of participant
-  ;
+
 
     private Random randomGenerator = new Random();
     private List<Category> categories = new ArrayList<Category>();
