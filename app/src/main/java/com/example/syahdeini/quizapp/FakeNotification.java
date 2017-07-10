@@ -86,7 +86,7 @@ public class FakeNotification extends AsyncTask<URL, Integer, Long> {
 //                setContentView(R.layout.activity_answer);
 //                setView();
 //                setEventListener();
-            }
+            }   
         });
 
         // set event listener on webview

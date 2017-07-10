@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -19,7 +20,7 @@ public class PostActivity extends AppCompatActivity {
     private Study st;
     private Question current_question;
     private Button next_button;
-
+    private RadioGroup radioGroup;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +38,7 @@ public class PostActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
+                fillAnswer();
                 if(st.postques.is_finish_question())
                 {
                     Intent i = new Intent(PostActivity.this,EndActivity.class);
@@ -50,6 +52,22 @@ public class PostActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void fillAnswer()
+    {
+        String answer;
+        if(current_question.question_type.equals("MC")) {
+            int selectedId = radioGroup.getCheckedRadioButtonId();
+            RadioButton rd = (RadioButton) findViewById(selectedId);
+            answer = rd.getText().toString();
+        }
+        else
+        {
+            EditText answerText = (EditText) findViewById(R.id.answerText);
+            answer = answerText.getText().toString();
+        }
+        current_question.participantAnswer = answer;
+    }
     private void setView()
     {
         try {
@@ -60,7 +78,7 @@ public class PostActivity extends AppCompatActivity {
     }
         if(current_question.question_type.equals("MC")) {
             setContentView(R.layout.content_post_mc);
-            RadioGroup radioGroup =  (RadioGroup) findViewById(R.id.radioGroup);
+            radioGroup =  (RadioGroup) findViewById(R.id.radioGroup);
 
             for(int j = 0; j<current_question.options.size(); j++)
             {

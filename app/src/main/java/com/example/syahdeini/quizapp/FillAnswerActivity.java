@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Timer;
 
-public class FillAnswerActivity extends AppCompatActivity {
+public class                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        FillAnswerActivity extends AppCompatActivity {
 
     private Button buttonNext;
     private  Study st;

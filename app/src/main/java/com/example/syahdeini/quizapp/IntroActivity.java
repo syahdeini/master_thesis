@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.renderscript.ScriptGroup;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -57,8 +58,8 @@ public class IntroActivity extends AppCompatActivity {
     private void updateQuestion()
     {
         if(counter<1)
-            textview.setText(st.pre_text);
+            textview.setText(Html.fromHtml(st.pre_text));
         else
-            textview.setText(st.post_text);
+            textview.setText(Html.fromHtml(st.post_text));
     }
 }

@@ -161,7 +161,6 @@ public class AnswerActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                update_visited_links("");
 
                 if (radioBack.isChecked()) {
                     updateLog();
@@ -193,19 +192,31 @@ public class AnswerActivity extends AppCompatActivity {
         webview.setWebViewClient(new WebViewClient(){
             @Override
 //             after the page is finished the link is tracked
-            public void onPageFinished(WebView view, String url)
-            {
-                // first time
-                if(prevUrl.length()==0) {
-                    stopWatchLink.start();
+            public void onPageFinished(WebView view, String url) {
+                if(!url.equals(""))
+                {// first time
+                    if (prevUrl.equals("")) { // just for the starter
+                        stopWatchLink.start();
+                    } else if (!prevUrl.equals(url)) {
+                        // update all visited link using previousAnswerLink
+                        update_visited_links(prevUrl);
+                        stopWatchLink.reset();
+                        stopWatchLink.start();
+                    }
+
+                    // if it about:blank, when user click home button after clicking the link
+                    if(url.equals("about:blank"))
+                    {
+                        prevUrl="";
+                        previousAnswerLink=-1;
+                        stopWatchLink.stop();
+                        stopWatchLink.reset();
+                    }
+                    else {
+                        prevUrl = url;
+                        previousAnswerLink = activeAnswerLink;
+                    }
                 }
-                else if(!prevUrl.equals(url))
-                {
-                    // update all visited link using previousAnswerLink
-                    update_visited_links("");
-                }
-                prevUrl = url;
-                previousAnswerLink=activeAnswerLink;
             }
         });
     }
@@ -214,8 +225,6 @@ public class AnswerActivity extends AppCompatActivity {
     {
 
         Long timeGap = stopWatchLink.getTime();
-        if(url.length()==0) // this is for the last url
-            url = prevUrl;
 
         if(back_flag!=null) {
             st.active_quest.get(previousAnswerLink).time_visited_links2.add(timeGap);
@@ -225,8 +234,6 @@ public class AnswerActivity extends AppCompatActivity {
             st.active_quest.get(previousAnswerLink).time_visited_links.add(timeGap);
             st.active_quest.get(previousAnswerLink).visited_links.add(url);
         }
-        stopWatchLink.reset();
-        stopWatchLink.start();
 
     }
 
