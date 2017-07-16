@@ -74,7 +74,7 @@ public class PostActivity extends AppCompatActivity {
             current_question = st.postques.getQuestion();
         }
         catch(Exception e) {
-        Notification.short_toast(getApplicationContext(), e.getMessage());
+        Popup.short_toast(getApplicationContext(), e.getMessage());
     }
         if(current_question.question_type.equals("MC")) {
             setContentView(R.layout.content_post_mc);

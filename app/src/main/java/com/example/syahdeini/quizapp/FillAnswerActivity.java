@@ -40,6 +40,7 @@ public class                                                                    
         stopwatchTTLA = new StopWatch();
         stopwatchTTLA.start();
         updateView();
+        st.checkNotification("fillAnswer",this);
 
         // Event listener for view
         buttonNext.setOnClickListener(new View.OnClickListener() {

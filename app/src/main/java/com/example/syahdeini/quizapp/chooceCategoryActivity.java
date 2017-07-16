@@ -58,7 +58,7 @@ public class chooceCategoryActivity extends AppCompatActivity {
             public void onClick(View v) {
                 int rdId = radioGroup.getCheckedRadioButtonId();
                 if(rdId==-1)
-                    Notification.short_toast(getApplicationContext(),"please select a category");
+                    Popup.short_toast(getApplicationContext(),"please select a category");
                 else {
                     RadioButton selectedRd = (RadioButton) findViewById(rdId);
                     st.setActive_catg((String) selectedRd.getText());

@@ -1,8 +1,13 @@
 package com.example.syahdeini.quizapp;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+
 import org.apache.commons.lang3.time.StopWatch;
 
 import java.io.Serializable;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -27,18 +32,21 @@ public class Study  implements Serializable{
     public String study_id;   //optional
     public String participantId;    // the Id of participant
 
-
     private Random randomGenerator = new Random();
     private List<Category> categories = new ArrayList<Category>();
 
     // It is possible to make more than one study
     private List<Experiment> experiments = new ArrayList<Experiment>();
-
     public PostQuestion postques = new PostQuestion();
 
     public Experiment active_exp;
     public Category active_catg;
     public List<Question> active_quest = new ArrayList<Question>() {};
+
+    public List<BoxNotification> notifs = new ArrayList<BoxNotification>();
+    public List<BoxNotification> notifActive = new ArrayList<BoxNotification>();
+    private int shiftNum;
+    public List<NotifTimer> NotificationWatch = new ArrayList<NotifTimer>() {};
 
 
     // experimets setter and getter
@@ -65,6 +73,11 @@ public class Study  implements Serializable{
         return true;
     }
 
+    public Boolean setNotification(BoxNotification[] notification)
+    {
+        this.notifs = Arrays.asList(notification);
+        return true;
+    }
 
     // use to set the active_catg, called in chooseCategory
     public void setActive_catg(String categoryName)
@@ -144,6 +157,7 @@ public class Study  implements Serializable{
 
     // start experiment by specifying experiment name
     public void startExperiment(String experiment_name) throws SelfException{
+
         Experiment selected_exp=null;
         for(int i=0;i<this.experiments.size();i++)
         {
@@ -161,7 +175,6 @@ public class Study  implements Serializable{
         this.participantId="P"+Integer.toString(randomGenerator.nextInt());
         // set random question
         setRandQuestion();
-
     }
 
     // Check if the experiment is still on the progress
@@ -177,13 +190,43 @@ public class Study  implements Serializable{
     public void updateQuestions() throws SelfException
     {
         // use this if linear style, use setRandQuestion for random style question
-        this.active_quest.clear();
+        if(this.active_quest!=null)
+            this.active_quest.clear();
         String represent_id =generateRepresentId();
         for(int i=0;i<this.active_exp.num_presented_question;i++)
         {
             Question _q = this.active_catg.getQuestion();
             _q.represent_id = represent_id;
             this.active_quest.add(_q);
+        }
+    }
+
+    public void checkNotification(String phase, Activity act)
+    {
+        for(BoxNotification _notif: this.notifs)
+        {
+            if(this.shiftNum == _notif.shift && phase.equals(_notif.phase))
+            {
+//                NotifTimer notifTimer = new NotifTimer(_notif.getTimeToShow(),0,_notif);
+//                notifTimer.start();
+//                NotificationWatch.add(notifTimer);
+//                new FakeNotification().execute(notifTimer);
+                Intent i = new Intent(act.getApplicationContext(),Timer_service.class);
+                Bundle bundle  = new Bundle();
+                _notif.setActivity(act.getBaseContext());
+                bundle.putSerializable("notification",_notif);
+                i.putExtras(bundle);
+                try {
+                    act.getApplicationContext().startService(i);
+//                    notifActive.add(_notif);
+//                    this.notifs.remove(_notif);
+
+                }
+                catch (Exception e)
+                {
+                    e.getMessage();
+                }
+            }
         }
     }
 
@@ -217,6 +260,8 @@ public class Study  implements Serializable{
         }
         else
             throw new SelfException("Question is already finish");
+
+        this.shiftNum++;
     }
 
 

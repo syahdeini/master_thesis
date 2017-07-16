@@ -49,6 +49,7 @@ public class AnswerActivity extends AppCompatActivity {
         setView();         // set answer link view
         setWebView();      // set webview and the listener
         setEventListener();
+        st.checkNotification("answer",this);
     }
 
 

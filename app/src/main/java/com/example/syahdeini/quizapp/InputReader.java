@@ -70,8 +70,12 @@ public final class InputReader {
             temp = jsonObj.get("post_exp").toString();
             PostQuestion pe = gson.fromJson(temp, PostQuestion.class);
 
+            temp = jsonObj.get("notification").toString();
+            BoxNotification[] notification = gson.fromJson(temp, BoxNotification[].class);
+
             st.setCategories(cat);
             st.setExperiments(exs);
+            st.setNotification(notification);
             st.postques = pe;
             return st;
 

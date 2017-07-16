@@ -1,7 +1,12 @@
 package com.example.syahdeini.quizapp;
 
+import android.app.Activity;
+import android.app.Notification;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +18,9 @@ import android.widget.Toast;
 
 import org.apache.commons.lang3.time.StopWatch;
 import org.w3c.dom.Text;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class QuizActivity extends AppCompatActivity {
 
@@ -33,7 +41,6 @@ public class QuizActivity extends AppCompatActivity {
     private int totalQuestion = 4;
     private Study st;
     private String back_flag="";
-
     private StopWatch stopWatchTTLQ = new StopWatch();
 
 
@@ -55,10 +62,16 @@ public class QuizActivity extends AppCompatActivity {
             if(back_flag==null)
                 st.runExperiment("experiment1");
         } catch (SelfException e) {
-            Notification.short_toast(getApplicationContext(),"Fail Start experiment!");
+            Popup.short_toast(getApplicationContext(),"Fail Start experiment!");
         }
         updateView();
         stopWatchTTLQ.start();
+        st.checkNotification("quiz",this);
+
+        //**************************
+        IntentFilter f= new IntentFilter(Timer_service.ACTION_RESP);
+        LocalBroadcastManager.getInstance(this).registerReceiver(onEvent,f);
+        //*************************
 
         mNextButton.setOnClickListener(new View.OnClickListener(){
 
@@ -103,4 +116,18 @@ public class QuizActivity extends AppCompatActivity {
     private void updateScore(int mScore) {
         mScoreView.setText(""+mScore);
     }
+
+    private void showNotif(BoxNotification notif)
+    {
+        notif.show(this);
+    }
+
+    private BroadcastReceiver onEvent=new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+
+           BoxNotification notif = (BoxNotification) intent.getSerializableExtra("notification");
+            showNotif(notif);
+        }
+    };
 }
