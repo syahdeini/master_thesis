@@ -46,7 +46,6 @@ public class Study  implements Serializable{
     public List<BoxNotification> notifs = new ArrayList<BoxNotification>();
     public List<BoxNotification> notifActive = new ArrayList<BoxNotification>();
     private int shiftNum;
-    public List<NotifTimer> NotificationWatch = new ArrayList<NotifTimer>() {};
 
 
     // experimets setter and getter
@@ -207,20 +206,12 @@ public class Study  implements Serializable{
         {
             if(this.shiftNum == _notif.shift && phase.equals(_notif.phase))
             {
-//                NotifTimer notifTimer = new NotifTimer(_notif.getTimeToShow(),0,_notif);
-//                notifTimer.start();
-//                NotificationWatch.add(notifTimer);
-//                new FakeNotification().execute(notifTimer);
                 Intent i = new Intent(act.getApplicationContext(),Timer_service.class);
                 Bundle bundle  = new Bundle();
-                _notif.setActivity(act.getBaseContext());
                 bundle.putSerializable("notification",_notif);
                 i.putExtras(bundle);
                 try {
                     act.getApplicationContext().startService(i);
-//                    notifActive.add(_notif);
-//                    this.notifs.remove(_notif);
-
                 }
                 catch (Exception e)
                 {

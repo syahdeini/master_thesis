@@ -33,7 +33,7 @@ public class Timer_service extends IntentService {
     protected void onHandleIntent(Intent intent) {
         notification = (BoxNotification) intent.getSerializableExtra("notification");
         try {
-            Thread.sleep(5000);
+            Thread.sleep(notification.getTimeToShow());
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

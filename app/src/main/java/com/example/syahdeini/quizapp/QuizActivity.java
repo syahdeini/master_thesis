@@ -6,6 +6,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.net.Uri;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -122,12 +123,40 @@ public class QuizActivity extends AppCompatActivity {
         notif.show(this);
     }
 
+    private void openApp()
+    {
+        Intent intent = null;
+        try {
+            // opening twitter
+            this.getPackageManager().getPackageInfo("com.twitter.android",0);
+            intent = new Intent(Intent.ACTION_VIEW, Uri.parse("twitter://user?user_id=25073877"));
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        }
+        catch (Exception e)
+        {
+            intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/asyahdeini"));
+        }
+        startActivity(intent);
+    }
+
     private BroadcastReceiver onEvent=new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
 
-           BoxNotification notif = (BoxNotification) intent.getSerializableExtra("notification");
-            showNotif(notif);
+//           BoxNotification notif = (BoxNotification) intent.getSerializableExtra("notification");
+//            showNotif(notif);
+            try{
+//            Uri uri = Uri.parse("https://www.instagram.com/barackobama/?hl=en");
+//            Intent likeIng = new Intent(Intent.ACTION_VIEW, uri);
+//            likeIng.setPackage("com.instagram.android");
+//            startActivity(likeIng);
+                openApp();
+            }
+            catch (Exception e)
+            {
+                e.getMessage();
+
+            }
         }
     };
 }
