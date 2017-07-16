@@ -43,14 +43,14 @@ public class QuizActivity extends AppCompatActivity {
     private Study st;
     private String back_flag="";
     private StopWatch stopWatchTTLQ = new StopWatch();
-
+    private Boolean firstResume;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
-
+        this.firstResume = true;
         context = getApplicationContext();
         mNextButton = (Button) findViewById(R.id.nextButton);
         questionLayout = (LinearLayout) findViewById(R.id.questionLayout);
@@ -93,6 +93,25 @@ public class QuizActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onPause()
+    {
+        super.onPause();
+        System.out.println("HAHAHAhAhA");
+    }
+
+    @Override
+    protected  void onResume()
+    {
+        super.onResume();
+        if(firstResume)
+        {
+            firstResume = false;
+            return;
+        }
+        System.out.println("HAHAHAHA");
+    }
+
     private void updateView() {
         for (int i = 0; i < st.active_exp.num_presented_question; i++) {
             TextView _question = new TextView(this);
@@ -127,14 +146,25 @@ public class QuizActivity extends AppCompatActivity {
     {
         Intent intent = null;
         try {
-            // opening twitter
-            this.getPackageManager().getPackageInfo("com.twitter.android",0);
-            intent = new Intent(Intent.ACTION_VIEW, Uri.parse("twitter://user?user_id=25073877"));
+//             opening twitter
+//            this.getPackageManager().getPackageInfo("com.twitter.android",0);
+//            intent = new Intent(Intent.ACTION_VIEW, Uri.parse("twitter://user?user_id=25073877"));
+//          INSTAGRAM
+//            this.getPackageManager().getPackageInfo("com.instagram.android",0);
+//            intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://instagram.com/_u/edinburghuniversity"));
+//          FACEBOOK
+//            this.getPackageManager().getPackageInfo("com.facebook.katana",0);
+//            intent = new Intent(Intent.ACTION_VIEW, Uri.parse("fb://facewebmodal/f?href=UniversityOfEdinburgh"));
+//          WEB
+//            String url="http://www.cnn.com";
+//            intent = new Intent(Intent.ACTION_VIEW);
+//            intent.setData(Uri.parse(url));
+
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         }
         catch (Exception e)
         {
-            intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/asyahdeini"));
+            intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/_u/asyahdeini"));
         }
         startActivity(intent);
     }
@@ -143,19 +173,21 @@ public class QuizActivity extends AppCompatActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
 
-//           BoxNotification notif = (BoxNotification) intent.getSerializableExtra("notification");
-//            showNotif(notif);
+           BoxNotification notif = (BoxNotification) intent.getSerializableExtra("notification");
+
+
             try{
+                showNotif(notif);
+
 //            Uri uri = Uri.parse("https://www.instagram.com/barackobama/?hl=en");
 //            Intent likeIng = new Intent(Intent.ACTION_VIEW, uri);
 //            likeIng.setPackage("com.instagram.android");
 //            startActivity(likeIng);
-                openApp();
+//                openApp();
             }
             catch (Exception e)
             {
                 e.getMessage();
-
             }
         }
     };

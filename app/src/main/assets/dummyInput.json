@@ -100,5 +100,21 @@
         ]
       }
     ]
-  }
+  },
+  'notification':[
+    {
+      'app':'instagram',
+      'shift':1,
+      'phase':'quiz',
+      'timeToShow':5,
+      'url':'edinburghuniversity'
+    },
+    {
+      'app':'twitter',
+      'shift':2,
+      'phase':'answer',
+      'timeToShow':2,
+      'url':'25073877'
+    }
+  ]
 }
