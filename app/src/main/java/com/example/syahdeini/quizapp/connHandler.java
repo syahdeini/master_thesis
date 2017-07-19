@@ -29,7 +29,7 @@ public class connHandler extends AsyncTask<Study, Void, Void> {
     protected Void doInBackground(Study... params) {
         try {
             Study st = params[0];
-            URL url = new URL("http://192.168.43.148:8080/post");
+            URL url = new URL("http://192.168.43.161:8080/post");
             HttpURLConnection httpCon = (HttpURLConnection) url.openConnection();
             httpCon.setDoOutput(true);
             httpCon.setRequestMethod("POST");

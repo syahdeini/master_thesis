@@ -1,6 +1,8 @@
 package com.example.syahdeini.quizapp;
 
 import android.app.Activity;
+import android.app.NotificationManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -44,7 +46,7 @@ public class Study  implements Serializable{
     public List<Question> active_quest = new ArrayList<Question>() {};
 
     public List<BoxNotification> notifs = new ArrayList<BoxNotification>();
-    public List<BoxNotification> notifActive = new ArrayList<BoxNotification>();
+    public List<BoxNotification> activeNotif = new ArrayList<BoxNotification>();
     private int shiftNum;
 
 
@@ -188,7 +190,9 @@ public class Study  implements Serializable{
     // set question linearly to active_quest
     public void updateQuestions() throws SelfException
     {
-        // use this if linear style, use setRandQuestion for random style question
+        setRandPresentedQuestion();
+
+        // use this if l    inear style, use setRandQuestion for random style question
         if(this.active_quest!=null)
             this.active_quest.clear();
         String represent_id =generateRepresentId();
@@ -212,6 +216,9 @@ public class Study  implements Serializable{
                 i.putExtras(bundle);
                 try {
                     act.getApplicationContext().startService(i);
+                    this.activeNotif.add(_notif);
+                    Integer idx = this.notifs.indexOf(_notif);
+                    this.notifs.remove(idx);
                 }
                 catch (Exception e)
                 {
@@ -223,6 +230,8 @@ public class Study  implements Serializable{
 
     // set random question
     public void setRandQuestion() throws SelfException {
+        setRandPresentedQuestion();
+
         if(this.active_catg==null)
             this.setRandCategory();
         String represent_id =generateRepresentId();
@@ -237,6 +246,8 @@ public class Study  implements Serializable{
     // run experiment
     public void runExperiment(String experimentName) throws SelfException
     {
+
+
 
         if(this.active_exp==null) // if the experiment is not yet intialize
         {
@@ -253,6 +264,7 @@ public class Study  implements Serializable{
             throw new SelfException("Question is already finish");
 
         this.shiftNum++;
+
     }
 
 
@@ -287,9 +299,37 @@ public class Study  implements Serializable{
         }
     }
 
+    public BoxNotification getLasestNotif()
+    {
+        return this.activeNotif.get(this.activeNotif.size()-1);
+    }
+
+    public void startLogNotif(StopWatch stopwatch)
+    {
+        this.getLasestNotif().presentedId = this.active_quest.get(this.active_quest.size()-1).represent_id;
+        stopwatch.reset();
+        stopwatch.start();
+    }
+
+    public void stopLogNotif(StopWatch stopwatch)
+    {
+        this.getLasestNotif().TTLN+=stopwatch.getTime(); // in milissecond
+        stopwatch.stop();
+
+    }
+
+    public void setRandPresentedQuestion()
+    {
+        if(this.active_exp.random_presented_question)
+        {
+            this.active_exp.changeNumberPresentedQuestion();
+        }
+    }
+
     public void updateTTLFA(Integer id, Long dTime)
     {
         active_quest.get(id).TTLFA+= dTime;
     }
+
 };
 

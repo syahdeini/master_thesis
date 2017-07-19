@@ -1,5 +1,7 @@
 package com.example.syahdeini.quizapp;
 
+import android.app.NotificationManager;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -28,7 +30,7 @@ public class AnswerActivity extends AppCompatActivity {
     private Button mButtonNext;
     private RadioButton radioBack;
     private RadioButton radioNext;
-    private StopWatch stopwatchTTLB = new StopWatch();
+    private StopWatchLogger stopwatchTTLB = new StopWatchLogger();
     private StopWatch stopWatchLink = new StopWatch();
     private WebView webview;
     LinearLayout answerLayout;
@@ -37,19 +39,24 @@ public class AnswerActivity extends AppCompatActivity {
     private LinearLayout webViewframelayout;
     String back_flag;
     private String prevUrl = "";
+    private StopWatch notifStopWatch = new StopWatch();
+    private Boolean firstResume;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         webview = new WebView(this);
         setContentView(R.layout.activity_answer);
         Intent i = getIntent();
+        this.firstResume = true;
         st = (Study)i.getSerializableExtra("studyObject");
         back_flag = i.getStringExtra("BACK");
         stopwatchTTLB.start();
+        if(back_flag==null) // not click back button
+            st.checkNotification("answer",this);
         setView();         // set answer link view
         setWebView();      // set webview and the listener
         setEventListener();
-        st.checkNotification("answer",this);
     }
 
 
@@ -245,8 +252,53 @@ public class AnswerActivity extends AppCompatActivity {
             logStr="TTLB";
         else
             logStr="TTLB2"; // look back time track
-
         st.log(logStr,stopwatchTTLB);
         stopwatchTTLB.stop();
     }
+
+    // THIS IS METHOD FOR NOTIFICATIOn
+
+    @Override
+    protected void onPause()
+    {
+        super.onPause();
+        stopwatchTTLB.suspend();
+        st.startLogNotif(notifStopWatch);
+    }
+
+    @Override
+    protected  void onResume()
+    {
+        super.onResume();
+        if(firstResume)
+        {
+            // Clear all notification
+            ((NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE)).cancelAll();
+            firstResume = false;
+            return;
+        }
+        stopwatchTTLB.resume();
+        st.stopLogNotif(notifStopWatch);
+    }
+
+
+    private void showNotif(BoxNotification notif)
+    {
+        notif.show(this);
+    }
+
+    private BroadcastReceiver onEvent=new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+
+            BoxNotification notif = (BoxNotification) intent.getSerializableExtra("notification");
+            try{
+                showNotif(notif);
+            }
+            catch (Exception e)
+            {
+                e.getMessage();
+            }
+        }
+    };
 }

@@ -2,6 +2,7 @@ package com.example.syahdeini.quizapp;
 
 import android.app.Activity;
 import android.app.Notification;
+import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -42,7 +43,8 @@ public class QuizActivity extends AppCompatActivity {
     private int totalQuestion = 4;
     private Study st;
     private String back_flag="";
-    private StopWatch stopWatchTTLQ = new StopWatch();
+    private StopWatchLogger stopWatchTTLQ = new StopWatchLogger();
+    private StopWatch notifStopWatch = new StopWatch();
     private Boolean firstResume;
 
     @Override
@@ -60,29 +62,30 @@ public class QuizActivity extends AppCompatActivity {
         back_flag = i.getStringExtra("BACK");
 
         try {
-            if(back_flag==null)
+            if(back_flag==null) {
                 st.runExperiment("experiment1");
+                st.checkNotification("quiz",this);
+            }
+            updateView();
+            stopWatchTTLQ.start();
+
+            //**************************
+            IntentFilter f= new IntentFilter(Timer_service.ACTION_RESP);
+            LocalBroadcastManager.getInstance(this).registerReceiver(onEvent,f);
+            //*************************
+
         } catch (SelfException e) {
             Popup.short_toast(getApplicationContext(),"Fail Start experiment!");
         }
-        updateView();
-        stopWatchTTLQ.start();
-        st.checkNotification("quiz",this);
-
-        //**************************
-        IntentFilter f= new IntentFilter(Timer_service.ACTION_RESP);
-        LocalBroadcastManager.getInstance(this).registerReceiver(onEvent,f);
-        //*************************
 
         mNextButton.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
-
                 Intent i = new Intent(QuizActivity.this,AnswerActivity.class);
                 Bundle bundle  = new Bundle();
                 updateLog();
-                bundle.putSerializable("studyObject",st);
+                bundle.putSerializable("studyObject", st);
                 i.putExtras(bundle);
                 if(back_flag!=null)
                 {
@@ -93,24 +96,6 @@ public class QuizActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    protected void onPause()
-    {
-        super.onPause();
-        System.out.println("HAHAHAhAhA");
-    }
-
-    @Override
-    protected  void onResume()
-    {
-        super.onResume();
-        if(firstResume)
-        {
-            firstResume = false;
-            return;
-        }
-        System.out.println("HAHAHAHA");
-    }
 
     private void updateView() {
         for (int i = 0; i < st.active_exp.num_presented_question; i++) {
@@ -133,40 +118,36 @@ public class QuizActivity extends AppCompatActivity {
         st.log(logStr,stopWatchTTLQ);stopWatchTTLQ.stop();
     }
 
-    private void updateScore(int mScore) {
-        mScoreView.setText(""+mScore);
+// THIS IS METHOD FOR NOTIFICATIOn
+
+    @Override
+    protected void onPause()
+    {
+        super.onPause();
+        st.startLogNotif(notifStopWatch);
+        stopWatchTTLQ.suspend();
+
     }
+
+    @Override
+    protected  void onResume()
+    {
+        super.onResume();
+        if(firstResume)
+        {
+            // Clear all notification
+            ((NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE)).cancelAll();
+            firstResume = false;
+            return;
+        }
+        stopWatchTTLQ.resume();
+        st.stopLogNotif(notifStopWatch);
+    }
+
 
     private void showNotif(BoxNotification notif)
     {
         notif.show(this);
-    }
-
-    private void openApp()
-    {
-        Intent intent = null;
-        try {
-//             opening twitter
-//            this.getPackageManager().getPackageInfo("com.twitter.android",0);
-//            intent = new Intent(Intent.ACTION_VIEW, Uri.parse("twitter://user?user_id=25073877"));
-//          INSTAGRAM
-//            this.getPackageManager().getPackageInfo("com.instagram.android",0);
-//            intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://instagram.com/_u/edinburghuniversity"));
-//          FACEBOOK
-//            this.getPackageManager().getPackageInfo("com.facebook.katana",0);
-//            intent = new Intent(Intent.ACTION_VIEW, Uri.parse("fb://facewebmodal/f?href=UniversityOfEdinburgh"));
-//          WEB
-//            String url="http://www.cnn.com";
-//            intent = new Intent(Intent.ACTION_VIEW);
-//            intent.setData(Uri.parse(url));
-
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        }
-        catch (Exception e)
-        {
-            intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/_u/asyahdeini"));
-        }
-        startActivity(intent);
     }
 
     private BroadcastReceiver onEvent=new BroadcastReceiver() {
@@ -174,16 +155,8 @@ public class QuizActivity extends AppCompatActivity {
         public void onReceive(Context context, Intent intent) {
 
            BoxNotification notif = (BoxNotification) intent.getSerializableExtra("notification");
-
-
             try{
                 showNotif(notif);
-
-//            Uri uri = Uri.parse("https://www.instagram.com/barackobama/?hl=en");
-//            Intent likeIng = new Intent(Intent.ACTION_VIEW, uri);
-//            likeIng.setPackage("com.instagram.android");
-//            startActivity(likeIng);
-//                openApp();
             }
             catch (Exception e)
             {

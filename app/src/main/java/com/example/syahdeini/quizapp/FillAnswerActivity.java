@@ -1,5 +1,8 @@
 package com.example.syahdeini.quizapp;
 
+import android.app.NotificationManager;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
 import android.support.v4.content.SharedPreferencesCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -25,19 +28,22 @@ public class                                                                    
 
     private Button buttonNext;
     private  Study st;
-    private StopWatch stopwatchTTLA;
+    private StopWatchLogger stopwatchTTLA = new StopWatchLogger();
     private Integer activeView_id = -1;
     // This to log
     private HashMap<Integer,StopWatch> stopWatchTTLFA = new HashMap<Integer, StopWatch>();
     private ArrayList<EditText> answerText = new ArrayList<EditText>();
+    private StopWatch notifStopWatch = new StopWatch();
+    private Boolean firstResume;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fill_answer);
         buttonNext = (Button) findViewById(R.id.buttonNext);
         Intent i = getIntent();
+        this.firstResume = true;
         st = (Study) i.getSerializableExtra("studyObject");
-        stopwatchTTLA = new StopWatch();
         stopwatchTTLA.start();
         updateView();
         st.checkNotification("fillAnswer",this);
@@ -137,4 +143,50 @@ public class                                                                    
         }
         return super.onKeyDown(keyCode, event);
     }
+
+    // THIS IS METHOD FOR NOTIFICATIOn
+
+    @Override
+    protected void onPause()
+    {
+        super.onPause();
+        stopwatchTTLA.suspend();
+        st.startLogNotif(notifStopWatch);
+    }
+
+    @Override
+    protected  void onResume()
+    {
+        super.onResume();
+        if(firstResume)
+        {
+            // Clear all notification
+            ((NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE)).cancelAll();
+            firstResume = false;
+            return;
+        }
+        stopwatchTTLA.resume();
+        st.stopLogNotif(notifStopWatch);
+    }
+
+
+    private void showNotif(BoxNotification notif)
+    {
+        notif.show(this);
+    }
+
+    private BroadcastReceiver onEvent=new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+
+            BoxNotification notif = (BoxNotification) intent.getSerializableExtra("notification");
+            try{
+                showNotif(notif);
+            }
+            catch (Exception e)
+            {
+                e.getMessage();
+            }
+        }
+    };
 }

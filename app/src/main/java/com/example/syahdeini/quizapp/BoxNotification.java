@@ -12,6 +12,8 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.support.v7.app.NotificationCompat;
 
+import org.apache.commons.lang3.time.StopWatch;
+
 import java.io.Serializable;
 
 /**
@@ -24,10 +26,15 @@ public class BoxNotification implements Serializable {
     public String phase;
     public long timeToShow;
     public String url;
+    public String titleText;
+    public String msgText;
+    public long TTLN = 0;  //Time to look the notification
+//    public StopWatch stopwatch = new StopWatch();
+    public String presentedId;
 
     public long getTimeToShow()
     {
-        return this.timeToShow*1000;
+        return this.timeToShow*1;
     }
 
     public void show(Activity currentAct) {
@@ -37,8 +44,8 @@ public class BoxNotification implements Serializable {
                     .setSmallIcon(R.drawable.ic_action_name)
                     // get resource should be acquired by sending the resource
                     .setLargeIcon(BitmapFactory.decodeResource(currentAct.getResources(), R.drawable.ic_action_name))
-                    .setContentTitle("My Notification")
-                    .setContentText("Hello world")
+                    .setContentTitle(titleText)
+                    .setContentText(msgText)
                     .setColor(Color.parseColor("#FFFFFF"))
                     .setDefaults(android.app.Notification.DEFAULT_VIBRATE)
                     .setVibrate(new long[]{android.app.Notification.DEFAULT_VIBRATE})
@@ -57,7 +64,6 @@ public class BoxNotification implements Serializable {
                 intent.setData(Uri.parse(url));
             }
 
-
             PendingIntent pendingIntent = PendingIntent.getActivity(currentAct, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
             mBuilder.setContentIntent(pendingIntent);
 
@@ -73,4 +79,5 @@ public class BoxNotification implements Serializable {
             e.getMessage();
         }
     }
+
 }
