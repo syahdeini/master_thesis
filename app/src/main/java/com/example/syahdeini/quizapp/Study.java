@@ -306,16 +306,19 @@ public class Study  implements Serializable{
 
     public void startLogNotif(StopWatch stopwatch)
     {
-        this.getLasestNotif().presentedId = this.active_quest.get(this.active_quest.size()-1).represent_id;
-        stopwatch.reset();
-        stopwatch.start();
+        if(this.activeNotif.size()>0) {
+            this.getLasestNotif().presentedId = this.active_quest.get(this.active_quest.size() - 1).represent_id;
+            stopwatch.reset();
+            stopwatch.start();
+        }
     }
 
     public void stopLogNotif(StopWatch stopwatch)
     {
-        this.getLasestNotif().TTLN+=stopwatch.getTime(); // in milissecond
-        stopwatch.stop();
-
+        if(this.activeNotif.size()>0) {
+            this.getLasestNotif().TTLN+=stopwatch.getTime(); // in milissecond
+            stopwatch.stop();
+        }
     }
 
     public void setRandPresentedQuestion()

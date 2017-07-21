@@ -146,52 +146,52 @@
         ]
       },
       {
-          'question_id':'PQA2',
-          'text':'During this study, did you ever look up an answer, then forget the answer before you were able to type it in?',
-          'question_type':'MC',
-          'options':[
-              'Yes',
-              'No'
-          ]
+        'question_id':'PQA2',
+        'text':'During this study, did you ever look up an answer, then forget the answer before you were able to type it in?',
+        'question_type':'MC',
+        'options':[
+          'Yes',
+          'No'
+        ]
       },
       {
-          'question_id':'PQA3',
-          'text':'During the course of this study, how many cell phone notifications did you receive ?',
-          'question_type':'MC',
-          'options':[
-              '0',
-              '1',
-              '2',
-              '3 or more'
-      ]
+        'question_id':'PQA3',
+        'text':'During the course of this study, how many cell phone notifications did you receive ?',
+        'question_type':'MC',
+        'options':[
+          '0',
+          '1',
+          '2',
+          '3 or more'
+        ]
       },
       {
-          'question_id':'PQA4',
-          'text':'How many notifications did you decide to click ?',
-          'question_type':'MC',
-          'options':[
-              '0',
-              '1',
-              '2',
-              '3 or more'
-          ]
+        'question_id':'PQA4',
+        'text':'How many notifications did you decide to click ?',
+        'question_type':'MC',
+        'options':[
+          '0',
+          '1',
+          '2',
+          '3 or more'
+        ]
       },
       {
         'question_id':'PQA5',
         'text':'As you were looking up information, did you ever follow a link you didn\'t need to follow, just out of interest ?',
         'question_type':'MC',
-          'options':[
+        'options':[
           'Yes',
           'No'
-          ]
-        },
+        ]
+      },
       {
         'question_id':'PQA6',
         'text':'During the study, did you read about or learn any new facts that were not answers to questions we asked ?',
         'question_type':'MC',
         'options':[
-            'Yes',
-            'No'
+          'Yes',
+          'No'
         ]
       },
       {

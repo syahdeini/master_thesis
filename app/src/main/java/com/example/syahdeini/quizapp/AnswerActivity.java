@@ -31,7 +31,7 @@ public class AnswerActivity extends AppCompatActivity {
     private RadioButton radioBack;
     private RadioButton radioNext;
     private StopWatchLogger stopwatchTTLB = new StopWatchLogger();
-    private StopWatch stopWatchLink = new StopWatch();
+    private StopWatchLogger stopWatchLink = new StopWatchLogger();
     private WebView webview;
     LinearLayout answerLayout;
     private int activeAnswerLink;
@@ -41,7 +41,7 @@ public class AnswerActivity extends AppCompatActivity {
     private String prevUrl = "";
     private StopWatch notifStopWatch = new StopWatch();
     private Boolean firstResume;
-
+    private Button Backbutton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,8 +54,14 @@ public class AnswerActivity extends AppCompatActivity {
         stopwatchTTLB.start();
         if(back_flag==null) // not click back button
             st.checkNotification("answer",this);
-        setView();         // set answer link view
         setWebView();      // set webview and the listener
+        setViewEveryReload();
+    }
+
+
+    public void setViewEveryReload()
+    {
+        setView();         // set answer link view
         setEventListener();
     }
 
@@ -81,11 +87,6 @@ public class AnswerActivity extends AppCompatActivity {
         return super.onKeyDown(keyCode,event);
     }
 
-
-    @Override
-    public void onBackPressed() {
-    }
-
     // set answer link view
     public void setView()
     {
@@ -98,7 +99,6 @@ public class AnswerActivity extends AppCompatActivity {
         }
 
         radioNext = (RadioButton) findViewById(R.id.radioButtonAnswer);
-        webview.loadUrl("");
         answerLayout = (LinearLayout) findViewById(R.id.answerLayout);
         // Adding the answer links and link it to webview
         for(int j=0;j<st.active_quest.size();j++)
@@ -129,6 +129,15 @@ public class AnswerActivity extends AppCompatActivity {
                      webview.loadUrl(q.link_answer);
                 }
             });
+
+            _tv.setOnFocusChangeListener(new View.OnFocusChangeListener()
+            {
+                @Override
+                public void onFocusChange(View v, boolean hasFocus) {
+                    if(hasFocus)
+                        ((TextView)v).setTextColor(Color.GREEN);
+                }
+            });
       answerLayout.addView(_tv);
         }
     }
@@ -143,21 +152,11 @@ public class AnswerActivity extends AppCompatActivity {
         params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                 600);
         webview.setLayoutParams(params);
-        Button Backbutton = new Button(this);
+        Backbutton = new Button(this);
         params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT);
         Backbutton.setLayoutParams(params);
         Backbutton.setText("Home");
-        Backbutton.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                setContentView(R.layout.activity_answer);
-                setView();
-                setEventListener();
-            }
-        });
-
         webViewframelayout.addView(webview);
         webViewframelayout.addView(Backbutton);
     }
@@ -169,7 +168,6 @@ public class AnswerActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-
                 if (radioBack.isChecked()) {
                     updateLog();
                     Intent i = new Intent(AnswerActivity.this, QuizActivity.class);
@@ -196,6 +194,20 @@ public class AnswerActivity extends AppCompatActivity {
             }
         });
 
+        Backbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                // This is for set all the view again
+                setContentView(R.layout.activity_answer);
+                setViewEveryReload();
+                // stop logger and update linkj
+                update_visited_links(prevUrl);
+                webview.loadUrl("");
+                stopWatchLink.stop();
+            }
+        });
+
         // set event listener on webview
         webview.setWebViewClient(new WebViewClient(){
             @Override
@@ -204,6 +216,7 @@ public class AnswerActivity extends AppCompatActivity {
                 if(!url.equals(""))
                 {// first time
                     if (prevUrl.equals("")) { // just for the starter
+                        stopWatchLink.reset();
                         stopWatchLink.start();
                     } else if (!prevUrl.equals(url)) {
                         // update all visited link using previousAnswerLink
@@ -211,19 +224,8 @@ public class AnswerActivity extends AppCompatActivity {
                         stopWatchLink.reset();
                         stopWatchLink.start();
                     }
-
-                    // if it about:blank, when user click home button after clicking the link
-                    if(url.equals("about:blank"))
-                    {
-                        prevUrl="";
-                        previousAnswerLink=-1;
-                        stopWatchLink.stop();
-                        stopWatchLink.reset();
-                    }
-                    else {
                         prevUrl = url;
-                        previousAnswerLink = activeAnswerLink;
-                    }
+                        previousAnswerLink = activeAnswerLink; // this is the id of the textview,                     // to put a time inside the st.active_answer
                 }
             }
         });
@@ -245,6 +247,8 @@ public class AnswerActivity extends AppCompatActivity {
 
     }
 
+
+    // Update TTLB log
     public void updateLog()
     {
         String logStr;
@@ -256,16 +260,20 @@ public class AnswerActivity extends AppCompatActivity {
         stopwatchTTLB.stop();
     }
 
-    // THIS IS METHOD FOR NOTIFICATIOn
 
+    @Override
+    public void onBackPressed() {
+    }
+
+    // THIS IS METHOD FOR NOTIFICATIOn
     @Override
     protected void onPause()
     {
         super.onPause();
         stopwatchTTLB.suspend();
+        stopWatchLink.suspend();
         st.startLogNotif(notifStopWatch);
     }
-
     @Override
     protected  void onResume()
     {
@@ -278,15 +286,13 @@ public class AnswerActivity extends AppCompatActivity {
             return;
         }
         stopwatchTTLB.resume();
+        stopWatchLink.resume();
         st.stopLogNotif(notifStopWatch);
     }
-
-
     private void showNotif(BoxNotification notif)
     {
         notif.show(this);
     }
-
     private BroadcastReceiver onEvent=new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {

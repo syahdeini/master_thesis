@@ -9,11 +9,14 @@ import org.apache.commons.lang3.time.StopWatch;
 public class StopWatchLogger extends StopWatch{
     public boolean isPause;
     public boolean isStop;
+    public boolean isStart;
+
     public StopWatchLogger()
     {
         super();
         isPause = false;
         isStop = false;
+        isStart = false;
     }
 
     @Override
@@ -25,10 +28,19 @@ public class StopWatchLogger extends StopWatch{
         }
     }
 
+
+    @Override
+    public void start()
+    {
+        super.start();
+        isStart = true;
+    }
+
+
     @Override
     public void suspend()
     {
-        if(!isStop) {
+        if(!isStop && isStart) {
             super.suspend();
             isPause = true;
         }

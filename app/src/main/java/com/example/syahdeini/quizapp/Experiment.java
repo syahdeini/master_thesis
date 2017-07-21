@@ -17,8 +17,7 @@ public class Experiment implements Serializable{
     public String questionOrder;
     public Boolean random_presented_question;
     public int max_presented_question;
-    private Random randomGenerator
-            ;
+    private Random randomGenerator;
 
     public Experiment()
     {
@@ -30,7 +29,7 @@ public class Experiment implements Serializable{
         this.num_question = num_question;
         this.num_presented_question = num_presented_question;
         this.TTS = TTS;
-        this.questionOrder = "LINEAR";
+        this.questionOrder =  "RANDOM";//"LINEAR";
         changeNumberPresentedQuestion();
     }
 
