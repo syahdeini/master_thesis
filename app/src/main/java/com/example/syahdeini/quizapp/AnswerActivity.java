@@ -77,9 +77,9 @@ public class AnswerActivity extends AppCompatActivity {
                     if (webview.canGoBack()) {
                         webview.goBack();
                     } else {
-                        Intent intent = getIntent();
-                        finish();
-                        startActivity(intent);
+//                        Intent intent = getIntent();
+//                        finish();
+//                        startActivity(intent);
                     }
                     return true;
             }
@@ -191,6 +191,7 @@ public class AnswerActivity extends AppCompatActivity {
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
                 }
+
             }
         });
 
@@ -204,6 +205,7 @@ public class AnswerActivity extends AppCompatActivity {
                 // stop logger and update linkj
                 update_visited_links(prevUrl);
                 webview.loadUrl("");
+                prevUrl="";
                 stopWatchLink.stop();
             }
         });
@@ -263,7 +265,14 @@ public class AnswerActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        return;
     }
+
+//    @Override
+//    public boolean onKeyDown(int keyCode,KeyEvent event)
+//    {
+//        return (keyCode == KeyEvent.KEYCODE_BACK ? true : super.onKeyDown(keyCode, event));
+//    }
 
     // THIS IS METHOD FOR NOTIFICATIOn
     @Override

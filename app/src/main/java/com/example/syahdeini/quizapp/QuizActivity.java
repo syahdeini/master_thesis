@@ -75,7 +75,7 @@ public class QuizActivity extends AppCompatActivity {
             //*************************
 
         } catch (SelfException e) {
-            Popup.short_toast(getApplicationContext(),"Fail Start experiment!");
+            Popup.short_toast(getApplicationContext(),e.getMessage());
         }
 
         mNextButton.setOnClickListener(new View.OnClickListener(){

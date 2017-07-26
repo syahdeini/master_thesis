@@ -238,16 +238,6 @@
         ]
       },
       {
-        'question_id':'PQ6',
-        'text':'How long have you speak english ? if you are native, leave blank',
-        'question_type':'TEXT'
-      },
-      {
-        'question_id':'PQ7',
-        'text':'What is your english IELTS/TOEFL score? if you are native, leave blank',
-        'question_type':'TEXT'
-      },
-      {
         'question_id':'PQ8',
         'text':'Do you find it difficult to use this smartphone',
         'question_type':'MC',
@@ -256,7 +246,7 @@
           'Hard',
           'average',
           'Easy',
-          'Very easy',
+          'Very easy'
         ]
       },
       {

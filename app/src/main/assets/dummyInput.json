@@ -49,55 +49,6 @@
           'text':'The actress who plays Catelyn Stark, Michelle Fairley, Also played Mrs. Granger in what movie ?',
           'link_answer':'https://www.buzzfeed.com/daves4/49-things-you-never-knew-about-game-of-thrones-that-will-blo?utm_term=.cvAPeDk9k#.gnVYJdK0K',
           'answer':'Harry Potter and the Deathly Hallows.'
-        },
-        {
-          'question_id':'5',
-          'text':'How old is voldemort when he dies in the battle of hogwarts ?',
-          'link_answer':'https://www.buzzfeed.com/ariellecalderon/facts-that-will-change-the-way-you-look-at-harry-potter?utm_term=.dqV4dmr5r#.ajox2DjQj',
-          'answer':'71'
-        }
-      ,
-        {
-          'question_id':'6',
-          'text':'What is the most watched episode on show “How i met your mother” ?',
-          'link_answer':'https://ritely.com/how-i-met-your-mother-trivia/',
-          'answer':'The finale episode'
-        },
-        {
-          'question_id':'7',
-          'text':'Who is the character in the lord of the ring story to be believed as chief of hero by tolkien ?',
-          'link_answer':'https://www.buzzfeed.com/keelyflaherty/facts-you-probably-didnt-know-about-the-lord-of-the-rings?utm_term=.ovNdRA3m3#.ltLREyara',
-          'answer':'Sam'
-        },
-        {
-          'question_id':'8',
-          'text':'In Toy story movie, what is buzz lighter original name ?',
-          'link_answer':'https://www.buzzfeed.com/mjs538/33-things-you-probably-didnt-know-about-the-toy?utm_term=.fmAA4nZJZ#.gq23LDGrG',
-          'answer':'Lunar Larry'
-        },
-        {
-          'question_id':'9',
-          'text':'In Up movie. How many baloons are attached to the house ?',
-          'link_answer':'https://www.buzzfeed.com/ariellecalderon/things-you-probably-didnt-know-about-disney-pixars-up?utm_term=.vhLQqoJyJ#.mwvZnxNjN',
-          'answer':'10,286'
-        },
-        {
-          'question_id':'10',
-          'text':'From where does the film maker make the insipartion of the film landscape ?',
-          'link_answer':'https://www.buzzfeed.com/javiermoreno/frozen-is-awesome?utm_term=.pe67G9J8J#.tmVEbrmqm',
-          'answer':'Norway'
-        },
-        {
-          'question_id':'11',
-          'text':'In which city is the original location of “Winnie the pooh” ?',
-          'link_answer':'http://www.neatorama.com/2012/01/18/11-things-you-might-not-know-about-winnie-the-pooh/',
-          'answer':'Sussex'
-        },
-        {
-          'question_id':'12',
-          'text':'Who is the african american actor that the studio originally choose to play neo in “the matrix” ?',
-          'link_answer':'http://www.hollywood.com/movies/matrix-facts-that-will-blow-your-mind-60227881/',
-          'answer':'Will smith'
         }
       ]
     },
@@ -211,26 +162,13 @@
         ]
       },
       {
-        'question_id':'PQ3',
-        'text':'Please specify your ethnicity ?',
-        'question_type':'MC',
-        'options':[
-          'White',
-          'Hispanic or Latino',
-          'Black or African american',
-          'Native American or American Indian',
-          'Asian / Pacific Islander',
-          'Other'
-        ]
-      },
-      {
         'question_id':'PQ4',
         'text':'What country are you come from ?',
         'question_type':'TEXT'
       },
       {
         'question_id':'PQ5',
-        'text':'is english your native language',
+        'text':'Is English your native language',
         'question_type':'MC',
         'options':[
           'YES',
@@ -238,18 +176,14 @@
         ]
       },
       {
-        'question_id':'PQ6',
-        'text':'How long have you speak english ? if you are native, leave blank',
-        'question_type':'TEXT'
+      'question_id':'PQ6',
+      'text':'How many years have you spoken English? If you are native speaker please leave blank.',
+      'question_type':'TEXT'
       },
-      {
-        'question_id':'PQ7',
-        'text':'What is your english IELTS/TOEFL score? if you are native, leave blank',
-        'question_type':'TEXT'
-      },
+
       {
         'question_id':'PQ8',
-        'text':'Do you find it difficult to use this smartphone',
+        'text':'How difficult did you find the smartphone in this study ?',
         'question_type':'MC',
         'options':[
           'Very hard',
@@ -261,7 +195,7 @@
       },
       {
         'question_id':'PQ9',
-        'text':'What kind of phone are you using',
+        'text':'What kind of phone are you normally use ?',
         'question_type':'MC',
         'options':[
           'non-smartphone',
@@ -271,7 +205,7 @@
         ]
       },{
       'question_id':'PQ10',
-      'text':'How frequently are you using a smartphone',
+      'text':'How frequently do you use a smartphone ?',
       'question_type':'MC',
       'options':[
         'Don\'t own one',

@@ -35,8 +35,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".expSetPropActivity" />
-        <activity android:name=".OpenApplication"></activity>
-    <service android:name=".Timer_service"></service>
+
+        <service android:name=".Timer_service"></service>
     </application>
 
 </manifest>

@@ -59,7 +59,9 @@ public class PostActivity extends AppCompatActivity {
         if(current_question.question_type.equals("MC")) {
             int selectedId = radioGroup.getCheckedRadioButtonId();
             RadioButton rd = (RadioButton) findViewById(selectedId);
-            answer = rd.getText().toString();
+            answer ="";
+            if(rd!=null)
+                answer = rd.getText().toString();
         }
         else
         {
