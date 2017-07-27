@@ -20,7 +20,6 @@ import java.util.List;
  */
 
 public class Timer_service extends IntentService {
-    private NotifTimer notificationTimer;
     private BoxNotification notification;
     public static final String ACTION_RESP = "com.example.syahdeini.quizapp.countdown";
 

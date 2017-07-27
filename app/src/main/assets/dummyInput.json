@@ -28,63 +28,71 @@
       [
         {
           'question_id':'1',
-          'text':'Lisa kurdow who played phoboe is afraid of what animal ?',
-          'link_answer':'http://mentalfloss.com/article/56565/25-things-you-might-not-know-about-friends',
-          'answer':'duck'
-        },
-        {
-          'question_id':'2',
           'text':'What is the original name of the titanic movie ?',
           'link_answer':'https://www.simplemost.com/15-fun-facts-probably-didnt-know-titanic/',
           'answer':'Planet ice'
         },
         {
+          'question_id':'2',
+          'text':'In lord of the ring, How tall is gandalf ?',
+          'link_answer':'https://www.phactual.com/14-fun-facts-about-the-lord-of-the-rings-the-fellowship-of-the-ring/',
+          'answer':'Seven foot'
+        },
+        {
           'question_id':'3',
-          'text':'In lord of the ring, sindarin, the elvish language is originally insipred by what language ?',
-          'link_answer':'https://en.wikipedia.org/wiki/Languages_constructed_by_J._R._R._Tolkien',
-          'answer':'Finish'
+          'text':'How many artist played both on game of thrones and harry potter ?',
+          'link_answer':' http://screenrant.com/best-facts-game-of-thrones-trivia/',
+          'answer':'9'
         },
         {
           'question_id':'4',
-          'text':'The actress who plays Catelyn Stark, Michelle Fairley, Also played Mrs. Granger in what movie ?',
-          'link_answer':'https://www.buzzfeed.com/daves4/49-things-you-never-knew-about-game-of-thrones-that-will-blo?utm_term=.cvAPeDk9k#.gnVYJdK0K',
-          'answer':'Harry Potter and the Deathly Hallows.'
-        }
-      ]
-    },
-    {
-      'id':'345',
-      'name':'news',
-      'total_question':4,
-      'question_order':'RANDOM',
-      'questions':
-      [
-        {
-          'question_id':'Q12',
-          'text':'Who is the prime minister of UK ?',
-          'link_answer':'https://en.wikipedia.org/wiki/Theresa_May'
+          'text':'How old is voldemort when he dies in the battle of hogwarts ?'  ,
+          'link_answer':'https://www.buzzfeed.com/ariellecalderon/facts-that-will-change-the-way-you-look-at-harry-potter?utm_term=.dqV4dmr5r#.ajox2DjQj',
+          'answer':'bumbelbee'
         },
         {
-          'question_id':'Q13',
-          'text':'what is the name of the village where René Descartes was born ?',
-          'link_answer':'https://en.wikipedia.org/wiki/Ren%C3%A9_Descartes'
+          'question_id':'5',
+          'text':'How long serial “How i met your mother” is filmed ?',
+          'link_answer':'https://www.phactual.com/10-fun-facts-about-how-i-met-your-mother/',
+          'answer':'9 years'
         },
         {
-          'question_id':'Q14',
-          'text':'How many book that paulo coelho had written so far ?',
-          'link_answer':'https://en.wikipedia.org/wiki/Paulo_Coelho'
+          'question_id':'6',
+          'text':'In Up movie. How many baloons are attached to carl’s house ?',
+          'link_answer':'https://filmschoolrejects.com/10-fun-facts-about-pixars-up-1749a61575ca/',
+          'answer':'10,297'
         },
         {
-          'question_id':'Q15',
-          'text':'What is the most famous book writen by paulo coelho ?',
-          'link_answer':'https://en.wikipedia.org/wiki/Paulo_Coelho'
+          'question_id':'7',
+          'text':'Where does marvel get the idea of the black spiderman suit ?',
+          'link_answer':'http://screenrant.com/best-marvel-facts-trivia-movies-tv-comics-superheroes/',
+          'answer':'fan  or Randy.'
+        },
+        {
+          'question_id':'8',
+          'text':' What is the most expensive movie of all time ?',
+          'link_answer':'https://www.factretriever.com/hollywood-movies-facts',
+          'answer':'Avatar
+          '
+        },
+        {
+          'question_id':'9',
+          'text':'  How many academy award that UP movie nominated to ?',
+          'link_answer':'http://www.imdb.com/title/tt1049413/trivia',
+          'answer':'two'
+        },
+        {
+          'question_id':'10',
+          'text':'What is the most watched episode on show “How i met your mother” ?',
+          'link_answer':'https://ritely.com/how-i-met-your-mother-trivia/',
+          'answer':'The finale episode'
         }
       ]
     }
   ],
   'post_exp':
   {
-    'total_question':2,
+    'total_question':15,
     'questions':
     [
       {
@@ -182,7 +190,7 @@
       },
 
       {
-        'question_id':'PQ8',
+        'question_id':'PQ7',
         'text':'How difficult did you find the smartphone in this study ?',
         'question_type':'MC',
         'options':[
@@ -194,7 +202,7 @@
         ]
       },
       {
-        'question_id':'PQ9',
+        'question_id':'PQ8',
         'text':'What kind of phone are you normally use ?',
         'question_type':'MC',
         'options':[
@@ -204,7 +212,7 @@
           'Other'
         ]
       },{
-      'question_id':'PQ10',
+      'question_id':'PQ9',
       'text':'How frequently do you use a smartphone ?',
       'question_type':'MC',
       'options':[
@@ -217,27 +225,29 @@
     ]
   },
   'notification':[
+
     {
       'app':'instagram',
-      'shift':2,
+      'shift':1,
       'phase':'quiz',
-      'timeToShow':1300,
-      'url':'edinburghuniversity',
-      'titleText':'University edinburgh instagram',
-      'msgText':'University Edinburgh has post a new photo on the instagram'
+      'timeToShow':600,
+      'url':'gal_gadot',
+      'titleText':'Wonderful Gal Dagot',
+      'msgText':'Gal dagot just post a new picture!'
     },
+
     {
       'app':'twitter',
-      'shift':1,
-      'phase':'fillAnswer',
-      'timeToShow':1500,
+      'shift':2,
+      'phase':'quiz',
+      'timeToShow':1000,
       'url':'25073877',
       'titleText':'Donald trump vs the world',
       'msgText':'Donald trump post a controversy tweet again!'
     },
     {
       'app':'web',
-      'shift':1,
+      'shift':2,
       'phase':'answer',
       'timeToShow':1600,
       'url':'http://www.edinburghnews.scotsman.com/our-region/edinburgh/city-centre/sixty-firefighters-tackle-hospital-fire-throughout-night-1-4454261',
@@ -245,66 +255,71 @@
       'msgText':'There is a great fire in the city of edinbugh ! '
     },
     {
-      'app':'web',
-      'shift':2,
-      'phase':'quizz',
-      'timeToShow':1500,
-      'url':'http://www.adidas.co.uk/outlet?cm_mmc=AdieSEM_Google-_-Sale-General-B-Exact-_-General-Discounts-X-General-_-adidas+discount&cm_mmca1=UK&cm_mmca2=e&ds_kid=43700007274011015&gclid=CjwKEAjwqcHLBRCq5uHTpLL12FISJAD6PgDIsDL4Rv_QadEYWOsQRzwC0MRoqZGRMW72BDzI_i8ljRoC2Hzw_wcB&gclsrc=aw.ds&dclid=CKi1_v-nmNUCFfQV0wodcXYG6Q',
-      'titleText':'Adidas discount!',
-      'msgText':'Don\'t miss 50% more discount from adidas ! '
+      'app':'instagram',
+      'shift':4,
+      'phase':'answer',
+      'timeToShow':500,
+      'url':'emmawatson',
+      'titleText':'Beautiful emma watson',
+      'msgText':'Emma watson just posted a new picture'
     },
     {
       'app':'web',
-      'shift':3,
-      'phase':'fillAnswer',
-      'timeToShow':1600,
+      'shift':6,
+      'phase':'quiz',
+      'timeToShow':800,
       'url':'https://www.whatuni.com/advice/choosing-a-uni/bizarre-university-facts/54017/',
       'titleText':'Bizzare university fact in UK!',
       'msgText':'Hey check this bizzare university fact !'
     },
     {
       'app':'web',
-      'shift':4,
+      'shift':6,
       'phase':'answer',
       'timeToShow':1900,
       'url':'http://www.nme.com/blogs/nme-blogs/is-avril-lavigne-really-dead-759563',
       'titleText':'Yup, she is dead!',
       'msgText':'Do you know that artist avril lavigne is dead !'
     },
+
+    {
+      'app':'twitter',
+      'shift':7,
+      'phase':'quiz',
+      'timeToShow':1100,
+      'url':'62513246',
+      'titleText':'JK Rowling',
+      'msgText':'Get a new information about newest harry potter books!'
+    }
+    ,
+    {
+      'app':'instagram',
+      'shift':8,
+      'phase':'quiz',
+      'timeToShow':300,
+      'url':'edinburghuniversity',
+      'titleText':'University edinburgh instagram',
+      'msgText':'University Edinburgh has post a new photo on the instagram'
+    },
+
     {
       'app':'web',
-      'shift':4,
-      'phase':'fillAnswer',
+      'shift':9,
+      'phase':'answer',
       'timeToShow':1200,
       'url':'http://www.todayifoundout.com/index.php/2013/06/25-amazing-facts/',
       'titleText':'Short fun fact!',
       'msgText':'Short fun fact that you need to know !'
     },
     {
-      'app':'instagram',
-      'shift':5,
+      'app':'web',
+      'shift':9,
       'phase':'quiz',
-      'timeToShow':1600,
-      'url':'gal_gadot',
-      'titleText':'Wonderful Gal Dagot',
-      'msgText':'Gal dagot just post a new picture!'
-    },
-    {
-      'app':'instagram',
-      'shift':5,
-      'phase':'answer',
       'timeToShow':1000,
-      'url':'emmawatson',
-      'titleText':'Beautiful emma watson',
-      'msgText':'Emma watson just posted a new picture'
-    },
-    {
-      'app':'twitter',
-      'shift':6,
-      'phase':'fillAnswer',
-      'timeToShow':1100,
-      'url':'62513246',
-      'titleText':'JK Rowling',
-      'msgText':'Get a new information about newest harry potter books!'
-    }  ]
+      'url':'http://www.adidas.co.uk/outlet?cm_mmc=AdieSEM_Google-_-Sale-General-B-Exact-_-General-Discounts-X-General-_-adidas+discount&cm_mmca1=UK&cm_mmca2=e&ds_kid=43700007274011015&gclid=CjwKEAjwqcHLBRCq5uHTpLL12FISJAD6PgDIsDL4Rv_QadEYWOsQRzwC0MRoqZGRMW72BDzI_i8ljRoC2Hzw_wcB&gclsrc=aw.ds&dclid=CKi1_v-nmNUCFfQV0wodcXYG6Q',
+      'titleText':'Adidas discount!',
+      'msgText':'Don\'t miss 50% more discount from adidas ! '
+    }
+
+  ]
 }
