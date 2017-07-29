@@ -22,7 +22,7 @@
     {
       'id':'123',
       'name':'movies',
-      'total_question':4,
+      'total_question':10,
       'question_order':'RANDOM',
       'questions':
       [
@@ -46,8 +46,8 @@
         },
         {
           'question_id':'4',
-          'text':'How old is voldemort when he dies in the battle of hogwarts ?'  ,
-          'link_answer':'https://www.buzzfeed.com/ariellecalderon/facts-that-will-change-the-way-you-look-at-harry-potter?utm_term=.dqV4dmr5r#.ajox2DjQj',
+          'text':'What is the meaning of Dumbeldore in harry potter series ?'  ,
+          'link_answer':'http://www.teenvogue.com/gallery/harry-potter-facts',
           'answer':'bumbelbee'
         },
         {
@@ -198,7 +198,7 @@
           'Hard',
           'average',
           'Easy',
-          'Very easy',
+          'Very easy'
         ]
       },
       {
@@ -240,7 +240,7 @@
       'app':'twitter',
       'shift':2,
       'phase':'quiz',
-      'timeToShow':1000,
+      'timeToShow':100,
       'url':'25073877',
       'titleText':'Donald trump vs the world',
       'msgText':'Donald trump post a controversy tweet again!'
@@ -249,7 +249,7 @@
       'app':'web',
       'shift':2,
       'phase':'answer',
-      'timeToShow':1600,
+      'timeToShow':3000,
       'url':'http://www.edinburghnews.scotsman.com/our-region/edinburgh/city-centre/sixty-firefighters-tackle-hospital-fire-throughout-night-1-4454261',
       'titleText':'Edinburgh Fire!',
       'msgText':'There is a great fire in the city of edinbugh ! '
@@ -258,7 +258,7 @@
       'app':'instagram',
       'shift':4,
       'phase':'answer',
-      'timeToShow':500,
+      'timeToShow':2000,
       'url':'emmawatson',
       'titleText':'Beautiful emma watson',
       'msgText':'Emma watson just posted a new picture'
@@ -267,7 +267,7 @@
       'app':'web',
       'shift':6,
       'phase':'quiz',
-      'timeToShow':800,
+      'timeToShow':100,
       'url':'https://www.whatuni.com/advice/choosing-a-uni/bizarre-university-facts/54017/',
       'titleText':'Bizzare university fact in UK!',
       'msgText':'Hey check this bizzare university fact !'
@@ -276,7 +276,7 @@
       'app':'web',
       'shift':6,
       'phase':'answer',
-      'timeToShow':1900,
+      'timeToShow':4900,
       'url':'http://www.nme.com/blogs/nme-blogs/is-avril-lavigne-really-dead-759563',
       'titleText':'Yup, she is dead!',
       'msgText':'Do you know that artist avril lavigne is dead !'
@@ -306,7 +306,7 @@
       'app':'web',
       'shift':9,
       'phase':'answer',
-      'timeToShow':1200,
+      'timeToShow':2000,
       'url':'http://www.todayifoundout.com/index.php/2013/06/25-amazing-facts/',
       'titleText':'Short fun fact!',
       'msgText':'Short fun fact that you need to know !'

@@ -204,7 +204,7 @@ public class AnswerActivity extends AppCompatActivity {
                 setViewEveryReload();
                 // stop logger and update linkj
                 update_visited_links(prevUrl);
-                webview.loadUrl("");
+                webview.loadUrl("about:blank");
                 prevUrl="";
                 stopWatchLink.stop();
             }
@@ -215,27 +215,22 @@ public class AnswerActivity extends AppCompatActivity {
             @Override
 //             after the page is finished the link is tracked
             public void onPageFinished(WebView view, String url) {
-                if(!url.equals(""))
-                {// first time
-                    if (prevUrl.equals("")) { // just for the starter
-                        stopWatchLink.reset();
-                        stopWatchLink.start();
-                    } else if (!prevUrl.equals(url)) {
+                    if (!prevUrl.equals(url)) {
                         // update all visited link using previousAnswerLink
                         update_visited_links(prevUrl);
                         stopWatchLink.reset();
                         stopWatchLink.start();
                     }
-                        prevUrl = url;
-                        previousAnswerLink = activeAnswerLink; // this is the id of the textview,                     // to put a time inside the st.active_answer
-                }
+                    prevUrl = url;
+                    previousAnswerLink = activeAnswerLink; // this is the id of the textview,                     // to put a time inside the st.active_answer
             }
         });
     }
 
     public void update_visited_links(String url)
     {
-
+        if(url.equals("") || url.equals("about:blank"))
+            return;
         Long timeGap = stopWatchLink.getTime();
 
         if(back_flag!=null) {

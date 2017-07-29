@@ -39,6 +39,7 @@ public class expSetPropActivity extends AppCompatActivity {
         if(st.reseracher!=null)
             researchId.setText(st.reseracher);
 
+
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(
                 this, android.R.layout.simple_spinner_item, st.getExperimentsName());
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

@@ -173,6 +173,7 @@ public class Study  implements Serializable{
         this.active_exp = selected_exp;
 
         // this is bad need to have a participant
+        if(participantId==null)
         this.participantId="P"+Integer.toString(randomGenerator.nextInt());
         // set random question
         setRandQuestion();
@@ -182,7 +183,7 @@ public class Study  implements Serializable{
     // there is a question still need to be asked
     public boolean isExperimentIsStillGoing()
     {
-        if(this.active_catg.questions.size() >= this.active_exp.num_presented_question)
+        if((this.active_catg.questions.size() >= this.active_exp.num_presented_question) && this.active_catg.questions.size()>0)
             return true;
         return false;
     }
