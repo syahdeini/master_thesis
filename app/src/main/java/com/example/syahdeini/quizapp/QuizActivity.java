@@ -157,6 +157,8 @@ public class QuizActivity extends AppCompatActivity {
            BoxNotification notif = (BoxNotification) intent.getSerializableExtra("notification");
             try{
                 showNotif(notif);
+                notif.isClicked = true;
+                st.increaseNumnotifClicked();
             }
             catch (Exception e)
             {

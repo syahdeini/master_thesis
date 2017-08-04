@@ -32,7 +32,7 @@ public class Question implements Serializable {
     public ArrayList<String> visited_links2;
     public ArrayList<Long> time_visited_links;
     public ArrayList<Long> time_visited_links2;
-    public int num_app_visited;
+    public int num_notif_clicked;
 
 
     public static final int RANDOM = 1;
@@ -47,6 +47,8 @@ public class Question implements Serializable {
         this.time_visited_links2 = new ArrayList<Long>();
         this.lookback=false;
         this.participantAnswer="";
+        this.num_notif=0;
+        this.num_notif_clicked=0;
     }
 
     public Question(Integer id, String text, String link_answer){

@@ -54,7 +54,7 @@ public class                                                                    
             public void onClick(View v) {
                 updateLog();
                 saveAnswer();
-                if (st.isExperimentIsStillGoing()) {
+                if (st.isStillQuestionAvailable()) {
                     Intent i = new Intent(FillAnswerActivity.this, QuizActivity.class);
                     Bundle bundle = new Bundle();
                     bundle.putSerializable("studyObject", st);
@@ -182,6 +182,8 @@ public class                                                                    
             BoxNotification notif = (BoxNotification) intent.getSerializableExtra("notification");
             try{
                 showNotif(notif);
+                notif.isClicked = true;
+                st.increaseNumnotifClicked();
             }
             catch (Exception e)
             {

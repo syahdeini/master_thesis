@@ -126,7 +126,7 @@ public class Study  implements Serializable{
     }
 
     // Used on post-question session, Only return one question
-    public Question getPostQuestion()throws SelfException {
+    public Question getPostQuestion() throws SelfException {
         if(this.postques.is_finish_question())
         {
             throw new SelfException("question is empty");
@@ -176,6 +176,7 @@ public class Study  implements Serializable{
         if(participantId==null)
         this.participantId="P"+Integer.toString(randomGenerator.nextInt());
         // set random question
+        setRandPresentedQuestion();
         setRandQuestion();
     }
 
@@ -183,7 +184,15 @@ public class Study  implements Serializable{
     // there is a question still need to be asked
     public boolean isExperimentIsStillGoing()
     {
-        if((this.active_catg.questions.size() >= this.active_exp.num_presented_question) && this.active_catg.questions.size()>0)
+        setRandPresentedQuestion();
+        if((this.active_catg.questions.size() >= this.active_exp.num_presented_question))
+            return true;
+        return false;
+    }
+
+    public boolean isStillQuestionAvailable()
+    {
+        if(this.active_catg.questions.size()>0)
             return true;
         return false;
     }
@@ -191,9 +200,8 @@ public class Study  implements Serializable{
     // set question linearly to active_quest
     public void updateQuestions() throws SelfException
     {
-        setRandPresentedQuestion();
 
-        // use this if l    inear style, use setRandQuestion for random style question
+        // use this if linear style, use setRandQuestion for random style question
         if(this.active_quest!=null)
             this.active_quest.clear();
         String represent_id =generateRepresentId();
@@ -217,9 +225,11 @@ public class Study  implements Serializable{
                 i.putExtras(bundle);
                 try {
                     act.getApplicationContext().startService(i);
+                    _notif.presentedId = this.getLastActiveQuestion().represent_id;
                     this.activeNotif.add(_notif);
                     Integer idx = this.notifs.indexOf(_notif);
                     this.notifs.remove(idx);
+                    increaseNumNotif();
                 }
                 catch (Exception e)
                 {
@@ -229,9 +239,25 @@ public class Study  implements Serializable{
         }
     }
 
+    public void increaseNumNotif()
+    {
+        for(Question q: this.active_quest)
+        {
+            q.num_notif++;
+        }
+    }
+
+    public void increaseNumnotifClicked()
+    {
+        for(Question q: this.active_quest)
+        {
+            q.num_notif_clicked++;
+        }
+    }
+
     // set random question
     public void setRandQuestion() throws SelfException {
-        setRandPresentedQuestion();
+
 
         if(this.active_catg==null)
             this.setRandCategory();
@@ -247,8 +273,6 @@ public class Study  implements Serializable{
     // run experiment
     public void runExperiment(String experimentName) throws SelfException
     {
-
-
 
         if(this.active_exp==null) // if the experiment is not yet intialize
         {
@@ -308,7 +332,7 @@ public class Study  implements Serializable{
     public void startLogNotif(StopWatch stopwatch)
     {
         if(this.activeNotif.size()>0) {
-            this.getLasestNotif().presentedId = this.active_quest.get(this.active_quest.size() - 1).represent_id;
+//            this.getLasestNotif().presentedId = this.active_quest.get(this.active_quest.size() - 1).represent_id;
             stopwatch.reset();
             stopwatch.start();
         }
@@ -326,13 +350,23 @@ public class Study  implements Serializable{
     {
         if(this.active_exp.random_presented_question)
         {
-            this.active_exp.changeNumberPresentedQuestion();
+            if(this.active_catg.questions.size()==1)
+                this.active_exp.num_presented_question=1;
+            else
+                this.active_exp.changeNumberPresentedQuestion();
         }
     }
 
     public void updateTTLFA(Integer id, Long dTime)
     {
         active_quest.get(id).TTLFA+= dTime;
+    }
+
+    public Question getLastActiveQuestion()
+    {
+        if(this.active_quest.size()>0)
+         return this.active_quest.get(this.active_quest.size()-1);
+        return null;
     }
 
 };

@@ -34,31 +34,31 @@
         },
         {
           'question_id':'2',
-          'text':'In lord of the ring, How tall is gandalf ?',
+          'text':'In the movie "Lord of the Rings", How tall is Gandalf ?',
           'link_answer':'https://www.phactual.com/14-fun-facts-about-the-lord-of-the-rings-the-fellowship-of-the-ring/',
           'answer':'Seven foot'
         },
         {
           'question_id':'3',
-          'text':'How many artist played both on game of thrones and harry potter ?',
+          'text':'How many actors played both in Game of Thrones and in the Harry Potter movies ?',
           'link_answer':' http://screenrant.com/best-facts-game-of-thrones-trivia/',
           'answer':'9'
         },
         {
           'question_id':'4',
-          'text':'What is the meaning of Dumbeldore in harry potter series ?'  ,
+          'text':'What is the meaning of Dumbledore in the Harry Potter movies ?'  ,
           'link_answer':'http://www.teenvogue.com/gallery/harry-potter-facts',
           'answer':'bumbelbee'
         },
         {
           'question_id':'5',
-          'text':'How long serial “How i met your mother” is filmed ?',
+          'text':'How many years has “How i met your mother” been filmed ?',
           'link_answer':'https://www.phactual.com/10-fun-facts-about-how-i-met-your-mother/',
           'answer':'9 years'
         },
         {
           'question_id':'6',
-          'text':'In Up movie. How many baloons are attached to carl’s house ?',
+          'text':'How many baloons are attached to carl’s house in the "UP" movie ?',
           'link_answer':'https://filmschoolrejects.com/10-fun-facts-about-pixars-up-1749a61575ca/',
           'answer':'10,297'
         },
@@ -77,13 +77,13 @@
         },
         {
           'question_id':'9',
-          'text':'  How many academy award that UP movie nominated to ?',
+          'text':'  How many academy awards has the movie "UP" been nominated to ?',
           'link_answer':'http://www.imdb.com/title/tt1049413/trivia',
           'answer':'two'
         },
         {
           'question_id':'10',
-          'text':'What is the most watched episode on show “How i met your mother” ?',
+          'text':'What is the most watched episode on the show “How i met your mother” ?',
           'link_answer':'https://ritely.com/how-i-met-your-mother-trivia/',
           'answer':'The finale episode'
         }
@@ -92,7 +92,6 @@
   ],
   'post_exp':
   {
-    'total_question':15,
     'questions':
     [
       {
@@ -185,7 +184,7 @@
       },
       {
       'question_id':'PQ6',
-      'text':'How many years have you spoken English? If you are native speaker please leave blank.',
+      'text':'How many years have you spoken English? If you are a native speaker please leave blank.',
       'question_type':'TEXT'
       },
 
@@ -203,7 +202,7 @@
       },
       {
         'question_id':'PQ8',
-        'text':'What kind of phone are you normally use ?',
+        'text':'What kind of phone do you normally use ?',
         'question_type':'MC',
         'options':[
           'non-smartphone',

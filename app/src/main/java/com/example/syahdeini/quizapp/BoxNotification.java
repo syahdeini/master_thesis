@@ -28,6 +28,7 @@ public class BoxNotification implements Serializable {
     public String url;
     public String titleText;
     public String msgText;
+    public Boolean isClicked;
     public long TTLN = 0;  //Time to look the notification
 //    public StopWatch stopwatch = new StopWatch();
     public String presentedId;
@@ -39,6 +40,7 @@ public class BoxNotification implements Serializable {
 
     public void show(Activity currentAct) {
         try {
+            this.isClicked=false;
             // get instance of notification manager
             NotificationCompat.Builder mBuilder = (NotificationCompat.Builder) new NotificationCompat.Builder(currentAct)
                     .setSmallIcon(R.drawable.ic_action_name)
