@@ -355,6 +355,8 @@ public class Study  implements Serializable{
             else
                 this.active_exp.changeNumberPresentedQuestion();
         }
+        else
+            this.active_exp.num_presented_question=this.active_exp.max_presented_question;
     }
 
     public void updateTTLFA(Integer id, Long dTime)

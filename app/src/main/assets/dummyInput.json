@@ -12,9 +12,9 @@
     {
       'name':'experiment1',
       'num_quesstion':1,
-      'max_presented_question':2,
+      'max_presented_question':1,
       'TTS':10,
-      'random_presented_question':true
+      'random_presented_question':false
     }
   ],
   'category':
