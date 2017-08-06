@@ -49,9 +49,9 @@ public class expSetPropActivity extends AppCompatActivity {
         setButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String selected = spinExp.getSelectedItem().toString();
-                st.setActive_catg(selected);
-
+                String selectedExp = spinExp.getSelectedItem().toString();
+                st.selectedExperimentName = selectedExp;
+                String experiment =
                 st.study_name = studyName.getText().toString();
                 st.reseracher = researchId.getText().toString();
                 st.participantId = participantId.getText().toString();

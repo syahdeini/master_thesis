@@ -16,8 +16,6 @@ public class Category implements Serializable{
         public List<Question> questions = new ArrayList<Question>();
         public List<Question> asked_questions = new ArrayList<Question>();
         public int total_question;
-        public int seed;
-        public String question_order;
         private Random randomGenerator = new Random();
 
         public Category()

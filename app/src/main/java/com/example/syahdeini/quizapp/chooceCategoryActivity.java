@@ -61,7 +61,8 @@ public class chooceCategoryActivity extends AppCompatActivity {
                     Popup.short_toast(getApplicationContext(),"please select a category");
                 else {
                     RadioButton selectedRd = (RadioButton) findViewById(rdId);
-                    st.setActive_catg((String) selectedRd.getText());
+                    st.selectedCategoryName = (String) selectedRd.getText();
+//                    st.setActive_catg((String) selectedRd.getText());
 
                     Intent i = new Intent(chooceCategoryActivity.this,QuizActivity.class);
                     Bundle bundle  = new Bundle();

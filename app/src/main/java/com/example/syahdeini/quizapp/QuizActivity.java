@@ -63,7 +63,7 @@ public class QuizActivity extends AppCompatActivity {
 
         try {
             if(back_flag==null) {
-                st.runExperiment("experiment1");
+                st.runExperiment();
                 st.checkNotification("quiz",this);
             }
             updateView();

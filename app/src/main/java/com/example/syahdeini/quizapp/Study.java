@@ -33,6 +33,8 @@ public class Study  implements Serializable{
     public String study_name; // optional
     public String study_id;   //optional
     public String participantId;    // the Id of participant
+    public String selectedCategoryName;
+    public String selectedExperimentName;
 
     private Random randomGenerator = new Random();
     private List<Category> categories = new ArrayList<Category>();
@@ -53,9 +55,9 @@ public class Study  implements Serializable{
     // experimets setter and getter
     // set experiment by set name, number of question and number of presented question
     // TTS is the maximum time the participant allowed to see the question
-    public Boolean setExperiments(String name, int num_question, int num_present_question, int TTS)
+    public Boolean setExperiments(String name, int num_question, int num_present_question)
     {
-        Experiment _exp = new Experiment(name,num_question,num_present_question,TTS);
+        Experiment _exp = new Experiment(name,num_question,num_present_question);
         experiments.add(_exp);
         return true;
     }
@@ -81,7 +83,7 @@ public class Study  implements Serializable{
     }
 
     // use to set the active_catg, called in chooseCategory
-    public void setActive_catg(String categoryName)
+    public void setActiveCatg(String categoryName)
     {
         this.active_catg = this.categories.get(0);
         for(Category cat: this.categories)
@@ -89,6 +91,23 @@ public class Study  implements Serializable{
             if(cat.name.equals(categoryName))
                 this.active_catg = cat;
         }
+    }
+
+    public void setActiveExp(String ExperimentName)
+    {
+        Experiment selected_exp = null;
+        if(ExperimentName == null)
+            selected_exp = this.experiments.get(0);
+        else {
+            for (int i = 0; i < this.experiments.size(); i++) {
+                if (this.experiments.get(i).name.equals(ExperimentName)) {
+                    selected_exp = this.experiments.get(i);
+                    break;
+                }
+            }
+        }
+        this.active_exp = selected_exp;
+
     }
 
     // getter for private properties (categories and experiments)
@@ -142,7 +161,7 @@ public class Study  implements Serializable{
         if(this.active_exp.questionOrder=="RANDOM")
             setRandQuestion();
         else
-            updateQuestions();
+            setLinearQuestions();
     }
 
     // get category from list of categories
@@ -156,32 +175,21 @@ public class Study  implements Serializable{
         throw new SelfException("Category not found");
     }
 
+
     // start experiment by specifying experiment name
-    public void startExperiment(String experiment_name) throws SelfException{
+    public void initializeExperiment() throws SelfException{
 
-        Experiment selected_exp=null;
-        for(int i=0;i<this.experiments.size();i++)
-        {
-            if(this.experiments.get(i).name.equals(experiment_name))
-            {
-                selected_exp = this.experiments.get(i);
-                break;
-            }
-        }
-        if(selected_exp==null)
-            throw new SelfException("experiment not found");
-        this.active_exp = selected_exp;
-
+        this.setActiveCatg(this.selectedCategoryName);
+        this.setActiveExp(this.selectedExperimentName);
         // this is bad need to have a participant
         if(participantId==null)
         this.participantId="P"+Integer.toString(randomGenerator.nextInt());
         // set random question
         setRandPresentedQuestion();
-        setRandQuestion();
     }
 
     // Check if the experiment is still on the progress
-    // there is a question still need to be asked
+    // there is a question still need <>                                                                                                                                                                                                                                                                                                                                                                                                                        </>o be asked
     public boolean isExperimentIsStillGoing()
     {
         setRandPresentedQuestion();
@@ -198,7 +206,7 @@ public class Study  implements Serializable{
     }
 
     // set question linearly to active_quest
-    public void updateQuestions() throws SelfException
+    public void setLinearQuestions() throws SelfException
     {
 
         // use this if linear style, use setRandQuestion for random style question
@@ -271,19 +279,20 @@ public class Study  implements Serializable{
 
     // the main method
     // run experiment
-    public void runExperiment(String experimentName) throws SelfException
+    public void runExperiment() throws SelfException
     {
 
         if(this.active_exp==null) // if the experiment is not yet intialize
         {
-            startExperiment(experimentName);
+            initializeExperiment();
         }
-        else if(this.isExperimentIsStillGoing())
+
+        if(this.isExperimentIsStillGoing())
         {
-            if(this.active_exp.questionOrder=="RANDOM")
+            if(this.active_exp.questionOrder.equals("RANDOM"))
                 setRandQuestion();
             else
-                updateQuestions();
+                setLinearQuestions();
         }
         else
             throw new SelfException("Question is already finish");
