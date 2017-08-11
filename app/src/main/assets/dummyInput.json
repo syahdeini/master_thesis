@@ -41,7 +41,7 @@
         {
           'question_id':'3',
           'text':'How many actors played both in Game of Thrones and in the Harry Potter movies ?',
-          'link_answer':' http://screenrant.com/best-facts-game-of-thrones-trivia/',
+          'link_answer':'http://screenrant.com/best-facts-game-of-thrones-trivia/',
           'answer':'9'
         },
         {
@@ -66,18 +66,17 @@
           'question_id':'7',
           'text':'Where does marvel get the idea of the black spiderman suit ?',
           'link_answer':'http://screenrant.com/best-marvel-facts-trivia-movies-tv-comics-superheroes/',
-          'answer':'fan  or Randy.'
+          'answer':'Fan or Randy'
         },
         {
           'question_id':'8',
           'text':' What is the most expensive movie of all time ?',
           'link_answer':'https://www.factretriever.com/hollywood-movies-facts',
-          'answer':'Avatar
-          '
+          'answer':'Avatar'
         },
         {
           'question_id':'9',
-          'text':'  How many academy awards has the movie "UP" been nominated to ?',
+          'text':'How many academy awards has the movie "UP" been nominated to ?',
           'link_answer':'http://www.imdb.com/title/tt1049413/trivia',
           'answer':'two'
         },

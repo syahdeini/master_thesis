@@ -158,10 +158,7 @@ public class Study  implements Serializable{
         int temp_idx = randomGenerator.nextInt(experiments.size());
         this.active_exp = this.experiments.get(temp_idx);
         setRandCategory();
-        if(this.active_exp.questionOrder=="RANDOM")
-            setRandQuestion();
-        else
-            setLinearQuestions();
+        setActiveQuestion();
     }
 
     // get category from list of categories
@@ -192,8 +189,7 @@ public class Study  implements Serializable{
     // there is a question still need <>                                                                                                                                                                                                                                                                                                                                                                                                                        </>o be asked
     public boolean isExperimentIsStillGoing()
     {
-        setRandPresentedQuestion();
-        if((this.active_catg.questions.size() >= this.active_exp.num_presented_question))
+        if(this.active_catg.questions.size() >= this.active_exp.num_presented_question)
             return true;
         return false;
     }
@@ -205,21 +201,7 @@ public class Study  implements Serializable{
         return false;
     }
 
-    // set question linearly to active_quest
-    public void setLinearQuestions() throws SelfException
-    {
 
-        // use this if linear style, use setRandQuestion for random style question
-        if(this.active_quest!=null)
-            this.active_quest.clear();
-        String represent_id =generateRepresentId();
-        for(int i=0;i<this.active_exp.num_presented_question;i++)
-        {
-            Question _q = this.active_catg.getQuestion();
-            _q.represent_id = represent_id;
-            this.active_quest.add(_q);
-        }
-    }
 
     public void checkNotification(String phase, Activity act)
     {
@@ -264,18 +246,9 @@ public class Study  implements Serializable{
     }
 
     // set random question
-    public void setRandQuestion() throws SelfException {
-
-
-        if(this.active_catg==null)
-            this.setRandCategory();
-        String represent_id =generateRepresentId();
-        for(int i=0;i<this.active_exp.num_presented_question;i++) {
-            Question _q = this.active_catg.getRandQuestion();
-            _q.represent_id = represent_id;
-            this.active_quest.add(_q);
-        }
-    }
+//    public void setRandQuestion() throws SelfException {
+//
+//    }
 
     // the main method
     // run experiment
@@ -286,20 +259,33 @@ public class Study  implements Serializable{
         {
             initializeExperiment();
         }
+        setRandPresentedQuestion();
 
         if(this.isExperimentIsStillGoing())
-        {
-            if(this.active_exp.questionOrder.equals("RANDOM"))
-                setRandQuestion();
-            else
-                setLinearQuestions();
-        }
+            setActiveQuestion();
         else
             throw new SelfException("Question is already finish");
 
         this.shiftNum++;
 
     }
+
+    public void setActiveQuestion() throws SelfException
+    {
+        if(this.active_catg==null)
+            this.setRandCategory();
+        String represent_id =generateRepresentId();
+        for(int i=0;i<this.active_exp.num_presented_question;i++) {
+            Question _q;
+            if(this.active_exp.questionOrder.equals("RANDOM"))
+                _q = this.active_catg.getRandQuestion();
+            else
+                _q = this.active_catg.getQuestion();
+            _q.represent_id = represent_id;
+            this.active_quest.add(_q);
+        }
+    }
+
 
 
     public String getFilename()

@@ -51,7 +51,6 @@ public class expSetPropActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String selectedExp = spinExp.getSelectedItem().toString();
                 st.selectedExperimentName = selectedExp;
-                String experiment =
                 st.study_name = studyName.getText().toString();
                 st.reseracher = researchId.getText().toString();
                 st.participantId = participantId.getText().toString();

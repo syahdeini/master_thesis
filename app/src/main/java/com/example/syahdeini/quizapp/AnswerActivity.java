@@ -203,7 +203,7 @@ public class AnswerActivity extends AppCompatActivity {
                 setContentView(R.layout.activity_answer);
                 setViewEveryReload();
                 // stop logger and update linkj
-                update_visited_links(prevUrl);
+                updateVisitedLinks(prevUrl);
                 webview.loadUrl("about:blank");
                 prevUrl="";
                 stopWatchLink.stop();
@@ -217,7 +217,7 @@ public class AnswerActivity extends AppCompatActivity {
             public void onPageFinished(WebView view, String url) {
                     if (!prevUrl.equals(url)) {
                         // update all visited link using previousAnswerLink
-                        update_visited_links(prevUrl);
+                        updateVisitedLinks(prevUrl);
                         stopWatchLink.reset();
                         stopWatchLink.start();
                     }
@@ -227,7 +227,7 @@ public class AnswerActivity extends AppCompatActivity {
         });
     }
 
-    public void update_visited_links(String url)
+    public void updateVisitedLinks(String url)
     {
         if(url.equals("") || url.equals("about:blank"))
             return;
