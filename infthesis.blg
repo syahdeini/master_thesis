@@ -1,0 +1,56 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: infthesis.aux
+A level-1 auxiliary file: chapters/chap1.aux
+A level-1 auxiliary file: chapters/chap2.aux
+A level-1 auxiliary file: chapters/chap3.aux
+A level-1 auxiliary file: chapters/chap4.aux
+A level-1 auxiliary file: chapters/chap5.aux
+A level-1 auxiliary file: appendix1.aux
+The style file: apalike.bst
+Database file #1: resources/myref.bib
+Warning--can't use both author and editor fields in BaddeleyWilkins1983
+Warning--empty journal in einsteindGuynn1992
+Warning--can't use both author and editor fields in gruneberAndMoris1978
+You've used 38 entries,
+            1935 wiz_defined-function locations,
+            751 strings with 10495 characters,
+and the built_in function-call counts, 15353 in all, are:
+= -- 1524
+> -- 567
+< -- 31
++ -- 180
+- -- 178
+* -- 1313
+:= -- 2631
+add.period$ -- 121
+call.type$ -- 38
+change.case$ -- 266
+chr.to.int$ -- 38
+cite$ -- 41
+duplicate$ -- 591
+empty$ -- 1137
+format.name$ -- 250
+if$ -- 3052
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 45
+newline$ -- 193
+num.names$ -- 124
+pop$ -- 234
+preamble$ -- 1
+purify$ -- 273
+quote$ -- 0
+skip$ -- 442
+stack$ -- 0
+substring$ -- 1145
+swap$ -- 77
+text.length$ -- 6
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 214
+warning$ -- 3
+while$ -- 141
+width$ -- 0
+write$ -- 496
+(There were 3 warnings)
