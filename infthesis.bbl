@@ -1,5 +1,12 @@
 \begin{thebibliography}{}
 
+\bibitem[and, 2017]{androidActivity}
+ (2017).
+\newblock Android activity lifecycle.
+\newblock
+  \url{https://developer.android.com/guide/components/activities/activity-lifecycle.html}.
+\newblock Accessed: 2017-08-01.
+
 \bibitem[jso, 2017]{jsonDesc}
  (2017).
 \newblock Json description.

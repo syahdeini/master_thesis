@@ -12,48 +12,49 @@ A level-1 auxiliary file: appendix2.aux
 The style file: apalike.bst
 Database file #1: resources/myref.bib
 Warning--to sort, need author or key in jsonDesc
+Warning--to sort, need author or key in androidActivity
 Warning--can't use both author and editor fields in BaddeleyWilkins1983
 Warning--empty journal in einsteindGuynn1992
 Warning--can't use both author and editor fields in gruneberAndMoris1978
-You've used 39 entries,
+You've used 40 entries,
             1935 wiz_defined-function locations,
-            759 strings with 10608 characters,
-and the built_in function-call counts, 15562 in all, are:
-= -- 1547
+            763 strings with 10751 characters,
+and the built_in function-call counts, 15771 in all, are:
+= -- 1570
 > -- 567
 < -- 31
 + -- 180
 - -- 178
-* -- 1328
-:= -- 2665
-add.period$ -- 125
-call.type$ -- 39
-change.case$ -- 271
-chr.to.int$ -- 39
-cite$ -- 44
-duplicate$ -- 601
-empty$ -- 1155
+* -- 1343
+:= -- 2699
+add.period$ -- 129
+call.type$ -- 40
+change.case$ -- 276
+chr.to.int$ -- 40
+cite$ -- 47
+duplicate$ -- 611
+empty$ -- 1173
 format.name$ -- 250
-if$ -- 3093
+if$ -- 3134
 int.to.chr$ -- 1
 int.to.str$ -- 0
 missing$ -- 45
-newline$ -- 199
+newline$ -- 205
 num.names$ -- 124
-pop$ -- 237
+pop$ -- 240
 preamble$ -- 1
-purify$ -- 278
+purify$ -- 283
 quote$ -- 0
-skip$ -- 449
+skip$ -- 456
 stack$ -- 0
-substring$ -- 1158
+substring$ -- 1171
 swap$ -- 77
 text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 220
-warning$ -- 4
+type$ -- 226
+warning$ -- 5
 while$ -- 141
 width$ -- 0
-write$ -- 509
-(There were 4 warnings)
+write$ -- 522
+(There were 5 warnings)
