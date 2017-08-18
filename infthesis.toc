@@ -9,54 +9,70 @@
 \contentsline {section}{\numberline {2.4}Prospective memory and intention}{7}{section.2.4}
 \contentsline {subsubsection}{\numberline {2.4.0.1}Detached intention}{8}{subsubsection.2.4.0.1}
 \contentsline {subsubsection}{\numberline {2.4.0.2}Lost of intention}{8}{subsubsection.2.4.0.2}
-\contentsline {section}{\numberline {2.5}Prospective memory and attention}{8}{section.2.5}
+\contentsline {section}{\numberline {2.5}Prospective memory and attention}{9}{section.2.5}
 \contentsline {section}{\numberline {2.6}Prospective memory error at event Boundaries}{9}{section.2.6}
-\contentsline {section}{\numberline {2.7}Previous research}{10}{section.2.7}
+\contentsline {section}{\numberline {2.7}Previous research}{11}{section.2.7}
 \contentsline {chapter}{\numberline {3}Experiment and Application Design}{13}{chapter.3}
-\contentsline {section}{\numberline {3.1}Experiment Design}{13}{section.3.1}
+\contentsline {section}{\numberline {3.1}Experiment design}{13}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Participant}{13}{subsection.3.1.1}
 \contentsline {subsection}{\numberline {3.1.2}Procedure}{13}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}Goal}{14}{subsection.3.1.3}
-\contentsline {subsection}{\numberline {3.1.4}Question}{14}{subsection.3.1.4}
-\contentsline {subsection}{\numberline {3.1.5}Demographic question}{14}{subsection.3.1.5}
-\contentsline {subsection}{\numberline {3.1.6}Input Data}{14}{subsection.3.1.6}
-\contentsline {subsection}{\numberline {3.1.7}Consent form}{16}{subsection.3.1.7}
-\contentsline {subsection}{\numberline {3.1.8}Participant information sheet}{16}{subsection.3.1.8}
-\contentsline {section}{\numberline {3.2}Android application and web server}{16}{section.3.2}
-\contentsline {section}{\numberline {3.3}Requirement}{17}{section.3.3}
-\contentsline {section}{\numberline {3.4}Application Design}{17}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Input and output}{17}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Application entities}{18}{subsection.3.4.2}
-\contentsline {subsection}{\numberline {3.4.3}Application flow}{18}{subsection.3.4.3}
-\contentsline {subsection}{\numberline {3.4.4}Notification design}{20}{subsection.3.4.4}
-\contentsline {subsection}{\numberline {3.4.5}tracked variable}{22}{subsection.3.4.5}
-\contentsline {chapter}{\numberline {4}Implementation}{29}{chapter.4}
-\contentsline {section}{\numberline {4.1}Entities relationship}{29}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Study Class}{30}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Experiment Class}{31}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}Category Class}{31}{subsection.4.1.3}
-\contentsline {subsection}{\numberline {4.1.4}Question Class}{33}{subsection.4.1.4}
-\contentsline {subsection}{\numberline {4.1.5}BoxNotification class}{33}{subsection.4.1.5}
-\contentsline {section}{\numberline {4.2}Application flow}{34}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Android Activity}{34}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}expInitialActivity}{36}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}expSetPropActivity}{37}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}IntroActivity}{37}{subsection.4.2.4}
-\contentsline {subsection}{\numberline {4.2.5}ChooseCategoryActivity}{37}{subsection.4.2.5}
-\contentsline {subsection}{\numberline {4.2.6}QuestionActivity}{38}{subsection.4.2.6}
-\contentsline {subsubsection}{\numberline {4.2.6.1}Study.RunExperiment()}{38}{subsubsection.4.2.6.1}
-\contentsline {subsubsection}{\numberline {4.2.6.2}AnswerActivity}{39}{subsubsection.4.2.6.2}
-\contentsline {subsection}{\numberline {4.2.7}fillAnswerActivity}{39}{subsection.4.2.7}
-\contentsline {section}{\numberline {4.3}Notification mechanism}{42}{section.4.3}
-\contentsline {section}{\numberline {4.4}Tracker}{42}{section.4.4}
-\contentsline {subsubsection}{\numberline {4.4.0.1}TTLQ, lb\_TTLQ and lookback}{43}{subsubsection.4.4.0.1}
-\contentsline {subsection}{\numberline {4.4.1}TTLB and lb\_TTLB}{43}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}visitedLinks, lb\_visitedLinks, timeVisitedLinks\\ and lb\_timeVisitedLinks}{43}{subsection.4.4.2}
-\contentsline {subsection}{\numberline {4.4.3}TTLA and TTLFA}{44}{subsection.4.4.3}
-\contentsline {subsection}{\numberline {4.4.4}numNotif, numNotifClicked and TTLN}{45}{subsection.4.4.4}
-\contentsline {chapter}{\numberline {5}Experiment Result}{49}{chapter.5}
-\contentsline {section}{\numberline {5.1}Experiment output}{49}{section.5.1}
-\contentsline {section}{\numberline {5.2}Data analysis}{49}{section.5.2}
-\contentsline {section}{\numberline {5.3}Hypothesis testing}{50}{section.5.3}
-\contentsline {section}{\numberline {5.4}Discussion}{50}{section.5.4}
-\contentsline {chapter}{Bibliography}{51}{appendix*.50}
+\contentsline {subsection}{\numberline {3.1.3}Question}{14}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}Demographic question}{15}{subsection.3.1.4}
+\contentsline {subsection}{\numberline {3.1.5}Input Data}{15}{subsection.3.1.5}
+\contentsline {subsection}{\numberline {3.1.6}Consent form}{16}{subsection.3.1.6}
+\contentsline {subsection}{\numberline {3.1.7}Participant information sheet}{16}{subsection.3.1.7}
+\contentsline {section}{\numberline {3.2}Application Design}{16}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Requirement}{17}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Input and Output}{17}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Application Entities}{18}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Application flow and properties}{18}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}Notification Design}{21}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.6}Tracked Variable}{21}{subsection.3.2.6}
+\contentsline {chapter}{\numberline {4}Implementation}{25}{chapter.4}
+\contentsline {section}{\numberline {4.1}Entities relationship}{25}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Study Class}{26}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Experiment Class}{27}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Category Class}{27}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}Question Class}{29}{subsection.4.1.4}
+\contentsline {subsection}{\numberline {4.1.5}BoxNotification class}{29}{subsection.4.1.5}
+\contentsline {section}{\numberline {4.2}Application flow}{30}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Android Activity}{30}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}expInitialActivity}{32}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}expSetPropActivity}{33}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}IntroActivity}{33}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.2.5}ChooseCategoryActivity}{33}{subsection.4.2.5}
+\contentsline {subsection}{\numberline {4.2.6}QuestionActivity}{34}{subsection.4.2.6}
+\contentsline {subsubsection}{\numberline {4.2.6.1}Study.RunExperiment()}{34}{subsubsection.4.2.6.1}
+\contentsline {subsubsection}{\numberline {4.2.6.2}AnswerActivity}{35}{subsubsection.4.2.6.2}
+\contentsline {subsection}{\numberline {4.2.7}fillAnswerActivity}{35}{subsection.4.2.7}
+\contentsline {section}{\numberline {4.3}Notification mechanism}{38}{section.4.3}
+\contentsline {section}{\numberline {4.4}Tracker}{38}{section.4.4}
+\contentsline {subsubsection}{\numberline {4.4.0.1}TTLQ, lb\_TTLQ and lookback}{39}{subsubsection.4.4.0.1}
+\contentsline {subsection}{\numberline {4.4.1}TTLB and lb\_TTLB}{39}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}visitedLinks, lb\_visitedLinks, timeVisitedLinks\\ and lb\_timeVisitedLinks}{39}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}TTLA and TTLFA}{40}{subsection.4.4.3}
+\contentsline {subsection}{\numberline {4.4.4}numNotif, numNotifClicked and TTLN}{41}{subsection.4.4.4}
+\contentsline {chapter}{\numberline {5}Experiment Result and Discussion}{45}{chapter.5}
+\contentsline {section}{\numberline {5.1}Prospective memory error on smartphone}{45}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Experiment result}{45}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Discussion}{46}{subsection.5.1.2}
+\contentsline {section}{\numberline {5.2}The effect of multiple intention}{46}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Experiment result}{46}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Discussion}{47}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}The effect of notifiaction on the intention}{48}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.4}Experiment Result}{48}{subsection.5.2.4}
+\contentsline {subsection}{\numberline {5.2.5}Disscussion}{49}{subsection.5.2.5}
+\contentsline {subsection}{\numberline {5.2.6}Event boundary on prospective memory}{50}{subsection.5.2.6}
+\contentsline {subsection}{\numberline {5.2.7}Experiment Result}{50}{subsection.5.2.7}
+\contentsline {subsection}{\numberline {5.2.8}Discussion}{50}{subsection.5.2.8}
+\contentsline {chapter}{\numberline {6}Conclusion and Suggestion}{53}{chapter.6}
+\contentsline {section}{\numberline {6.1}Conclusion}{53}{section.6.1}
+\contentsline {section}{\numberline {6.2}Future suggestion}{53}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Experiment application suggestion}{53}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Experiment design suggestion}{53}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.3}Futher investigation}{54}{subsection.6.2.3}
+\contentsline {chapter}{Appendices}{55}{section*.47}
+\contentsline {chapter}{\numberline {A}Study object properties}{57}{Appendix.a.A}
+\contentsline {chapter}{Appendices}{61}{section*.50}
+\contentsline {chapter}{\numberline {B}List of documents used in the experiment}{63}{Appendix.b.B}
+\contentsline {chapter}{Bibliography}{67}{appendix*.53}

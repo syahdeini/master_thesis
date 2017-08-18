@@ -92,7 +92,7 @@ Every variables inside this class except \textit{numPresentedQuestion} is determ
 
 \begin{table}[!htb]
   \centering
-\begin{longtable}{ |p{0.5cm}|p{4cm}|p{2.3cm}|p{6cm}|  }
+\begin{longtable}{ |p{0.5cm}|p{5cm}|p{2.3cm}|p{6cm}|  }
  \hline
  No& Variable's name & Type & Description \\
  \hline
@@ -276,7 +276,7 @@ Lastly, the active question (\textit{activeQuest}) is picked from the questions 
 \subsubsection{AnswerActivity}
 In this activity the answer link are shown as a textview inside the UI layout. If the participant click the answer link then the clickListener inside the textview will open an answer window. An java class called \textit{webview} is used as a browser of the answer page based on the URL of the answer link (question.url).
 
-Two radio buttons are presented to the participant. These are the option whether the participant want to go back to see the question again or to continue to answer the question.
+Two radio buttons are presented to the participant. These are the option whether the participant want to return to see the question again or to continue to answer the question.
 
 If the participant chose back then the application will go to question activity. on this transition the string is also capsulated inside the intent along with the study object. this string called "BACK" is used as a flag. This flag is send to question activity and send back to answer activity. this flag is used to know if the participant look at the question again.
 If the back flag is present on the answerActivity then the radio button to see the question again is hidden by setting it's visibility to GONE, as it seen on the snapshot of the code.
@@ -319,7 +319,7 @@ While the notification process wait, the main activity (Quiz) should keep workin
 This method will called  the show method inside the notification.
 
 The \textbf{Notifaction.show()} method is used to shown the notification to the front end of the android screen. This methode use
- NotificationCompact.Builder is used To build the notification layout. an Intent object is inserted inside the Builder object that contains what application to open. If the participant click the notification then the experiment application will be minimized. this event will call OnPause() methode on the current activity, and the android phone will open the intended application. The participant can go back to the current app by opening the application again and the OnResume() method  of the current activity is called.
+ NotificationCompact.Builder is used To build the notification layout. an Intent object is inserted inside the Builder object that contains what application to open. If the participant click the notification then the experiment application will be minimized. this event will call OnPause() methode on the current activity, and the android phone will open the intended application. The participant can return to the current app by opening the application again and the OnResume() method  of the current activity is called.
 
 
 \section{Tracker}
@@ -363,7 +363,6 @@ To accomplish this stopWatchTTLFA is made as a hashmap where the key is the UI i
 
 to track the time updateTTLFA() method is called this method will track the TTLFA time by accessing the stopwatchTTLFA hash map using the activeViewId variable.
 
-\todo[inline]{jesus is hard to explain this}
 
 \subsection{numNotif, numNotifClicked and TTLN}
 As explained on the section 4.3.8 during the QuestionActivity, AnswerActivity and fillAnswerActivity the checkNotifaction() will find the notification that should be shown up to the screen and it will called the inceraseNumNotif() method.

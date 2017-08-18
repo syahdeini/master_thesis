@@ -1,0 +1,57 @@
+\begin{appendices}
+\chapter{Study object properties}
+
+\begin{table}[!h]
+  \centering
+\begin{longtable}{ |p{0.5cm}|>{\hspace{0pt}}p{5.5cm}|p{1.6cm}|p{7cm}|  }
+ \hline
+ \multicolumn{4}{|c|}{Input} \\
+ \hline
+ No& Name & Type & Description \\
+ \hline
+ 1 & Study.PreText  & String & Html string that will be shown at first on the experiment\\
+ 2 & Study.PostText & String & Html string that will be shown after the pretext\\
+ 3 & Study.Name &  String & The name of the study \\
+ 4 & Study.Id & String & The Id of the study \\
+ 5 &  Experiment.Name & String & The name of the experiment \\
+ 6 & Experiment.NumQuestion & Integer & The amount of questions to be presented on each quiz phase \\
+ 7 & Experiment.MaxPresentedQuestion  & Integer &  The maximum number of presented question if it change randomly on each phase \\
+ 8 & Experiment.RandomPresentedQuestion & Boolean &  Whether the number of presented question will be change randomly on each phase \\
+9 & Category.Id  & String &  Id of the category \\
+10 & Category.Name  & String & The name of the category \\
+11 & Category.TotalQuestion & Integer  & The total size of the question on the category  \\
+   12 & Category.QuestionOrder  &  String &  The order of how the question will be pulled from the list of questions. "LINEAR" it will be pulled based on the input order, "RANDOM" it will be pulled randomly\\
+   13 & Category.Question.Id  &  String & The unique Id of the question \\
+   14 & Category.Question.Text  & String &  The question text \\
+   15 & Category.Question.linkAnswer  &  String & the URL link of answer \\
+   16 & Category.Question.Answer  & String & the answer of the question \\
+   \hline
+\end{longtable}
+ \caption{Explanation of the entities inside the input file}
+ \label{tab:inputFile}
+\end{table}
+
+\begin{table}[!h]
+  \centering
+\begin{longtable}{ |p{0.5cm}|>{\hspace{0pt}}p{5.5cm}|p{1.6cm}|p{7cm}|  }
+ \hline
+ \multicolumn{4}{|c|}{Input} \\
+ \hline
+ No& Name & Type & Description \\
+ \hline
+17 & Notification.App  & String & What application the phone will open if the participant click the notification \\
+ 18 & Notification.shift & Int &
+ The number of phase when the notification should be shown. This will be explained more on the Notification section \\
+ 19 & Notification.Phase  & String & The activies name when the notification should be appeared\\
+20 & Notification.TimeToShow & Integer  &  how millisecond the application should wait before showing the notification \\
+ 21 & Notification.Url  &  String & what url or id the application will open if the participant clicked the notification \\
+ 22 & Notification.TitleText  & String & The title of the notification \\
+ 23 & Notification.MsgText  &  String & The text of the notification  \\
+ \hline
+\end{longtable}
+\caption{Explanation of the entities inside the input file}
+\label{tab:inputFile2}
+\end{table}
+
+
+\end{appendices}

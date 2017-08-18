@@ -64,18 +64,62 @@
 \usepackage{float}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{url}
 \usepackage{tabu}
 \usepackage{longtable}
+\usepackage{listings}
+\usepackage{xcolor}
 \usepackage{array}
+\usepackage{lipsum} % for dummy text
+\usepackage{enumitem}
+\setlist{nosep}
 \usepackage[english, status=draft]{fixme}
 \usepackage[colorinlistoftodos]{todonotes}
 \fxusetheme{color}
+\usepackage[font=small,labelfont=bf,justification=centering]{caption}
+\captionsetup{justification   = raggedright,
+              singlelinecheck = false}
 \usepackage{multirow}
-\graphicspath{ {resources/picture/},{resources/FE/}}
+\graphicspath{ {resources/picture/},{resources/FE/},{resources/evaluation/}}
+
+
+\colorlet{punct}{red!60!black}
+\definecolor{background}{HTML}{EEEEEE}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
+
+\lstdefinelanguage{json}{
+    basicstyle=\normalfont\ttfamily,
+    numbers=left,
+    numberstyle=\scriptsize,
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=lines,
+    backgroundcolor=\color{background},
+    literate=
+     *{0}{{{\color{numb}0}}}{1}
+      {1}{{{\color{numb}1}}}{1}
+      {2}{{{\color{numb}2}}}{1}
+      {3}{{{\color{numb}3}}}{1}
+      {4}{{{\color{numb}4}}}{1}
+      {5}{{{\color{numb}5}}}{1}
+      {6}{{{\color{numb}6}}}{1}
+      {7}{{{\color{numb}7}}}{1}
+      {8}{{{\color{numb}8}}}{1}
+      {9}{{{\color{numb}9}}}{1}
+      {:}{{{\color{punct}{:}}}}{1}
+      {,}{{{\color{punct}{,}}}}{1}
+      {\{}{{{\color{delim}{\{}}}}{1}
+      {\}}{{{\color{delim}{\}}}}}{1}
+      {[}{{{\color{delim}{[}}}}{1}
+      {]}{{{\color{delim}{]}}}}{1},
+}
+
 
 %% Information about the title, etc.
 \title{"What was I meant to do again" (Exploration of event boundary on the failure of prospective memory)}
-
 \author{Aldy Syahdeini}
 
 %% If the year of submission is not the current year, uncomment this line and
@@ -87,8 +131,19 @@
 
 %% Specify the abstract here.
 \abstract{%
-    This doctoral thesis will present the results of my work into the
-    reanimation of lifeless human tissues.
+
+Prospective memory is remembering to carry out planned action in the future wihtout
+instructed to do so.
+The prospective memory failure is the common phenomena in every day life.
+The effect of prospective memory failure can be trivial but can also be critical. The topic and the experiment
+of this research is based on the experiment  conducted by Prof. Richard Alan Carlson and his team.
+Different component of prospective memory and what aspect influence people to experience the failure was investigated.
+
+An experiment application is developed so another researcher can conduct the experiment of prospective memory.
+The application is made flexible so different type of input and experiment properties can be used in the experiment.
+The experiment on the failure of prospective memory is also conducted. Data was derived from 18 participants who underwent 3 experimental studies.
+The experiment showed that the prospective memory error happen when people use smartphone. The increaseing amount of intention and the mental
+ transition such as reading the new information on a web page will make person more likely to experience failure of prospective memory
 }
 
 %% Now we start with the actual document.
@@ -102,8 +157,10 @@
 
 %% Acknowledgements
 \begin{acknowledgements}
-Many thanks to my mummy for the numerous packed lunches; and of course to
-Igor, my faithful lab assistant.
+% Many thanks to my supervisor Dr. Maria wolters and Catherine crompton for useful discussions, hints, and
+% advice. Special thanks to Prof. Richard Alan Carlson give me an further understanding about this topic.
+% Big thanks to all my friends who participate and support when I am working on my thesis
+
 \end{acknowledgements}
 
 %% Next we need to have the declaration.
@@ -131,6 +188,8 @@ Igor, my faithful lab assistant.
 \include{chapters/chap3}
 \include{chapters/chap4}
 \include{chapters/chap5}
+\include{chapters/chap6}
+
 % \include{chap2}
 %% ... etc ...
 
@@ -139,6 +198,7 @@ Igor, my faithful lab assistant.
 %% chapter files.
 \appendix
 \include{appendix1}
+\include{appendix2}
 %% ... etc...
 
 %% Choose your favourite bibliography style here.

@@ -1,5 +1,11 @@
 \begin{thebibliography}{}
 
+\bibitem[jso, 2017]{jsonDesc}
+ (2017).
+\newblock Json description.
+\newblock \url{http://www.json.org/}.
+\newblock Accessed: 2017-08-01.
+
 \bibitem[Baddeley and Wilkins, 1983]{BaddeleyWilkins1983}
 Baddeley, A. and Wilkins, A. (1983).
 \newblock {\em Taking memory out of the laboratory.}, pages 1--17.

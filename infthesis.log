@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.28)  16 AUG 2017 05:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.28)  18 AUG 2017 04:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -388,35 +388,30 @@ Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
 \c@LT@chunks=\count128
 \LT@p@ftn=\toks21
 )
-(/opt/texlive/2015/texmf-dist/tex/latex/fixme/fixme.sty
-Package: fixme 2013/01/28 v4.2 Collaborative annotations for LaTeX2e
+(/opt/texlive/2015/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count129
+\lst@gtempboxa=\box63
+\lst@token=\toks22
+\lst@length=\count130
+\lst@currlwidth=\dimen147
+\lst@column=\count131
+\lst@pos=\count132
+\lst@lostspace=\dimen148
+\lst@width=\dimen149
+\lst@newlines=\count133
+\lst@lineno=\count134
+\lst@maxwidth=\dimen150
 
-(/opt/texlive/2015/texmf-dist/tex/latex/tools/verbatim.sty
-Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks22
-\verbatim@line=\toks23
-\verbatim@in@stream=\read1
+(/opt/texlive/2015/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2014/09/06 1.5e (Carsten Heinz)
+\c@lstnumber=\count135
+\lst@skipnumbers=\count136
+\lst@framebox=\box64
 )
-(/opt/texlive/2015/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
-
-(/opt/texlive/2015/texmf-dist/tex/generic/xkeyval/xkeyval.tex
-(/opt/texlive/2015/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks24
-\XKV@tempa@toks=\toks25
-)
-\XKV@depth=\count129
-File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+(/opt/texlive/2015/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2014/09/06 1.5e listings configuration
 ))
-\c@fixmecount=\count130
-\c@fxnotecount=\count131
-\c@fxwarningcount=\count132
-\c@fxerrorcount=\count133
-\c@fxfatalcount=\count134
-)
-(/opt/texlive/2015/texmf-dist/tex/latex/todonotes/todonotes.sty
-Package: todonotes 2012/07/25 .dtx Todonotes source and documentation.
-Package: todonotes 2012/07/25
+Package: listings 2014/09/06 1.5e (Carsten Heinz)
 
 (/opt/texlive/2015/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
@@ -435,17 +430,59 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 )
+(/opt/texlive/2015/texmf-dist/tex/latex/lipsum/lipsum.sty
+Package: lipsum 2014/07/27 v1.3 150 paragraphs of Lorem Ipsum dummy text
+\c@lips@count=\count137
+)
+(/opt/texlive/2015/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2011/09/28 v3.5.2 Customized lists
+\labelindent=\skip55
+\enit@outerparindent=\dimen151
+\enit@toks=\toks23
+\enit@inbox=\box65
+\enitdp@description=\count138
+)
+(/opt/texlive/2015/texmf-dist/tex/latex/fixme/fixme.sty
+Package: fixme 2013/01/28 v4.2 Collaborative annotations for LaTeX2e
+
+(/opt/texlive/2015/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks24
+\verbatim@line=\toks25
+\verbatim@in@stream=\read1
+)
+(/opt/texlive/2015/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+
+(/opt/texlive/2015/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/opt/texlive/2015/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks26
+\XKV@tempa@toks=\toks27
+)
+\XKV@depth=\count139
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+\c@fixmecount=\count140
+\c@fxnotecount=\count141
+\c@fxwarningcount=\count142
+\c@fxerrorcount=\count143
+\c@fxfatalcount=\count144
+)
+(/opt/texlive/2015/texmf-dist/tex/latex/todonotes/todonotes.sty
+Package: todonotes 2012/07/25 .dtx Todonotes source and documentation.
+Package: todonotes 2012/07/25
+
 (/opt/texlive/2015/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 (/opt/texlive/2015/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 (/opt/texlive/2015/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
 (/opt/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks26
-\pgfutil@tempdima=\dimen147
-\pgfutil@tempdimb=\dimen148
+\pgfutil@everybye=\toks28
+\pgfutil@tempdima=\dimen152
+\pgfutil@tempdimb=\dimen153
 
 (/opt/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.te
 x)) (/opt/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box63
+\pgfutil@abb=\box66
 
 (/opt/texlive/2015/texmf-dist/tex/latex/ms/everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
@@ -461,30 +498,30 @@ Package: pgf 2013/12/18 v3.0.0 (rcs-revision 1.14)
 Package: pgfsys 2013/11/30 v3.0.0 (rcs-revision 1.47)
 
 (/opt/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks27
-\pgfkeys@temptoks=\toks28
+\pgfkeys@pathtoks=\toks29
+\pgfkeys@temptoks=\toks30
 
 (/opt/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.te
 x
-\pgfkeys@tmptoks=\toks29
+\pgfkeys@tmptoks=\toks31
 ))
-\pgf@x=\dimen149
-\pgf@y=\dimen150
-\pgf@xa=\dimen151
-\pgf@ya=\dimen152
-\pgf@xb=\dimen153
-\pgf@yb=\dimen154
-\pgf@xc=\dimen155
-\pgf@yc=\dimen156
+\pgf@x=\dimen154
+\pgf@y=\dimen155
+\pgf@xa=\dimen156
+\pgf@ya=\dimen157
+\pgf@xb=\dimen158
+\pgf@yb=\dimen159
+\pgf@xc=\dimen160
+\pgf@yc=\dimen161
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
-\c@pgf@counta=\count135
-\c@pgf@countb=\count136
-\c@pgf@countc=\count137
-\c@pgf@countd=\count138
-\t@pgf@toka=\toks30
-\t@pgf@tokb=\toks31
-\t@pgf@tokc=\toks32
+\c@pgf@counta=\count145
+\c@pgf@countb=\count146
+\c@pgf@countc=\count147
+\c@pgf@countd=\count148
+\t@pgf@toka=\toks32
+\t@pgf@tokb=\toks33
+\t@pgf@tokc=\toks34
  (/opt/texlive/2015/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
 )
@@ -499,8 +536,8 @@ File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
 (/opt/texlive/2015/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.t
 ex
 File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
-\pgfsyssoftpath@smallbuffer@items=\count139
-\pgfsyssoftpath@bigbuffer@items=\count140
+\pgfsyssoftpath@smallbuffer@items=\count149
+\pgfsyssoftpath@bigbuffer@items=\count150
 )
 (/opt/texlive/2015/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.t
 ex
@@ -512,12 +549,12 @@ Package: pgfcore 2010/04/11 v3.0.0 (rcs-revision 1.7)
 (/opt/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
 (/opt/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/opt/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen157
-\pgfmath@count=\count141
-\pgfmath@box=\box64
-\pgfmath@toks=\toks33
-\pgfmath@stack@operand=\toks34
-\pgfmath@stack@operation=\toks35
+\pgfmath@dimen=\dimen162
+\pgfmath@count=\count151
+\pgfmath@box=\box67
+\pgfmath@toks=\toks35
+\pgfmath@stack@operand=\toks36
+\pgfmath@stack@operation=\toks37
 )
 (/opt/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
 (/opt/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.
@@ -537,55 +574,55 @@ ex)
 (/opt/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarit
 hmetics.code.tex)))
 (/opt/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count142
+\c@pgfmathroundto@lastzeros=\count152
 ))
 (/opt/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
-\pgf@picminx=\dimen158
-\pgf@picmaxx=\dimen159
-\pgf@picminy=\dimen160
-\pgf@picmaxy=\dimen161
-\pgf@pathminx=\dimen162
-\pgf@pathmaxx=\dimen163
-\pgf@pathminy=\dimen164
-\pgf@pathmaxy=\dimen165
-\pgf@xx=\dimen166
-\pgf@xy=\dimen167
-\pgf@yx=\dimen168
-\pgf@yy=\dimen169
-\pgf@zx=\dimen170
-\pgf@zy=\dimen171
+\pgf@picminx=\dimen163
+\pgf@picmaxx=\dimen164
+\pgf@picminy=\dimen165
+\pgf@picmaxy=\dimen166
+\pgf@pathminx=\dimen167
+\pgf@pathmaxx=\dimen168
+\pgf@pathminy=\dimen169
+\pgf@pathmaxy=\dimen170
+\pgf@xx=\dimen171
+\pgf@xy=\dimen172
+\pgf@yx=\dimen173
+\pgf@yy=\dimen174
+\pgf@zx=\dimen175
+\pgf@zy=\dimen176
 )
 (/opt/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.c
 ode.tex
 File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
-\pgf@path@lastx=\dimen172
-\pgf@path@lasty=\dimen173
+\pgf@path@lastx=\dimen177
+\pgf@path@lasty=\dimen178
 )
 (/opt/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.
 tex
 File: pgfcorepathusage.code.tex 2013/12/13  (rcs-revision 1.23)
-\pgf@shorten@end@additional=\dimen174
-\pgf@shorten@start@additional=\dimen175
+\pgf@shorten@end@additional=\dimen179
+\pgf@shorten@start@additional=\dimen180
 )
 (/opt/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2013/10/09  (rcs-revision 1.44)
-\pgfpic=\box65
-\pgf@hbox=\box66
-\pgf@layerbox@main=\box67
-\pgf@picture@serial@count=\count143
+\pgfpic=\box68
+\pgf@hbox=\box69
+\pgf@layerbox@main=\box70
+\pgf@picture@serial@count=\count153
 )
 (/opt/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.co
 de.tex
 File: pgfcoregraphicstate.code.tex 2013/09/19  (rcs-revision 1.11)
-\pgflinewidth=\dimen176
+\pgflinewidth=\dimen181
 )
 (/opt/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations
 .code.tex
 File: pgfcoretransformations.code.tex 2013/10/10  (rcs-revision 1.17)
-\pgf@pt@x=\dimen177
-\pgf@pt@y=\dimen178
-\pgf@pt@temp=\dimen179
+\pgf@pt@x=\dimen182
+\pgf@pt@y=\dimen183
+\pgf@pt@temp=\dimen184
 )
 (/opt/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
@@ -600,12 +637,12 @@ File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
 )
 (/opt/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2013/11/07  (rcs-revision 1.40)
-\pgfarrowsep=\dimen180
+\pgfarrowsep=\dimen185
 )
 (/opt/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
-\pgf@max=\dimen181
-\pgf@sys@shading@range@num=\count144
+\pgf@max=\dimen186
+\pgf@sys@shading@range@num=\count154
 ) (/opt/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.te
 x
 File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
@@ -613,7 +650,7 @@ File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
 (/opt/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.t
 ex
 File: pgfcoreexternal.code.tex 2013/07/15  (rcs-revision 1.20)
-\pgfexternal@startupbox=\box68
+\pgfexternal@startupbox=\box71
 ))
 (/opt/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
 File: pgfcorelayers.code.tex 2013/07/18  (rcs-revision 1.7)
@@ -628,15 +665,15 @@ File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
 )))
 (/opt/texlive/2015/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2013/10/31  (rcs-revision 1.34)
-\pgfnodeparttextbox=\box69
+\pgfnodeparttextbox=\box72
 ) (/opt/texlive/2015/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2013/07/31  (rcs-revision 1.12)
 )
 (/opt/texlive/2015/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.
 sty
 Package: pgfcomp-version-0-65 2007/07/03 v3.0.0 (rcs-revision 1.7)
-\pgf@nodesepstart=\dimen182
-\pgf@nodesepend=\dimen183
+\pgf@nodesepstart=\dimen187
+\pgf@nodesepend=\dimen188
 )
 (/opt/texlive/2015/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.
 sty
@@ -650,10 +687,10 @@ Package: pgfcomp-version-1-18 2007/07/23 v3.0.0 (rcs-revision 1.1)
 Package: pgffor 2013/12/13 v3.0.0 (rcs-revision 1.25)
 
 (/opt/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
-\pgffor@iter=\dimen184
-\pgffor@skip=\dimen185
-\pgffor@stack=\toks36
-\pgffor@toks=\toks37
+\pgffor@iter=\dimen189
+\pgffor@skip=\dimen190
+\pgffor@stack=\toks38
+\pgffor@toks=\toks39
 ))
 (/opt/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2013/12/13 v3.0.0 (rcs-revision 1.142)
@@ -661,31 +698,31 @@ Package: tikz 2013/12/13 v3.0.0 (rcs-revision 1.142)
 (/opt/texlive/2015/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.
 code.tex
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.0 (rcs-revision 1.20)
-\pgf@plot@mark@count=\count145
-\pgfplotmarksize=\dimen186
+\pgf@plot@mark@count=\count155
+\pgfplotmarksize=\dimen191
 )
-\tikz@lastx=\dimen187
-\tikz@lasty=\dimen188
-\tikz@lastxsaved=\dimen189
-\tikz@lastysaved=\dimen190
-\tikzleveldistance=\dimen191
-\tikzsiblingdistance=\dimen192
-\tikz@figbox=\box70
-\tikz@figbox@bg=\box71
-\tikz@tempbox=\box72
-\tikz@tempbox@bg=\box73
-\tikztreelevel=\count146
-\tikznumberofchildren=\count147
-\tikznumberofcurrentchild=\count148
-\tikz@fig@count=\count149
+\tikz@lastx=\dimen192
+\tikz@lasty=\dimen193
+\tikz@lastxsaved=\dimen194
+\tikz@lastysaved=\dimen195
+\tikzleveldistance=\dimen196
+\tikzsiblingdistance=\dimen197
+\tikz@figbox=\box73
+\tikz@figbox@bg=\box74
+\tikz@tempbox=\box75
+\tikz@tempbox@bg=\box76
+\tikztreelevel=\count156
+\tikznumberofchildren=\count157
+\tikznumberofcurrentchild=\count158
+\tikz@fig@count=\count159
 
 (/opt/texlive/2015/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
-\pgfmatrixcurrentrow=\count150
-\pgfmatrixcurrentcolumn=\count151
-\pgf@matrix@numberofcolumns=\count152
+\pgfmatrixcurrentrow=\count160
+\pgfmatrixcurrentcolumn=\count161
+\pgf@matrix@numberofcolumns=\count162
 )
-\tikz@expandcount=\count153
+\tikz@expandcount=\count163
 
 (/opt/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikz
 librarytopaths.code.tex
@@ -697,18 +734,18 @@ File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.0 (rcs-revision 1.7)
 )
 (/opt/texlive/2015/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count154
-\calc@Bcount=\count155
-\calc@Adimen=\dimen193
-\calc@Bdimen=\dimen194
-\calc@Askip=\skip55
-\calc@Bskip=\skip56
+\calc@Acount=\count164
+\calc@Bcount=\count165
+\calc@Adimen=\dimen198
+\calc@Bdimen=\dimen199
+\calc@Askip=\skip56
+\calc@Bskip=\skip57
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count156
-\calc@Cskip=\skip57
+\calc@Ccount=\count166
+\calc@Cskip=\skip58
 )
-\c@@todonotes@numberoftodonotes=\count157
+\c@@todonotes@numberoftodonotes=\count167
 )
 (/opt/texlive/2015/texmf-dist/tex/latex/fixme/themes/fxthemecolor.sty
 Package: fxthemecolor 
@@ -720,46 +757,36 @@ Package: fxenvlayoutcolor
 r.sty
 Package: fxtargetlayoutcolor 
 )) (/opt/texlive/2015/texmf-dist/tex/latex/multirow/multirow.sty
-\bigstrutjot=\dimen195
+\bigstrutjot=\dimen200
 )
 (./infthesis.aux (./chapters/chap1.aux) (./chapters/chap2.aux)
-(./chapters/chap3.aux
-
-LaTeX Warning: Label `tab:requirementList' multiply defined.
-
-) (./chapters/chap4.aux
+(./chapters/chap3.aux) (./chapters/chap4.aux
 
 LaTeX Warning: Label `tab:questionClassVariable' multiply defined.
 
-) (./chapters/chap5.aux
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-) (./appendix1.aux))
+) (./chapters/chap5.aux) (./chapters/chap6.aux) (./appendix1.aux)
+(./appendix2.aux))
 \openout1 = `infthesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for OMS/pzccm/m/n on input line 95.
-LaTeX Font Info:    Try loading font information for OMS+pzccm on input line 95
-.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 150.
+LaTeX Font Info:    ... okay on input line 150.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 150.
+LaTeX Font Info:    ... okay on input line 150.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 150.
+LaTeX Font Info:    ... okay on input line 150.
+LaTeX Font Info:    Checking defaults for OMS/pzccm/m/n on input line 150.
+LaTeX Font Info:    Try loading font information for OMS+pzccm on input line 15
+0.
  (/opt/texlive/2015/texmf-dist/tex/latex/psnfss/omspzccm.fd
 File: omspzccm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/pzccm.
 )
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    ... okay on input line 150.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 150.
+LaTeX Font Info:    ... okay on input line 150.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 150.
+LaTeX Font Info:    ... okay on input line 150.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 150.
+LaTeX Font Info:    ... okay on input line 150.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -797,17 +824,17 @@ LaTeX Font Info:    ... okay on input line 95.
 
 (/opt/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count158
-\scratchdimen=\dimen196
-\scratchbox=\box74
-\nofMPsegments=\count159
-\nofMParguments=\count160
-\everyMPshowfont=\toks38
-\MPscratchCnt=\count161
-\MPscratchDim=\dimen197
-\MPnumerator=\count162
-\makeMPintoPDFobject=\count163
-\everyMPtoPDFconversion=\toks39
+\scratchcounter=\count168
+\scratchdimen=\dimen201
+\scratchbox=\box77
+\nofMPsegments=\count169
+\nofMParguments=\count170
+\everyMPshowfont=\toks40
+\MPscratchCnt=\count171
+\MPscratchDim=\dimen202
+\MPnumerator=\count172
+\makeMPintoPDFobject=\count173
+\everyMPtoPDFconversion=\toks41
 ) (/opt/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -826,14 +853,15 @@ e
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
+Package caption Info: listings package is loaded.
 Package caption Info: longtable package is loaded.
 
 (/opt/texlive/2015/texmf-dist/tex/latex/caption/ltcaption.sty
 Package: ltcaption 2013/02/03 v1.3-62 longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
-\AtBeginShipoutBox=\box75
-Package hyperref Info: Link coloring OFF on input line 95.
+\AtBeginShipoutBox=\box78
+Package hyperref Info: Link coloring OFF on input line 150.
 
 (/opt/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -841,23 +869,24 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/opt/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count164
+\c@section@level=\count174
 )
-LaTeX Info: Redefining \ref on input line 95.
-LaTeX Info: Redefining \pageref on input line 95.
-LaTeX Info: Redefining \nameref on input line 95.
+LaTeX Info: Redefining \ref on input line 150.
+LaTeX Info: Redefining \pageref on input line 150.
+LaTeX Info: Redefining \nameref on input line 150.
 
 (./infthesis.out) (./infthesis.out)
 \@outlinefile=\write4
 \openout4 = `infthesis.out'.
 
+\c@lstlisting=\count175
  ABD: EveryShipout initializing macros
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20.74> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 102.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 157.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <20.74> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 102.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 157.
 LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
-(Font)              scaled to size 18.66588pt on input line 102.
+(Font)              scaled to size 18.66588pt on input line 157.
 
 [1
 
@@ -865,21 +894,21 @@ LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
 
 ]
 LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
-(Font)              scaled to size 10.79993pt on input line 102.
+(Font)              scaled to size 10.79993pt on input line 157.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 102.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 157.
 LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
-(Font)              scaled to size 10.79993pt on input line 102.
+(Font)              scaled to size 10.79993pt on input line 157.
 
 [3] [4] [5] [6
 
 ]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 117.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 174.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <24.88> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 117.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 174.
 LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
-(Font)              scaled to size 22.39185pt on input line 117.
+(Font)              scaled to size 22.39185pt on input line 174.
  (./infthesis.toc
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
@@ -905,15 +934,17 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
- [7])
+ [7] [8])
 \tf@toc=\write5
 \openout5 = `infthesis.toc'.
 
- [8]
+ [9]
+[10
+
+]
 \openout2 = `chapters/chap1.aux'.
 
-
-(./chapters/chap1.tex
+ (./chapters/chap1.tex
 Chapter 1.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
@@ -924,16 +955,13 @@ LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
 [1
 
 
-
 ]
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 37.
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
-(Font)              Font shape `OMS/pzccm/m/n' tried instead on input line 39.
+(Font)              Font shape `OMS/pzccm/m/n' tried instead on input line 38.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <12> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 44.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 47.
 LaTeX Font Info:    Font shape `OT1/phv/m/sl' will be
-(Font)              scaled to size 10.79993pt on input line 44.
+(Font)              scaled to size 10.79993pt on input line 47.
  [2]) [3]
 \openout2 = `chapters/chap2.aux'.
 
@@ -949,44 +977,40 @@ Overfull \hbox (4.16446pt too wide) in paragraph at lines 20--22
  com-po-nent of a prospec-
  []
 
-[5]
-Overfull \hbox (5.01929pt too wide) in paragraph at lines 41--43
-\OT1/ptm/m/n/12 mem-ory er-ror with a prospec-tive mem-ory er-ror. They claim t
-hat \OT1/ptm/m/it/12 action-slip\OT1/ptm/m/n/12 ([]Heckhausen
- []
+[5] [6] [7]
+Underfull \vbox (badness 6173) has occurred while \output is active []
 
-[6]
-Overfull \hbox (2.6779pt too wide) in paragraph at lines 49--50
-\OT1/ptm/m/n/12 in-action. A prior in-ten-tion is an in-ten-tion that is de-fin
-ed prior to ac-tion, while intention-
- []
+ [8]
+[9]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[7] [8] [9] [10]) [11]
+ [10]
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ô in font ptmr7t!
+)
+[11] [12]
 \openout2 = `chapters/chap3.aux'.
 
- (./chapters/chap3.tex [12
+ (./chapters/chap3.tex
+Chapter 3.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 13.
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 13.
+LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
+(Font)              scaled to size 12.9599pt on input line 13.
+[13
 
 
 
 ]
-Chapter 3.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 11.
-LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 11.
-LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
-(Font)              scaled to size 12.9599pt on input line 11.
-[13]
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 53.
-
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 61.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 65.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 61.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 65.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 61.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 65.
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ú in font ptmr7t!
@@ -1032,180 +1056,96 @@ Missing character: There is no ú in font ptmr7t!
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ù in font ptmr7t!
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 79.
 
-Underfull \hbox (badness 1237) in paragraph at lines 90--90
-[]| \OT1/ptm/m/n/12 Of-ten peo-ple go into a room
- []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
+ [14]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Underfull \hbox (badness 2042) in paragraph at lines 90--90
-\OT1/ptm/m/n/12 thing,they lose track of what
- []
-
-
-Underfull \vbox (badness 10000) detected at line 106
- []
-
-
-LaTeX Warning: Float too large for page by 235.98029pt on input line 109.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[14] [15]
-<resources/picture/framework_process.png, id=567, 938.50626pt x 233.87375pt>
+ [15]
+<resources/picture/framework_process.png, id=665, 1474.50874pt x 244.915pt>
 File: resources/picture/framework_process.png Graphic file (type png)
 
 <use resources/picture/framework_process.png>
 Package pdftex.def Info: resources/picture/framework_process.png used on input 
-line 129.
-(pdftex.def)             Requested size: 375.39584pt x 93.54782pt.
+line 139.
+(pdftex.def)             Requested size: 412.56497pt x 68.5234pt.
  [16 <./resources/picture/framework_process.png>]
-Overfull \hbox (66.0527pt too wide) in paragraph at lines 144--177
- [][] 
- []
+LaTeX Font Info:    Try loading font information for OMS+pcr on input line 206.
 
+ (/opt/texlive/2015/texmf-dist/tex/latex/psnfss/omspcr.fd
+File: omspcr.fd 
+)
+LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 206.
 
-LaTeX Warning: Float too large for page by 24.39pt on input line 179.
-
-
-Overfull \hbox (9.79999pt too wide) in paragraph at lines 192--201
-[] 
- []
-
-[17]
-Underfull \hbox (badness 6510) in paragraph at lines 218--219
-[]|\OT1/ptm/m/n/12 Researcher in-sert mul-ti-ple cat-e-gories
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 221--221
-[]| \OT1/ptm/m/n/12 Ex-per-i-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 222--222
-[]| \OT1/ptm/m/n/12 Ex-per-i-
- []
-
-
-Overfull \hbox (1.16417pt too wide) in paragraph at lines 222--222
-\OT1/ptm/m/n/12 ment.RandomPresentedQuestion| 
- []
-
-
-Overfull \hbox (52.84537pt too wide) in alignment at lines 208--232
- [] [] [] [] 
- []
-
-
-Underfull \vbox (badness 10000) detected at line 232
- []
-
-
-Overfull \hbox (52.84537pt too wide) in alignment at lines 232--240
- [] [] [] [] 
- []
-
-
-LaTeX Warning: Float too large for page by 236.38011pt on input line 243.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<resources/picture/quiz_Diagram.png, id=588, 517.935pt x 644.4075pt>
+[17] <resources/picture/quiz_Diagram.png, id=687, 767.86874pt x 608.2725pt>
 File: resources/picture/quiz_Diagram.png Graphic file (type png)
 
 <use resources/picture/quiz_Diagram.png>
 Package pdftex.def Info: resources/picture/quiz_Diagram.png used on input line 
-259.
-(pdftex.def)             Requested size: 207.17032pt x 257.75844pt.
+237.
+(pdftex.def)             Requested size: 383.93343pt x 304.13551pt.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<resources/picture/Quiz_flow.png, id=589, 1174.3875pt x 845.1575pt>
-File: resources/picture/Quiz_flow.png Graphic file (type png)
-
-<use resources/picture/Quiz_flow.png>
-Package pdftex.def Info: resources/picture/Quiz_flow.png used on input line 274
-.
-(pdftex.def)             Requested size: 411.04178pt x 295.80956pt.
-
-Overfull \hbox (66.0527pt too wide) in paragraph at lines 292--302
- [][] 
- []
-
-[18] <resources/picture/Quiz_activity.png, id=600, 527.9725pt x 999.735pt>
+<resources/picture/Quiz_activity.png, id=691, 529.98pt x 1111.15125pt>
 File: resources/picture/Quiz_activity.png Graphic file (type png)
 
 <use resources/picture/Quiz_activity.png>
 Package pdftex.def Info: resources/picture/Quiz_activity.png used on input line
- 320.
-(pdftex.def)             Requested size: 211.18526pt x 399.88692pt.
+ 257.
+(pdftex.def)             Requested size: 211.98824pt x 444.45262pt.
 
-Overfull \hbox (9.90277pt too wide) in paragraph at lines 320--320
+Overfull \hbox (10.70575pt too wide) in paragraph at lines 257--257
 [][] 
  []
 
-<resources/picture/Quiz_Activity_2.png, id=601, 452.69125pt x 1246.6575pt>
+<resources/picture/Quiz_Activity_2.png, id=692, 454.69875pt x 1334.9875pt>
 File: resources/picture/Quiz_Activity_2.png Graphic file (type png)
 
 <use resources/picture/Quiz_Activity_2.png>
 Package pdftex.def Info: resources/picture/Quiz_Activity_2.png used on input li
-ne 321.
-(pdftex.def)             Requested size: 158.4443pt x 436.33667pt.
- [19 <./resources/picture/quiz_Diagram.png>] [20 <./resources/picture/Quiz_flow
-.png>]
-<resources/picture/notication.png, id=616, 659.46375pt x 241.90375pt>
+ne 258.
+(pdftex.def)             Requested size: 159.14694pt x 467.25264pt.
+ [18]
+<resources/picture/Quiz_flow.png, id=709, 1364.09625pt x 906.38625pt>
+File: resources/picture/Quiz_flow.png Graphic file (type png)
+
+<use resources/picture/Quiz_flow.png>
+Package pdftex.def Info: resources/picture/Quiz_flow.png used on input line 269
+.
+(pdftex.def)             Requested size: 409.23204pt x 271.91797pt.
+ [19 <./resources/picture/quiz_Diagram.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [20 <./resources/picture/Quiz_activity.png> <./resources/picture/Quiz_Activity
+_2.png>]
+<resources/picture/notication.png, id=723, 659.46375pt x 241.90375pt>
 File: resources/picture/notication.png Graphic file (type png)
 
 <use resources/picture/notication.png>
-Package pdftex.def Info: resources/picture/notication.png used on input line 34
-9.
+Package pdftex.def Info: resources/picture/notication.png used on input line 36
+4.
 (pdftex.def)             Requested size: 428.64635pt x 157.23557pt.
 
-Overfull \hbox (16.08138pt too wide) in paragraph at lines 349--350
+Overfull \hbox (22.88136pt too wide) in paragraph at lines 364--365
  [] 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [21 <./resources/picture/Quiz_activity.png> <./resources/picture/Quiz_Activity
-_2.png>]
-Underfull \hbox (badness 1014) in paragraph at lines 370--371
-[]|\OT1/ptm/m/n/12 True if the par-tic-i-pant de-cide to
- []
-
-
-Underfull \hbox (badness 1603) in paragraph at lines 379--380
-[]|\OT1/ptm/m/n/12 how many no-ti-fi-ca-tion is shown
- []
-
-
-Overfull \hbox (1.63033pt too wide) in alignment at lines 362--382
- [] [] [] [] 
- []
-
-
-Underfull \vbox (badness 10000) detected at line 382
- []
-
-
-LaTeX Warning: Float too large for page by 236.38028pt on input line 385.
-
-) [22 <./resources/picture/notication.png>] [23] [24] [25] [26] [27]
+[21 <./resources/picture/Quiz_flow.png>]) [22 <./resources/picture/notication.p
+ng>] [23]
 \openout2 = `chapters/chap4.aux'.
 
-
-(./chapters/chap4.tex [28
+ (./chapters/chap4.tex [24
 
 
 
 ]
 Chapter 4.
-[29] <resources/picture/class_diagram.png, id=668, 1476.51625pt x 959.585pt>
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
+ine 8.
+[25] <resources/picture/class_diagram.png, id=756, 1476.51625pt x 959.585pt>
 File: resources/picture/class_diagram.png Graphic file (type png)
 
 <use resources/picture/class_diagram.png>
@@ -1217,14 +1157,9 @@ Overfull \hbox (30.39333pt too wide) in paragraph at lines 32--33
  [] 
  []
 
-[30 <./resources/picture/class_diagram.png>]
+[26 <./resources/picture/class_diagram.png>]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/it' tried instead on input line 86.
-
-Overfull \hbox (12.83566pt too wide) in paragraph at lines 103--103
-[]|\OT1/ptm/m/n/12 randomPresentedQuestion| 
- []
-
 
 Underfull \hbox (badness 1303) in paragraph at lines 103--104
 \OT1/ptm/m/n/12 tion will changed ran-domly, ex-
@@ -1236,7 +1171,7 @@ Underfull \hbox (badness 1748) in paragraph at lines 105--106
  []
 
 
-Overfull \hbox (1.63033pt too wide) in alignment at lines 95--107
+Overfull \hbox (30.08308pt too wide) in alignment at lines 95--107
  [] [] [] [] 
  []
 
@@ -1244,10 +1179,10 @@ Overfull \hbox (1.63033pt too wide) in alignment at lines 95--107
 Underfull \vbox (badness 10000) detected at line 107
  []
 
-[31]
+[27]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [32]
+ [28]
 Underfull \hbox (badness 2809) in paragraph at lines 137--138
 \OT1/ptm/m/n/12 ques-tions are pre-sented to-gether
  []
@@ -1261,7 +1196,7 @@ Overfull \hbox (1.63033pt too wide) in alignment at lines 127--140
 Underfull \vbox (badness 10000) detected at line 140
  []
 
-[33]
+[29]
 Underfull \hbox (badness 1303) in paragraph at lines 170--171
 \OT1/ptm/m/n/12 tion will changed ran-domly, ex-
  []
@@ -1286,10 +1221,10 @@ Underfull \vbox (badness 10000) detected at line 176
  []
 
 
-LaTeX Warning: Reference `fig:flowApp' on page 34 undefined on input line 184.
+LaTeX Warning: Reference `fig:flowApp' on page 30 undefined on input line 184.
 
-[34] [35]
-<resources/picture/activityLifeCycle.png, id=714, 556.0775pt x 679.53876pt>
+[30] [31]
+<resources/picture/activityLifeCycle.png, id=802, 556.0775pt x 679.53876pt>
 File: resources/picture/activityLifeCycle.png Graphic file (type png)
 
 <use resources/picture/activityLifeCycle.png>
@@ -1298,26 +1233,29 @@ line 206.
 (pdftex.def)             Requested size: 166.82454pt x 203.8632pt.
 
 
-LaTeX Warning: Reference `fig:expInitActLay' on page 36 undefined on input line
+LaTeX Warning: Reference `fig:expInitActLay' on page 32 undefined on input line
  215.
 
-<resources/FE/FE_1.png, id=715, 359.3425pt x 607.26875pt>
+<resources/FE/FE_1.png, id=803, 359.3425pt x 607.26875pt>
 File: resources/FE/FE_1.png Graphic file (type png)
 
 <use resources/FE/FE_1.png>
 Package pdftex.def Info: resources/FE/FE_1.png used on input line 229.
 (pdftex.def)             Requested size: 114.99194pt x 194.32997pt.
 
-<resources/FE/FE_set_properties.png, id=716, 355.3275pt x 592.2125pt>
+<resources/FE/FE_set_properties.png, id=804, 355.3275pt x 592.2125pt>
 File: resources/FE/FE_set_properties.png Graphic file (type png)
 
 <use resources/FE/FE_set_properties.png>
 Package pdftex.def Info: resources/FE/FE_set_properties.png used on input line 
 233.
 (pdftex.def)             Requested size: 113.7071pt x 189.51187pt.
- [36 <./resources/picture/activityLifeCycle.png>] [37 <./resources/FE/FE_1.png>
- <./resources/FE/FE_set_properties.png>] [38] <resources/picture/runExperiment.
-png, id=738, 768.8725pt x 877.2775pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [32 <./resources/picture/activityLifeCycle.png>] [33 <./resources/FE/FE_1.png>
+ <./resources/FE/FE_set_properties.png>] [34]
+<resources/picture/runExperiment.png, id=826, 768.8725pt x 877.2775pt>
 File: resources/picture/runExperiment.png Graphic file (type png)
 
 <use resources/picture/runExperiment.png>
@@ -1325,7 +1263,7 @@ Package pdftex.def Info: resources/picture/runExperiment.png used on input line
  296.
 (pdftex.def)             Requested size: 384.4353pt x 438.63768pt.
 
-<resources/picture/Flowchart_.png, id=739, 713.66624pt x 1657.19125pt>
+<resources/picture/Flowchart_.png, id=827, 713.66624pt x 1657.19125pt>
 File: resources/picture/Flowchart_.png Graphic file (type png)
 
 <use resources/picture/Flowchart_.png>
@@ -1338,110 +1276,293 @@ Overfull \hbox (78.98663pt too wide) in paragraph at lines 312--314
 en on the flowchart, the Study.checkNotification()
  []
 
-[39] [40 <./resources/picture/runExperiment.png>] [41 <./resources/picture/Flow
-chart_.png>] [42]
+
+Underfull \vbox (badness 1983) has occurred while \output is active []
+
+ [35]
+[36 <./resources/picture/runExperiment.png>] [37 <./resources/picture/Flowchart
+_.png>] [38]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\\' on input line 346.
 
-[43]
+[39]
 Overfull \hbox (0.2158pt too wide) in paragraph at lines 364--365
 []\OT1/ptm/m/n/12 to track the time up-dateT-TLFA() method is called this metho
 d will track the TTLFA
  []
 
-[44]
-<resources/picture/notification_diagram.png, id=782, 1631.09375pt x 944.52875pt
+[40]
+<resources/picture/notification_diagram.png, id=870, 1631.09375pt x 944.52875pt
 >
 File: resources/picture/notification_diagram.png Graphic file (type png)
  <use resources/picture/notification_diagram.png>
 Package pdftex.def Info: resources/picture/notification_diagram.png used on inp
-ut line 382.
+ut line 381.
 (pdftex.def)             Requested size: 570.89137pt x 330.59001pt.
 
-Overfull \hbox (158.3264pt too wide) in paragraph at lines 382--383
+Overfull \hbox (158.3264pt too wide) in paragraph at lines 381--382
  [] 
  []
 
 
-<resources/picture/tracker_linkVisited.png, id=783, 673.51625pt x 442.65375pt>
+<resources/picture/tracker_linkVisited.png, id=871, 673.51625pt x 442.65375pt>
 File: resources/picture/tracker_linkVisited.png Graphic file (type png)
 
 <use resources/picture/tracker_linkVisited.png>
 Package pdftex.def Info: resources/picture/tracker_linkVisited.png used on inpu
-t line 391.
+t line 390.
 (pdftex.def)             Requested size: 336.7573pt x 221.32632pt.
-) [45] [46 <./resources/picture/notification_diagram.png> <./resources/picture/
+) [41] [42 <./resources/picture/notification_diagram.png> <./resources/picture/
 tracker_linkVisited.png>]
 \openout2 = `chapters/chap5.aux'.
 
 
-(./chapters/chap5.tex [47
+(./chapters/chap5.tex [43
 
 
-] [48
+] [44
 
 ]
 Chapter 5.
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [45]
+
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 15.
+               Default added (so using `tbp') on input line 62.
+
+[46]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Overfull \hbox (866.35544pt too wide) in paragraph at lines 19--30
+<resources/evaluation/TTFLA_each_participant.png, id=916, 462.528pt x 346.896pt
+>
+File: resources/evaluation/TTFLA_each_participant.png Graphic file (type png)
+ <use resources/evaluation/TTFLA_each_participant.png>
+Package pdftex.def Info: resources/evaluation/TTFLA_each_participant.png used o
+n input line 151.
+(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
+
+Overfull \hbox (24.98094pt too wide) in paragraph at lines 151--153
+ [][] 
+ []
+
+<resources/evaluation/TTLFA_general.png, id=917, 462.528pt x 346.896pt>
+File: resources/evaluation/TTLFA_general.png Graphic file (type png)
+
+<use resources/evaluation/TTLFA_general.png>
+Package pdftex.def Info: resources/evaluation/TTLFA_general.png used on input l
+ine 158.
+(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
+
+Overfull \hbox (24.98094pt too wide) in paragraph at lines 158--160
  [][] 
  []
 
 
-! LaTeX Error: File `demoQuestion1_study2' not found.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.37 ...graphics[scale=0.35]{demoQuestion1_study2}
-                                                  
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.53 study 1 , average TTLFA, time_
-                                   visited_answer, lookback
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.54 
-     
-? 
 
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 57.
+<resources/evaluation/visitedLink_each_participant.png, id=918, 462.528pt x 346
+.896pt>
+File: resources/evaluation/visitedLink_each_participant.png Graphic file (type 
+png)
+ <use resources/evaluation/visitedLink_each_participant.png>
+Package pdftex.def Info: resources/evaluation/visitedLink_each_participant.png 
+used on input line 168.
+(pdftex.def)             Requested size: 397.77338pt x 298.33003pt.
 
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [47]
+[48 <./resources/evaluation/TTFLA_each_participant.png> <./resources/evaluation
+/TTLFA_general.png>]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 72.
+               Default added (so using `tbp') on input line 199.
+
+[49 <./resources/evaluation/visitedLink_each_participant.png>]
+<resources/evaluation/lookback_and_reading_time_studyAll.png, id=946, 462.528pt
+ x 346.896pt>
+File: resources/evaluation/lookback_and_reading_time_studyAll.png Graphic file 
+(type png)
+
+<use resources/evaluation/lookback_and_reading_time_studyAll.png>
+Package pdftex.def Info: resources/evaluation/lookback_and_reading_time_studyAl
+l.png used on input line 239.
+(pdftex.def)             Requested size: 397.77338pt x 298.33003pt.
 
 
-Overfull \hbox (5.49731pt too wide) in paragraph at lines 76--82
- [][] 
- []
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
+
+<resources/evaluation/frequency_lookback_study1.png, id=947, 462.528pt x 346.89
+6pt>
+File: resources/evaluation/frequency_lookback_study1.png Graphic file (type png
 )
-Underfull \vbox (badness 3769) has occurred while \output is active []
+ <use resources/evaluation/frequency_lookback_study1.png>
+Package pdftex.def Info: resources/evaluation/frequency_lookback_study1.png use
+d on input line 250.
+(pdftex.def)             Requested size: 206.28249pt x 154.71494pt.
 
- [49]
+<resources/evaluation/frequency_lookback_study3.png, id=948, 462.528pt x 346.89
+6pt>
+File: resources/evaluation/frequency_lookback_study3.png Graphic file (type png
+)
+ <use resources/evaluation/frequency_lookback_study3.png>
+Package pdftex.def Info: resources/evaluation/frequency_lookback_study3.png use
+d on input line 257.
+(pdftex.def)             Requested size: 206.28249pt x 154.71494pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+<resources/evaluation/lookback_and_reading_time_study1.png, id=949, 462.528pt x
+ 346.896pt>
+File: resources/evaluation/lookback_and_reading_time_study1.png Graphic file (t
+ype png)
+ <use resources/evaluation/lookback_and_reading_time_study1.png>
+Package pdftex.def Info: resources/evaluation/lookback_and_reading_time_study1.
+png used on input line 268.
+(pdftex.def)             Requested size: 206.28249pt x 154.71494pt.
+
+<resources/evaluation/lookback_and_reading_time_study3.png, id=950, 462.528pt x
+ 346.896pt>
+File: resources/evaluation/lookback_and_reading_time_study3.png Graphic file (t
+ype png)
+ <use resources/evaluation/lookback_and_reading_time_study3.png>
+Package pdftex.def Info: resources/evaluation/lookback_and_reading_time_study3.
+png used on input line 275.
+(pdftex.def)             Requested size: 206.28249pt x 154.71494pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 [50]
+Underfull \vbox (badness 4353) has occurred while \output is active []
+
+ [51 <./resources/evaluation/lookback_and_reading_time_studyAll.png> <./resourc
+es/evaluation/frequency_lookback_study1.png> <./resources/evaluation/frequency_
+lookback_study3.png>]) [52 <./resources/evaluation/lookback_and_reading_time_st
+udy1.png> <./resources/evaluation/lookback_and_reading_time_study3.png>]
+\openout2 = `chapters/chap6.aux'.
+
+
+(./chapters/chap6.tex
+Chapter 6.
+[53
+
+
+
+]) [54]
 \openout2 = `appendix1.aux'.
 
-
-No file appendix1.tex.
-(./infthesis.bbl [51
+ (./appendix1.tex [55
 
 
 
 
-] [52] [53])
+] [56]
+Appendix A.
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
+[]| \OT1/ptm/m/n/12 Ex-per-i-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
+[]| \OT1/ptm/m/n/12 Ex-per-i-
+ []
+
+
+Overfull \hbox (1.16417pt too wide) in paragraph at lines 19--19
+\OT1/ptm/m/n/12 ment.RandomPresentedQuestion| 
+ []
+
+
+Overfull \hbox (52.84537pt too wide) in alignment at lines 6--29
+ [] [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 29
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (52.84537pt too wide) in alignment at lines 36--51
+ [] [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 51
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+) [57
+
+] [58] [59]
+\openout2 = `appendix2.aux'.
+
+ (./appendix2.tex [60
+
+
+
+] [61
+
+] [62]
+Appendix B.
+<resources/picture/consent_form.png, id=1024, 719.68875pt x 933.4875pt>
+File: resources/picture/consent_form.png Graphic file (type png)
+
+<use resources/picture/consent_form.png>
+Package pdftex.def Info: resources/picture/consent_form.png used on input line 
+7.
+(pdftex.def)             Requested size: 503.77869pt x 653.4368pt.
+
+Overfull \hbox (91.21371pt too wide) in paragraph at lines 7--8
+[][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 7.19449pt on input line 10.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<resources/picture/information_sheet.png, id=1025, 588.1975pt x 1020.81375pt>
+File: resources/picture/information_sheet.png Graphic file (type png)
+
+<use resources/picture/information_sheet.png>
+Package pdftex.def Info: resources/picture/information_sheet.png used on input 
+line 13.
+(pdftex.def)             Requested size: 411.73544pt x 714.56476pt.
+
+
+LaTeX Warning: Float too large for page by 68.32245pt on input line 16.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) [63
+
+] [64 <./resources/picture/consent_form.png>] [65 <./resources/picture/informat
+ion_sheet.png>] (./infthesis.bbl [66
+
+
+] [67] [68] [69])
 
 FiXme Summary: Number of notes: 0,
 (FiXme)        Number of warnings: 0,
@@ -1449,16 +1570,16 @@ FiXme Summary: Number of notes: 0,
 (FiXme)        Number of fatal errors: 0,
 (FiXme)        Total: 0.
 
-[54]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 157.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 157.
+[70]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 217.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 217.
  (./infthesis.aux (./chapters/chap1.aux) (./chapters/chap2.aux)
 (./chapters/chap3.aux) (./chapters/chap4.aux) (./chapters/chap5.aux)
-(./appendix1.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 157.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 157.
+(./chapters/chap6.aux) (./appendix1.aux) (./appendix2.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 217.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 217.
 Package rerunfilecheck Info: File `infthesis.out' has not changed.
-(rerunfilecheck)             Checksum: 92C6782632733C517632394E32BA2D40;3943.
+(rerunfilecheck)             Checksum: 608204EC44D5662BC72627D8D2658C7E;5149.
 
 
 LaTeX Warning: There were undefined references.
@@ -1466,29 +1587,29 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 157.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 217.
  ) 
 Here is how much of TeX's memory you used:
- 19974 strings out of 493089
- 368181 string characters out of 6103488
- 488596 words of memory out of 5000000
- 22794 multiletter control sequences out of 15000+600000
- 49835 words of font info for 92 fonts, out of 8000000 for 9000
+ 21794 strings out of 493089
+ 396808 string characters out of 6103488
+ 586592 words of memory out of 5000000
+ 24525 multiletter control sequences out of 15000+600000
+ 55813 words of font info for 98 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,15n,82p,955b,701s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,16n,82p,893b,1767s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/opt/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</opt/texlive/2015/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/texlive/2015/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/texlive/2015/texmf-dist/fon
-ts/type1/urw/helvetic/uhvb8a.pfb></opt/texlive/2015/texmf-dist/fonts/type1/urw/
-helvetic/uhvr8a.pfb></opt/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvr
-o8a.pfb></opt/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/te
-xlive/2015/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></opt/texlive/2015/texm
-f-dist/fonts/type1/urw/times/utmr8a.pfb></opt/texlive/2015/texmf-dist/fonts/typ
-e1/urw/times/utmri8a.pfb>
-Output written on infthesis.pdf (62 pages, 971675 bytes).
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/texlive/2015/texmf-d
+ist/fonts/type1/urw/courier/ucrr8a.pfb></opt/texlive/2015/texmf-dist/fonts/type
+1/urw/helvetic/uhvb8a.pfb></opt/texlive/2015/texmf-dist/fonts/type1/urw/helveti
+c/uhvr8a.pfb></opt/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb
+></opt/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/texlive/2
+015/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></opt/texlive/2015/texmf-dist/
+fonts/type1/urw/times/utmr8a.pfb></opt/texlive/2015/texmf-dist/fonts/type1/urw/
+times/utmri8a.pfb>
+Output written on infthesis.pdf (80 pages, 1433010 bytes).
 PDF statistics:
- 920 PDF objects out of 1000 (max. 8388607)
- 812 compressed objects within 9 object streams
- 218 named destinations out of 1000 (max. 500000)
- 539 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1157 PDF objects out of 1200 (max. 8388607)
+ 1009 compressed objects within 11 object streams
+ 259 named destinations out of 1000 (max. 500000)
+ 717 words of extra memory for PDF output out of 10000 (max. 10000000)
 
