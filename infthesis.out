@@ -44,7 +44,7 @@
 \BOOKMARK [1][-]{section.4.3}{Notification mechanism}{chapter.4}% 44
 \BOOKMARK [1][-]{section.4.4}{Tracker}{chapter.4}% 45
 \BOOKMARK [2][-]{subsection.4.4.1}{TTLB and lb\137TTLB}{section.4.4}% 46
-\BOOKMARK [2][-]{subsection.4.4.2}{visitedLinks, lb\137visitedLinks, timeVisitedLinks and lb\137timeVisitedLinks}{section.4.4}% 47
+\BOOKMARK [2][-]{subsection.4.4.2}{visitedLinks, timeVisitedLink}{section.4.4}% 47
 \BOOKMARK [2][-]{subsection.4.4.3}{TTLA and TTLFA}{section.4.4}% 48
 \BOOKMARK [2][-]{subsection.4.4.4}{numNotif, numNotifClicked and TTLN}{section.4.4}% 49
 \BOOKMARK [0][-]{chapter.5}{Experiment Result and Discussion}{}% 50
@@ -54,7 +54,7 @@
 \BOOKMARK [1][-]{section.5.2}{The effect of multiple intention}{chapter.5}% 54
 \BOOKMARK [2][-]{subsection.5.2.1}{Experiment result}{section.5.2}% 55
 \BOOKMARK [2][-]{subsection.5.2.2}{Discussion}{section.5.2}% 56
-\BOOKMARK [2][-]{subsection.5.2.3}{The effect of notifiaction on the intention}{section.5.2}% 57
+\BOOKMARK [2][-]{subsection.5.2.3}{The effect of notifiaction}{section.5.2}% 57
 \BOOKMARK [2][-]{subsection.5.2.4}{Experiment Result}{section.5.2}% 58
 \BOOKMARK [2][-]{subsection.5.2.5}{Disscussion}{section.5.2}% 59
 \BOOKMARK [2][-]{subsection.5.2.6}{Event boundary on prospective memory}{section.5.2}% 60
@@ -66,8 +66,6 @@
 \BOOKMARK [2][-]{subsection.6.2.1}{Experiment application suggestion}{section.6.2}% 66
 \BOOKMARK [2][-]{subsection.6.2.2}{Experiment design suggestion}{section.6.2}% 67
 \BOOKMARK [2][-]{subsection.6.2.3}{Futher investigation}{section.6.2}% 68
-\BOOKMARK [0][-]{section*.41}{Appendices}{}% 69
-\BOOKMARK [0][-]{Appendix.a.A}{Study object properties}{}% 70
-\BOOKMARK [0][-]{section*.44}{Appendices}{}% 71
-\BOOKMARK [0][-]{Appendix.b.B}{List of documents used in the experiment}{}% 72
-\BOOKMARK [0][-]{appendix*.47}{Bibliography}{}% 73
+\BOOKMARK [0][-]{appendix.A}{List of documents used in the experiment}{}% 69
+\BOOKMARK [0][-]{appendix.B}{Figures of UI layout}{}% 70
+\BOOKMARK [0][-]{appendix*.36}{Bibliography}{}% 71

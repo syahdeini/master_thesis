@@ -11,12 +11,12 @@ The application high-level decision and work flow are explained using a flow cha
 
 \section{Experiment design}
 \subsection{Participant}
-21 Participants are participated in the study. All of the participant are student of University of Edinburgh.
-3 students participate as a tester to ensure the application works perfectly. While 18 students conducted the experiment, and their data are analyzed.
+21 Participants participated in the study. All the participants are student of University of Edinburgh.
+three students participate as a tester to ensure the application works perfectly. While 18 students conducted the experiment, and their data are analyzed.
 
 \subsection{Procedure}
-The experiment is conducted as a form of quiz where a number of questions is presented to the participant and the participant need to look the answer in the answer page.
-More detailed about the experiment can bee seen on experiment design section.
+The experiment is conducted as a form of quiz where a number of questions are presented to the participant and the participant need to look the answer in the answer page.
+More detailed about the experiment can be seen on experiment design section.
 
 Three studies are conducted. On each study, 10 questions with the same category will be presented to the participant. The study is conducted in a silent lab
  room in a forrest hill lab and a meeting room on the library. The room is kept empty and quite to lower the level distraction.
@@ -29,8 +29,8 @@ These studies are explained below;
 \end{itemize}
 
 \subsection{Question}
-During the experiment 10 questions are used. The questions are designed as simple as possible so it does not require the participant to remember long context of the question.
-The questions and its answer are listed on the table \ref{tab:questions}
+During the experiment, 10 questions are used. The questions are designed as simple as possible so it does not require the participant to remember long context of the question.
+The questions and its answer are listed on table \ref{tab:questions}
 
 % \begin{table}[!h]
 %   \centering
@@ -83,7 +83,7 @@ No & Question                                                                   
 
 \subsection{Demographic question}
 The participant is required to answer demographic questions at the end of the experiment.
-The list of the demographic questions can be seen on the table \ref{tab:demographicQuestion}
+The list of the demographic questions can be seen on table \ref{tab:demographicQuestion}
 
 \begin{table}[!b]
   \centering
@@ -116,9 +116,9 @@ The list of the demographic questions can be seen on the table \ref{tab:demograp
 The input data used in this experiment can be seen on the github application repository.
 
 \subsection{Consent form}
-Consent form is a document to formally get the approval of the participant and to ensure the participant understand the experiment. The participant will need to sign the document. The document can be seen on figure \ref{fig:consentForm}
+A consent form is used to get the approval of the participant and to ensure the participant understand the experiment. The participant will need to sign the document. The document can be seen on figure \ref{fig:consentForm}
 \subsection{Participant information sheet}
-The participant information is given to the participant before the experiment is conducted. It has the information about the experiment and the protection of the experiment's data. The participant information sheet can be seen on figure \ref{fig:InformationSheet}
+A participant information is given to the participant before the experiment is conducted. It has the information about the experiment and the protection of the experiment's data. The participant information sheet can be seen on figure \ref{fig:InformationSheet}
 
 \section{Application Design}
 
@@ -131,7 +131,7 @@ The framework is originally based on the \href{https://pennstate.qualtrics.com/j
 
  A researcher will need to start the web server and use it to upload the input file.
  On the android application, the researcher can set the experiment properties for example which experiment to conduct or the name of current participant etc.
- So the researcher can conduct multiple experiments with multiple participant without uploading the input file again
+ So the researcher can conduct multiple experiments with multiple participants without uploading the input file again
  . Then, the experiment is conducted and the application track a group of variables.
  After finishing the experiment the output data inside the android application will be sent to the web server which will be compiled to a JSON output file.
 
@@ -145,7 +145,7 @@ The framework is originally based on the \href{https://pennstate.qualtrics.com/j
 
 \subsection{Requirement}
 
-The table \ref{tab:requirementList} below shows the list of all requirements of the application and its description.
+Table \ref{tab:requirementList} below shows the list of all requirements of the application and its description.
 % The main part are there are two
 % main actors, a researcher and a participant. Researcher will able to set a input file and set parameters for the experiment. Participants then able to do the experiment by using the experiment application provided by the researcher. the application track the variables of the experiment. Finally, the researcher then able to download the experiment output\\
 
@@ -157,7 +157,7 @@ The table \ref{tab:requirementList} below shows the list of all requirements of 
      \hline
      \multicolumn{3}{|c|}{Requirement List} \\
      \hline
-     No& Name & Text \\
+     No& Name & Description \\
      \hline
      1   & Upload Input    & Researcher upload a JSON input file to the application\\ \hline
      2 & Download Output & Researcher download a JSON output file of the experiment\\ \hline
@@ -185,11 +185,11 @@ The table \ref{tab:requirementList} below shows the list of all requirements of 
 \subsection{Input and Output}
 
 
-The researcher needs to upload the input file that consist of all the experiment properties. After the experiment finish, the result can be downloaded as a JSON file.
+The researcher needs to upload the input file that consists of all the experiment properties. After the experiment finishes, the result can be downloaded as a JSON file.
 JSON (Java Script object notation) is used as an input and output format because it is very easy for a human to read and write, also for the machine to parse and generate.
 Most of the current programming language and analysis software support JSON format \citep{jsonDesc}.
-The JSON format consist of key and value pairs, on many language it is similar to dictionary, table or struct. This input file will then be uploaded and compiled to the android application.
-Here is a simple example of the JSON format. 
+The JSON format consists of key and value pairs, on many programming languages it is similar to dictionary, table or struct. This input file will then be uploaded and compiled to the android application.
+Here is a simple example of the JSON format.
 %\hfill \break
 %\newline
 % \noindent\fbox{%
@@ -209,10 +209,48 @@ Here is a simple example of the JSON format.
     hobby:"swimming"
  }
 \end{lstlisting}
-The table \ref{tab:inputFile} shows all the field for the input and its description. The output of the application will be a JSON file that consist of the experiment result
-which consist of the answer of the all the questions and tracked variables.
+Table \ref{tab:inputFile} shows all the field for the input and its description. The output of the application will be a JSON file that consists of the experiment result
+which consist of the answer to the all the questions and tracked variables.
 
-
+\begin{table}[!tbh]
+  \small
+  \footnotesize
+  \centering
+\begin{tabu}{ |X[0.5,l]|X[5.5,l]|X[1.6,l]|X[7,l]|  }
+ \hline
+ \multicolumn{4}{|c|}{Input} \\
+ \hline
+ No& Name & Type & Description \\
+ \hline
+ 1 & Study.PreText  & String & Html string that will be shown at first on the experiment\\
+ 2 & Study.PostText & String & Html string that will be shown after the pretext\\
+ 3 & Study.Name &  String & The name of the study \\
+ 4 & Study.Id & String & The Id of the study \\
+ 5 &  Experiment.Name & String & The name of the experiment \\
+ 6 & Experiment.NumQuestion & Integer & The amount of questions to be presented on each quiz phase \\
+ 7 & Experiment.MaxPresentedQuestion  & Integer &  The maximum number of presented question if it change randomly on each phase \\
+ 8 & Experiment.RandomPresentedQuestion & Boolean &  Whether the number of presented question will be change randomly on each phase \\
+9 & Category.Id  & String &  Id of the category \\
+10 & Category.Name  & String & The name of the category \\
+11 & Category.TotalQuestion & Integer  & The total size of the question on the category  \\
+   12 & Category.QuestionOrder  &  String &  The order of how the question will be pulled from the list of questions. "LINEAR" it will be pulled based on the input order, "RANDOM" it will be pulled randomly\\
+   13 & Category.Question.Id  &  String & The unique Id of the question \\
+   14 & Category.Question.Text  & String &  The question text \\
+   15 & Category.Question.linkAnswer  &  String & the URL link of answer \\
+   16 & Category.Question.Answer  & String & the answer of the question \\
+17 & Notification.App  & String & What application the phone will open if the participant click the notification \\
+ 18 & Notification.shift & Int &
+ The number of phase when the notification should be shown. This will be explained more on the Notification section \\
+ 19 & Notification.Phase  & String & The activies name when the notification should be appeared\\
+20 & Notification.TimeToShow & Integer  &  how millisecond the application should wait before showing the notification \\
+ 21 & Notification.Url  &  String & what url or id the application will open if the participant clicked the notification \\
+ 22 & Notification.TitleText  & String & The title of the notification \\
+ 23 & Notification.MsgText  &  String & The text of the notification  \\
+ \hline
+\end{tabu}
+\caption{Explanation of the entities inside the input file}
+\label{tab:inputFile}
+\end{table}
 
 \subsection{Application Entities}
 The input file that the researcher uploaded will be generated to an object.
@@ -245,10 +283,10 @@ This selected \textit{experiment} and \textit{category} objects will be linked b
 
 \subsection{Application flow and properties}
 
-The application have a general properties describe on the table \ref{tab:variableList} which will be used to identify the status of the experiment.
-These properties is also used to decide which notifications to show and what variables to track.
+The application has a general properties describe on table \ref{tab:variableList} which will be used to identify the status of the experiment.
+These  also used to decide which notifications to show and what variables to track.
 
-Figure \ref{fig:quiz_flowchart} shows the flow chart of the quiz experiment, and how the application properties is updated.
+Figure \ref{fig:quiz_flowchart} shows the flow chart of the quiz experiment, and how the application  updated.
 Figure \ref{fig:quiz_flow} shows the front end the application when the participant do the quiz experiment.
 
 To make it easier for the reader the experiment's flow is divided into four stages;
@@ -278,7 +316,7 @@ To make it easier for the reader the experiment's flow is divided into four stag
 % \item \textit{Shift} : This variable is used to count how many question-answer had been done.
 % \item \textit{Phase} : this variable has a value on what activity is currently active on the application
 % \item \textit{Active Category} : The active category that will be choose by the participant during the experiment. This category will contain list of questions.
-% \item \textit{Active Experiment} : This variable will contains the properties of the current experiment, this properties is set by the researcher from the application
+% \item \textit{Active Experiment} : This variable will contains the properties of the current experiment, this  set by the researcher from the application
 % \item \textit{Number of presented question} : this variable value shows how many question are asked at one \textit{shift} of question-answer.
 % \item \textit{Active Question }: the current question and it's answer link that is presented to the participant. This active question is picked from the question list inside the active category. the number of active question is based on \textit{number of presented question} variable.
 % \end{itemize}
@@ -295,7 +333,7 @@ To make it easier for the reader the experiment's flow is divided into four stag
      2 & \textit{Phase} & String & What the name of activity that is currently active on the application.\\ \hline
      4 & \textit{Active Category} & Category & Contain category used in the experiment, and it contains list of questions.  \\ \hline
      5 &  \textit{Active Experiment} & Experiment & Contains the properties of the current experiment. \\ \hline
-     %The properties is set by the researcher from the application.\\ \hline
+     %The  set by the researcher from the application.\\ \hline
      6 & \textit{Number of presented question} & Integer &  How many questions are presented at a time (\textit{shift}). \\ \hline
 7 & \textit{Active Question } & List of Question & List of the question that is presented to the participant. \\
                         %This variable is picked from the question list inside the active category.\\
@@ -310,12 +348,12 @@ To make it easier for the reader the experiment's flow is divided into four stag
 
 
 \begin{itemize}
-\item \textbf{Initialization} : firstly a \textit{phase} variable is initialize. The application then check if the experiment is active by ensuring that there is still questions need to be asked. The quiz is finished if all the question has been asked.
+\item \textbf{Initialization} : firstly a \textit{phase} variable is initialize. The application then confirm if the experiment is active by ensuring that there is still questions need to be asked. The quiz is finished if all the question has been asked.
 \item \textbf{Question activity} :  The number of presented question is changed (randomly or constant).
 Then questions are picked from the \textit{active category} and put to \textit{active question}. Then the \textit{active questions} are presented to the participant.
 \item \textbf{Answer activity} : Thirdly, the links for the answer page are presented to the participant. The participant then click the links and find the answer inside the answer page.
-The participant is able see the question again or decide to answer. The participant are only allowed to see the question again one time.
-\item \textbf{fill answer activity} Lastly, the participant need to write the answer of the question on the text box.
+The participant is able to see the question again or decide to answer. The participant is only allowed to see the question again one time.
+\item \textbf{fill answer activity} Lastly, the participant need to write the answer to the question on the text box.
 After that, the \textit{phase} variable is increased and the application will repeat the quiz again until it finished.
 \end{itemize}
 
@@ -324,7 +362,7 @@ After that, the \textit{phase} variable is increased and the application will re
 
 During the quiz experiment the notification will be shown to the participant.
 Notification will be shown as a pop-up box as seen in figure \ref{fig:clicked_notification_flow}.
-When the notification is poped up to the screen, the phone will vibrate and produce a sound.
+When the notification is shown to the screen, the phone will vibrate and produce a sound.
 
  If the participant click the notification then the application will be minimized and the android phone will be directed to another application.
  After that, the user can click the application icon to get back to the experiment application.
@@ -332,7 +370,7 @@ When the notification is poped up to the screen, the phone will vibrate and prod
 Based on this design, the \textit{notification} should have the properties listed on table \ref{NotifactionProperties}.
 % \begin{itemize}
 % \item \textit{shift} : This property is to decide on which shitft the notification will be shown, it will be compared to the \textit{shift} properties of the study object.
-% \item \textit{phase} : This properties is to decide on which activity (question, answer and fill answer) the notification will be shown.
+% \item \textit{phase} : This  to decide on which activity (question, answer and fill answer) the notification will be shown.
 % \item \textit{app} : What application the notification will open, it also need to have a value of the user or url of the application.
 % \item \textit{timeToshow} : How millisecond the framework should wait before the notification will be shown
 % \item \textit{notification text} : What is the message text inside the notification box
@@ -346,7 +384,7 @@ Based on this design, the \textit{notification} should have the properties liste
 \hline
 Variable          & Function                                                                                                                                  \\ \hline
 shift             & This property is to decide on which shitft the notification will be shown, it will be compared to shift variable in experiment properties \\ \hline
-phase             & This properties is to decide on which activity (question, answer and fillanswer) the notification will be shown.                          \\ \hline
+phase             & This  to decide on which activity (question, answer and fillanswer) the notification will be shown.                          \\ \hline
 app               & An application the notification will open; instagram, twitter, facebook or website.                           \\ \hline
 timeToshow        & Time (in millisecond) notificationwill the notifiaction need to wait before presented.                                                           \\ \hline
 notification text & The message text inside the pop-up box                                                                                     \\ \hline
@@ -373,7 +411,7 @@ notification text & The message text inside the pop-up box                      
 
 \subsection{Tracked Variable}
 During the experiment the application track variables. Table \ref{tab:trackedVarible} consist of all the variables that the application track.
-some of the variable has \textbf{lb} in front of their name, this mean that variable is tracked during the lookback process.
+some of the variables have \textbf{lb} in front of their name, this mean that variable is tracked during the lookback process.
 A process when the participant look the question again for the second time.
 
 \begin{table}[!b]

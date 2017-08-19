@@ -7,6 +7,12 @@
   \url{https://developer.android.com/guide/components/activities/activity-lifecycle.html}.
 \newblock Accessed: 2017-08-01.
 
+\bibitem[gso, 2017]{gsonLib}
+ (2017).
+\newblock Gson library.
+\newblock \url{https://github.com/google/gson}.
+\newblock Accessed: 2017-08-01.
+
 \bibitem[jso, 2017]{jsonDesc}
  (2017).
 \newblock Json description.

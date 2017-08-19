@@ -70,6 +70,7 @@
 \usepackage{rotating}
 \usepackage{epstopdf}
 \usepackage{tabu}
+\usepackage{epigraph}
 \usepackage{longtable}
 \usepackage{listings}
 \usepackage{xcolor}
@@ -123,7 +124,7 @@
 
 
 %% Information about the title, etc.
-\title{"What was I meant to do again" (Exploration of event boundary on the failure of prospective memory)}
+\title{What was I meant to do again (Exploration of event boundary on the failure of prospective memory)}
 \author{Aldy Syahdeini}
 
 %% If the year of submission is not the current year, uncomment this line and
@@ -140,14 +141,15 @@ Prospective memory is remembering to carry out planned action in the future wiht
 instructed to do so.
 The prospective memory failure is the common phenomena in every day life.
 The effect of prospective memory failure can be trivial but can also be critical. The topic and the experiment
-of this research is based on the experiment  conducted by Prof. Richard Alan Carlson and his team.
+of this research is based on the experiment conducted by Prof. Richard Alan Carlson and his team.
 Different component of prospective memory and what aspect influence people to experience the failure was investigated.
 
-An experiment application is developed so another researcher can conduct the experiment of prospective memory.
-The application is made flexible so different type of input and experiment properties can be used in the experiment.
+An application to conduct a prospective memory experiment is developed.
+The application is made flexible so different type of experiment properties can be implemented in the experiment.
 The experiment on the failure of prospective memory is also conducted. Data was derived from 18 participants who underwent 3 experimental studies.
-The experiment showed that the prospective memory error happen when people use smartphone. The increaseing amount of intention and the mental
- transition such as reading the new information on a web page will make person more likely to experience failure of prospective memory
+The experiment shows that the prospective memory error happen when people use smartphone.
+The amount of intentions are crucial component of prospective memory,
+and the mental and physical transition influence of prospective memory error.
 }
 
 %% Now we start with the actual document.
@@ -161,9 +163,14 @@ The experiment showed that the prospective memory error happen when people use s
 
 %% Acknowledgements
 \begin{acknowledgements}
-% Many thanks to my supervisor Dr. Maria wolters and Catherine crompton for useful discussions, hints, and
-% advice. Special thanks to Prof. Richard Alan Carlson give me an further understanding about this topic.
-% Big thanks to all my friends who participate and support when I am working on my thesis
+Many thanks to my supervisor Dr. Maria wolters who put her believe on me, and her guidance
+on the thesis.
+Special thanks to Catherine crompton for useful discussions, hints, and
+advice.
+thanks to Prof. Richard Alan Carlson give me an further understanding about this topic.
+Big thanks to all my family and friends who always support when I am working on my thesis.
+Lastly, thank you for all the participants who participate on this experiment.
+
 
 \end{acknowledgements}
 
@@ -186,7 +193,7 @@ The experiment showed that the prospective memory error happen when people use s
 %%%%%%%%
 %% Include your chapter files here. See the sample chapter file for the basic
 %% format.
-
+\include{chapters/intro}
 \include{chapters/chap1}
 \include{chapters/chap2}
 \include{chapters/chap3}
@@ -201,8 +208,11 @@ The experiment showed that the prospective memory error happen when people use s
 %% Any appendices should go here. The appendix files should look just like the
 %% chapter files.
 \appendix
+% \begin{appendices}
+
 \include{appendix1}
 \include{appendix2}
+\include{appendix3}
 %% ... etc...
 
 %% Choose your favourite bibliography style here.
