@@ -332,7 +332,7 @@ If the researcher set randomPresentedQuestion to true in the input file, then \t
 On the other hand if it's false, then the numPresentedQuestion will be constant.
 
 Next, \textbf{isExperimentIsStillGoing()} is called. This method make sure if the experiment is still on progress by checking the size of the
-\textit{question} variable inside the \textit{activeCatg}. If the size is still larger or similar than \textit{numPresentedQuestion} then the experiment can be continued.
+\textit{question} variable inside the \textit{activeCatg}. If the size is still larger or similar then \textit{numPresentedQuestion} then the experiment can be continued.
 
 Lastly, the active question (\textit{activeQuest}) is picked from the questions variable by calling \textbf{setActiveQuestion()}. this method filled
  i \textit{activeQuest} variable by fetching \textit{question} object from the \textit{question} variable inside \textit{activeCatg} object.
@@ -403,19 +403,19 @@ The expalanation of the variables are explained on table \ref{tab:trackedVarible
 
 \subsubsection{TTLQ, lb\_TTLQ and lookback}
 These variables is tracked inside the \textit{questionActivity}.
-\textit{StopWatchTTLQ} and \textit{stopWatchTTLQ\_lb} is used to track the time of this variable.
-The stopwatch object start to count the time when \textbf{OnCreate()} method is called.
+\textit{StopWatchTTLQ} and \textit{stopWatchTTLQ\_lb} are used to track the time of this variable.
+The stopwatch object starts to count the time when \textbf{OnCreate()} method is called.
 The \textbf{Study.log()} method will be called to track the variable when the next button is clicked then the stopwatch is stopped.
 The lookback variable will have true value if the participant chose to see the question again.
 
 \subsection{TTLB and lb\_TTLB}
 These variable are tracked inside the \textit{AnswerActivity}. Similar with TTLQ,
-\textit{stopwatchTTLB} and \textit{stopWatchTTLB\_lb} is used to track these variable.
+\textit{stopwatchTTLB} and \textit{stopWatchTTLB\_lb} are used to track these variable.
 The stopwatch will start on \textbf{Oncreate()} method and it will be tracked when the participant clicks the next button.
 
 \subsection{visitedLinks, timeVisitedLink}
 These variable is tracked inside the \textit{AnswerActivity}.
-\textit{StopWatchLink} then will be started, and it is used to track the time participant have spent on each web page inside the \textit{webview}.
+\textit{StopWatchLink} then will be started, and it are used to track the time participant have spent on each web page inside the \textit{webview}.
 The mechanism of the tracking is shown in figure \ref{fig:webViewTrack}. Firstly, the prevUrl variable is initialized,
 this variable stored the previous link the \textit{webview} had opened. This \textit{webview} class has an event listener called \textbf{onPageFinished()}
  which will be called every time the web page has been finish loaded, for example when the participant clicks new  link and open new web page.
@@ -424,7 +424,7 @@ this variable stored the previous link the \textit{webview} had opened. This \te
  to visitedLinks variable and how long the participant spent on the web page to \textit{timeVisitedLinks}.
 
 \subsection{TTLA and TTLFA}
-These variable are tracked on the \textbf{fillAnswerActivty}. \textit{TTLA} is tracked using \textit{StopWatchTTLA}, whie
+These variable are tracked on the \textbf{fillAnswerActivty}. \textit{TTLA} is tracked using \textit{StopWatchTTLA}, while
 \textit{TTLFA} is tracked differently because if there is more than one question then there will be multiple \textit{editText} for the answer field, and
 each one of them need to be tracked.
 
@@ -442,7 +442,7 @@ As seen in figure \ref{fig:NotificationFlo}. The QuestionActivity, AnswerActivit
 which will find the notification that should be shown up to the screen. If the notification is found than the activity call the \textbf{inceraseNumNotif()} method.
 This method will increase the \textit{numNotif} variable by 1.
 
-If the notifaction is clicked then the \textbf{inceraseNumNotifisClicked()} method will be called inside the \textbf{broadCastReceiver} method on the current activity class.
+If the notificiation is clicked then the \textbf{inceraseNumNotifisClicked()} method will be called inside the \textbf{broadCastReceiver} method on the current activity class.
 This method will increase the number of \textit{numNotifClicked} variable by 1.
 
 \textit{NotifStopWatch} object is used to track the TTLN time.
@@ -450,7 +450,7 @@ After the participant clicks the notification than the application will be minim
 application will be opened.
  the \textbf{OnPause()} event handler will be called just before the application is minimized.
 then inside the event handle a \textbf{Study.startLogNotif()} method is called. The \textbf{Study.startLogNotif()}  method will start the notifStopWatch object.
-Then after the participant retuirn to the experiment application the \textbf{onResume()} method is called.
+Then after the participant return to the experiment application the \textbf{onResume()} method is called.
 This method will call \textbf{Study.stopLogNotif()} method.
 The \textbf{Study.stopLogNotif()} method then track the TTLN variable inside the active notification
 by using the \textit{notifStopWatch} object.
