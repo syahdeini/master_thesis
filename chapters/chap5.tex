@@ -211,7 +211,7 @@ However, the number of notification has no correlation with the percentage of lo
 \footnotesize
 \begin{tabu}{|X[l]|X[l]|X[l]|X[l]|}
 \hline
-                  & Mean time to write the answer (TTLFA) & Mena time looking at answer page & Forget the question (lookback) percentage \\ \hline
+                  & Mean time to write the answer (TTLFA) & Mean time spent looking for an answer & Forget the question (lookback) percentage \\ \hline
 No Notifications  & 6.267 second                     & 59.875 second                       & 17\%               \\ \hline
 One Notification  & 7.292 second                     & 69.517 second                       & 11\%               \\ \hline
 Two Notifications & 7.304 second                     & 76.699 second                       & 21\%               \\ \hline
@@ -222,16 +222,21 @@ Two Notifications & 7.304 second                     & 76.699 second            
 
 
 \subsection{Disscussion}
-This result shows that the notification influence the intention, but it doesn't influence the prospective memory error.
-Table \ref{tab:notifiactionNumber} shows that the increasing number of notification make people harder to recall the content of the memory.
+This result shows that the notification does not have any effect on the prospective memory error.
+Table \ref{tab:notifiactionNumber} shows that the increasing number of notification made the participant spent longer time
+to write and answer and to find the answer. The result is consistent with the time needed to pay attention and to dismiss the notification.
+The difference in time is not significant thus does not show any influence on the level of attention given
+on the task.
+The notification does not appear to have had an effect beyond the time needed to notice the notification so a
+further investigation need to be conducted.
+%
+% If the notification is shown when the participant presented with the question,
+%  then the notification probably lower the level of attention thus make the intention not framed perfectly.
+% But if the notification is shown when the participant find the answer, this can mean that the notification attenuate the content of intention,
+% even though it's correctly framed before.
 
-If the notification is shown when the participant presented with the question,
- then the notification probably lower the level of attention thus make the intention not framed perfectly.
-But if the notification is shown when the participant find the answer, this can mean that the notification attenuate the content of intention,
-even though it's correctly framed before.
-
-In addition, if we consider the notification as an event boundary. We can argue that
-that mentally moving through event boundary will influence the intention but has no effect on the prospective memory error.
+% In addition, if we consider the notification as an event boundary. We can argue that
+% that mentally moving through event boundary will influence the intention but has no effect on the prospective memory error.
 
 \subsection{Event boundary on prospective memory}
 \subsection{Experiment Result}
@@ -293,13 +298,14 @@ for the visited link that has zero value, this is probably because the participa
 \centering
 \small
 \footnotesize
-\begin{tabu}{|X[3,l]|X[5,l]|X[5,l]|}
+\begin{tabu}{|X[3,l]|X[5,l]|X[5,l]|X[3,l]|}
 \hline
-Number of visited links & number of times participant,forget the question (lookback)(N=192) & number of times participant,remember question(N=192) \\ \hline
-0                       & 9                                                                 & 6                                                    \\ \hline
-1                       & 35                                                                & 135                                                  \\ \hline
-2                       & 1                                                                 & 5                                                    \\ \hline
-3                       & 0                                                                 & 1                                                    \\ \hline
+Number of visited links & number of times participant forget the question (lookback)(N=192) & number of times participant,remember question(N=192) & SUM \\ \hline
+0                       & 9                                                                 & 6                                            & 15             \\ \hline
+1                       & 35                                                                & 135                                          & 170             \\ \hline
+2                       & 1                                                                 & 5                                            & 6           \\ \hline
+3                       & 0                                                                 & 1                                            & 1        \\ \hline
+SUM                   & 45                                                                  & 147                                          & 192 \\ \hline
 \end{tabu}
 \caption{Number of visited page and how many times participant forget or remember the question from all the studies}
 \label{visitedPage}
