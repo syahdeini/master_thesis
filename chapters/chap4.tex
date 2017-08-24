@@ -2,6 +2,8 @@
 
 
 \chapter{Implementation}
+\epigraph{The brain is wider than the sky.}{\textit{Emily Dickinson}}
+
 This chapter discussed the technical implementation of the system based on the design discussed before.
 Section 4.1 provides the technical information about the main entity as classes that will be used in this study, including its variables and methods.
 Section 4.2  provides complete information about the work flow of the application.
@@ -229,9 +231,9 @@ The activity class is used to catch the event such us clicked or move to another
 The android application also contains a lifecycle which is default methods and activities that will be called every time.
 Figure \ref{fig:theLifeCycleOfActivity} shows the android activity lifecycle \citep{androidActivity}.
 There are three methods inside the lifecycle that is used in this experiment application;
- \textit{OnCreate()} is the first method to get called every time the activity start.
- \textit{OnPause()} will be called if the phone move to another application.
- Lastly,  \textit{OnResume()} is called if the user open the application again after leaving the application.
+ \textbf{OnCreate()} is the first method to get called every time the activity start.
+ \textbf{OnPause()} will be called if the phone move to another application.
+ Lastly,  \textbf{OnResume()} is called if the user open the application again after leaving the application.
 
 \begin{figure}[!tbh]
 \begin{center}
@@ -257,7 +259,7 @@ Then the JSON object compiled into The \textit{Study} object. This object contro
 This object will be sent through the activities.
 \textit{Intent} class of java is used to encapsulate the object and send to another activity.
 Because the \textit{Study} object need to be encapsulated inside the Intent,
- java programming language requires every class including the Study class to implement \textit{Serializable}.
+ java programming language requires every class sent by using an intent to implement \textit{Serializable}.
 
 %
 % \begin{figure*}
@@ -282,7 +284,6 @@ The purpose of this activity is to make it easier for the researcher to conduct 
 The UI layout of this activity can be seen in figure \ref{fig:IntroActivity}.
 This activity is used to show the information about the experiment to the participant before starting the experiment.
 This information is obtained from the preText and postText variables. the value of this variable will be converted into a html and shown to the participant.
-Figure X show example of the Consent information shown inside the application.
 
 \subsection{ChooseCategoryActivity}
 The UI layout of this activity can be seen in figure \ref{fig:ChooseCategoryActivity}.
@@ -295,7 +296,7 @@ The selected category name will then save in the \textit{selectedCategoryName} v
 The UI layout of this activity can be seen in figure \ref{fig:QuestionActivity}.
 In this activity, the question inside \textit{activeQuestion} variables is shown to the participant.
 This activity will be called multiple time during the quiz experiment.
-the main function of this activity is to call \textbf{Study.runExperiment()} method.
+The main function of this activity is to call \textbf{Study.runExperiment()} method.
 \textbf{Study.runExperiment()} is used to start or continue the quiz experiment.
 this method is explained in the section below.
 
@@ -323,8 +324,8 @@ Figure \ref{fig:runExperiment_flow} shows the work flow of the method. The First
  so new question is presented to the participant.
 
 
-On the initialization, active experiment (\textit{activeExp}) and active category (\textit{activeCatg}) are initialized by calling \textbf{initializeExperiment} method.
-The \textbf{initializeExperiment} method will fetch the selected \textit{experiment} and the
+On the initialization, active experiment (\textit{activeExp}) and active category (\textit{activeCatg}) are initialized by calling \textbf{initializeExperiment()} method.
+The \textbf{initializeExperiment()} method will fetch the selected \textit{experiment} and the
 \textit{category} object from the study class variables based on the \textit{selectedExperimentName} and \textit{selectedCategoryName}.
 
 
@@ -336,7 +337,7 @@ Next, \textbf{isExperimentIsStillGoing()} is called. This method make sure if th
 \textit{question} variable inside the \textit{activeCatg}. If the size is still larger or similar then \textit{numPresentedQuestion} then the experiment can be continued.
 
 Lastly, the active question (\textit{activeQuest}) is picked from the questions variable by calling \textbf{setActiveQuestion()}. this method filled
- i \textit{activeQuest} variable by fetching \textit{question} object from the \textit{question} variable inside \textit{activeCatg} object.
+ \textit{activeQuest} variable by fetching \textit{question} object from the \textit{question} variable inside \textit{activeCatg} object.
   The question object will be picked randomly if the researcher set \textit{questionOrder} to random. Otherwise, it will be picked linearly based on
   the input file order.
 
@@ -350,8 +351,8 @@ A java class called \textit{webview} is used as a browser. The \textit{webview} 
 On the layout, two radio buttons are presented to the participant. These are the option whether the participant wants to return to see the question again or to continue
  to answer the question.
 If the participant chose to look at the question again then a special string is capsulated inside the \textit{intent} object.
-This string is sent to question activity then send back to answer activity. this string is used to indicate if the participant looks at the question again.
-If the string is sent to answerActivity then the radio button "to see the question again" is hidden.
+This string is sent to question activity then send back to answer activity. It is also used to indicate if the participant looks at the question again.
+If the string is sent to answerActivity then the radio button "to see the question again" is not visible.
 
 
 \subsection{fillAnswerActivity}
@@ -388,7 +389,7 @@ The tracked variable are shown on the table \ref{tab:trackedVarible}.
 All of these variable are stored inside the \textit{question} class as seen in the class diagram \ref{fig:class_diagram}.
 Some of the variables are used to track the time in millisecond.
 To track the time the \textit{stopWatch} class provided by java API is used.
-The StopWatch object is stored inside the study class because the StopWatch class is not The StopWatch object is stored inside the study class because the StopWatch class is not serizable.
+The \textit{StopWatch} object is stored in the activity class because the \textit{StopWatch} class is not serizable.
 .
 During the experiment the application is minimized (participant clicks the notification).
 Then event some Stopwatch object need to be paused. Inside \textbf{OnPause()} event listener the stopWatch is suspended,
