@@ -4,11 +4,11 @@
 \chapter{Implementation}
 This chapter discussed the technical implementation of the system based on the design discussed before.
 Section 4.1 provides the technical information about the main entity as classes that will be used in this study, including its variables and methods.
-Section 4.2  provides a complete information about the work flow of the application.
+Section 4.2  provides complete information about the work flow of the application.
 Section 4.3 provides an information about the mechanism of notification. Lastly, section 4.4 provides an information about the tracker and its procedure.
 
 Flask framework and python programming language is used to develop the webserver. Java programming language and Android SDK is used to develop android application.
-
+The source code and the input file of the experiment are put into a github repository at \href{https://github.com/syahdeini/thesis}{https://github.com/syahdeini/thesis}.
 % \subsection{Web server}
 % explain sending data to the android application
 % Webserver is a http server that
@@ -20,7 +20,7 @@ Flask framework and python programming language is used to develop the webserver
 
 \section{Entities relationship}
 All the entities discussed in the design chapter will be represented as a class which consists of variables and methods.
-The relationship between classes can be seen on the class diagram on figure \ref{fig:class_diagram}.
+The relationship between classes can be seen in the class diagram in figure \ref{fig:class_diagram}.
  The box presents the class. The upper part of the box consists of the variable name and its type.
  The plus and minus sign before the variable name present the scope of the variable.
   Minus (-) means private and plus (+) means public.
@@ -45,8 +45,8 @@ As seen in the class diagram \ref{fig:class_diagram}. The study class contains \
 As explained in the design section, the experiment application need to initialize following variables before conducting the experiment;
 \textit{ActiveExp} (active experiment) variable is experiment that will be conducted, and \textit{activeCatg} (active category) is the
 category that will be used to pick questions.
-\textit{ActiveQuest} (active question) variable present what questions are currently asked to the participant.
-The question inside \textit{activeQuest} variable are picked from the a list of questions inside the active category (\textit{activeCatg}) variable.
+\textit{ActiveQuest} (active question) variable present what questions are currently asked.
+The question inside \textit{activeQuest} variable is picked from a list of questions inside the active category (\textit{activeCatg}) variable.
 \textit{ActiveExp} is set by the researcher on the setting experiment window, and the \textit{activeCatg} is chosen by the participant during the experiment
 
 
@@ -89,7 +89,7 @@ The notification object is picked from the \textit{notifications} variable that 
 The Experiment class contains the \textit{experiment variables} that is used to define the behaviour of the experiment.
 The variables are explained in the table \ref{tab:ExperimentClassVariable}.
 Every variables inside this class except \textit{numPresentedQuestion} is determined from the input file. \textit{numPresentedQuestion} is a variable that
-control how many questions is presented to the participant each time.
+controls how many questions is presented to the participant each time.
  \textbf{changeNumberPresentedQuestion()} method is called by the study class to change the value \textit{numPresentedQuestion} variable.
  The change can be random (from 1 to \textit{maxPresentedQuestion}) by using the Random object (RandomGenerator)
   provided by Java API.
@@ -108,7 +108,7 @@ control how many questions is presented to the participant each time.
  4 & questionOrder & String & If the value is RANDOM, then the question is picked randomly from a list of question, if the value is LINEAR then the question will be picked based on the order of the input file \\ \hline
  5 & randomPresentedQuestion & Boolean & If it the value is true, then on each phase the num of presented question will change randomly, explained more on changeNumberPresentedQuestion method \\ \hline
  6 & maxPresentedQuestion & Integer & This is the maximum number of presented question if the number of presented question is decided randomly\\ \hline
- 7 & randomGenerator & Random  & This is a random class that use to generate random number, it is used inside changeNumberPresentedQuestion method \\ \hline
+ 7 & randomGenerator & Random  & This is a random class that use to generate a random number, it is used inside changeNumberPresentedQuestion method \\ \hline
 \end{tabu} \par
 \caption{variables inside the experiment class}
  \label{tab:ExperimentClassVariable}
@@ -130,10 +130,10 @@ After the question is selected, it will get deleted from the \textit{questions} 
 
 \subsection{Question Class}
 Table \ref{tab:questionClassVariable} shows the variables inside this class.
-The \textit{question} class consist of the content of question; its question text, answer link and answer.
-The class also contains the tracked variable (the variables are explained more on trackker section).
+The \textit{question} class consist of the content of question; it's question text, answer link and answer.
+The class also contains the tracked variable (the variables are explained more on tracker section).
 The question can be two type MC or TEXT. MC means multiple choice, this question type will have multiple options on its answer choice,
-and the participant can chose one of them. while TEXT means that the participant need to write the question.
+and the participant can choose one of them. while TEXT means that the participant needs to write the question.
 \textit{representId} is generated when the questions are presented to the participant. this variable is unique and can
 be used to classify which questions are presented at the same time.
 
@@ -151,7 +151,7 @@ be used to classify which questions are presented at the same time.
  4 & answer & string & (optional) the answer of the question. \\ \hline
  5 & participantAnswer & string & the answer of the participant during the quiz activity.\\ \hline
  6 & questionType & String & The type of the question. The value can be "MC" or "TEXT".\\ \hline
- 7 & representId & string  &  the random id generated when the question is presented during quiz.\\ \hline
+ 7 & representId & string  &  the random id generated when the question is presented during the quiz.\\ \hline
  7 & options & list of String  & The answer option if the question is multiple choice.\\ \hline
 \end{tabu}
 \caption{Variable inside Question class (without the tracked variable)}
@@ -168,7 +168,8 @@ The Notification can open an android application of twitter, facebook, instagram
 To define which user will be shown if the user clicked the instagram, twitter or facebook notification. The user
 is defined by the user\_id code which can be found on the profile of their social media.
 the url can also contain the URL link, then the application will open the web page.
-This app needs to be specified on the \textit{app} variable and the \textit{url} variable. The \textit{url} variable needs to be filled with the user id of the twitter or instagram. Or it can be filled with http/https url to open web page. the class contains a show() method that will pop up the notification in the android phone.
+This app needs to be specified on the \textit{app} variable and the \textit{url} variable. The \textit{url} variable needs to be filled with the user id of the twitter or instagram. Or it can be filled with http/https url to open web page. the class contains a show()
+0method that will pop up the notification on the android phone.
 The mechanism and flow of the notification will be explained on next chapter.
 
 %
@@ -252,7 +253,7 @@ This method will read the JSON input and compiled it into \textit{Study} object.
 String input is compiled into JSON object by using \textit{GSON} library.
 \textit{GSON} is a serialization / deserialization library that is used to convert a string into a JSON object or another way around. \citep{gsonLib}
 
-Then the JSON object compiled into The \textit{Study} object. This object controlled the quiz experiment and hold all the data, including the track variables.
+Then the JSON object compiled into The \textit{Study} object. This object controls the quiz experiment and hold all the data, including the track variables.
 This object will be sent through the activities.
 \textit{Intent} class of java is used to encapsulate the object and send to another activity.
 Because the \textit{Study} object need to be encapsulated inside the Intent,
@@ -273,7 +274,7 @@ Because the \textit{Study} object need to be encapsulated inside the Intent,
 
 \subsection{expSetPropActivity}
 The UI layout of this activity can be seen in figure \ref{fig:expSetPropActivity}.
-This activity is used to set some parameter of the experiment. In this activity the researcher can pick which experiment to conduct, the name of the experiment,
+This activity is used to set some parameter of the experiment. In this activity, the researcher can pick which experiment to conduct, the name of the experiment,
 the id of the researcher and the id of the participant.
 The purpose of this activity is to make it easier for the researcher to conduct multiple experiments and multiple participants without uploading the input file again.
 
@@ -299,7 +300,7 @@ the main function of this activity is to call \textbf{Study.runExperiment()} met
 this method is explained in the section below.
 
 \subsubsection{Study.RunExperiment()}
-This method will be called everytime the Quiz activity started.
+This method will be called every time the Quiz activity started.
 The main function of this methods are :
 \begin{itemize}
 \item Initialize the active experiment (\textit{activeExp} variable) and active category (\textit{activeCatg}) variable.
@@ -322,14 +323,14 @@ Figure \ref{fig:runExperiment_flow} shows the work flow of the method. The First
  so new question is presented to the participant.
 
 
-On the inisialization, active experiment (\textit{activeExp}) and active category (\textit{activeCatg}) are initialized by calling \textbf{initializeExperiment} method.
+On the initialization, active experiment (\textit{activeExp}) and active category (\textit{activeCatg}) are initialized by calling \textbf{initializeExperiment} method.
 The \textbf{initializeExperiment} method will fetch the selected \textit{experiment} and the
 \textit{category} object from the study class variables based on the \textit{selectedExperimentName} and \textit{selectedCategoryName}.
 
 
 Subsequently, the \textbf{setRandomPresentedQuestion()} is called, this method will set the value of \textit{numPresentedQuestion}.
 If the researcher set randomPresentedQuestion to true in the input file, then \textbf{Experiment.changeNumberPresentedQuestion()} is called, this method will set numPresentedQuestion randomly
-On the other hand, if it's false, then the numPresentedQuestion will be constant.
+On the other hand if it's false, then the numPresentedQuestion will be constant.
 
 Next, \textbf{isExperimentIsStillGoing()} is called. This method make sure if the experiment is still on progress by checking the size of the
 \textit{question} variable inside the \textit{activeCatg}. If the size is still larger or similar then \textit{numPresentedQuestion} then the experiment can be continued.
@@ -364,7 +365,7 @@ and stored it on the \textit{participantAnswer} variable inside the \textit{ques
 Figure \ref{fig:NotificationFlo} shows the mechanism of notification.
 As seen on the flowchart, the \textbf{checkNotification()} method is called inside
 the OnCreate event on the QuestionActivity, AnswerActivity and FillAnswerActivity.
-The method checks on every notifications inside the \textit{notifs} variable if the there is a notification that should be shown up based on \textit{phase} and \textit{shift} variable of the notification.
+The method checks on every notification inside the \textit{notifs} variable if the there is a notification that should be shown up based on \textit{phase} and \textit{shift} variable of the notification.
 
 If there is a notification that needs to be shown up then the notification object is added into the \textit{activeNotif} and it is deleted from the \textit{notifs} variable of the study object.
 
@@ -372,12 +373,12 @@ The notification needs to wait for some millisecond before it can be shown up. T
 While the notification process waits, the main activity should keep working, so another process needs to be spawned a part of the main process.
 To accomplish it, \textit{TimerService} class is used. This class will be spawn as a new process and it will sleep for \textit{timeToShow} millisecond.
 After that, the service class will call the \textbf{BroadcastReceiver()}.
-The \textbf{BroadcastReceiver()} method  is defined on all of activities, and it simply calls \textbf{show()} method of the notification.
+The \textbf{BroadcastReceiver()} method  is defined on all of activities and it simply calls \textbf{show()} method of the notification.
 The \textbf{Notifaction.show()} method is used to show the notification to the front end of the android screen. This method use
  \textit{NotificationCompact.Builder} to build the notification layout.
  an \textit{Intent} object is inserted inside the Builder object that contains what application to open.
  If the participant clicks the notification then the experiment application will be minimized.
- This event will call \textbf{OnPause()} method on the current activity, and the android phone will open the intended application.
+ This event will call \textbf{OnPause()} method on the current activity and the android phone will open the intended application.
  The participant if the open the experiment application again, then the \textbf{OnResume()} method is called.
 
 
@@ -387,17 +388,18 @@ The tracked variable are shown on the table \ref{tab:trackedVarible}.
 All of these variable are stored inside the \textit{question} class as seen in the class diagram \ref{fig:class_diagram}.
 Some of the variables are used to track the time in millisecond.
 To track the time the \textit{stopWatch} class provided by java API is used.
-The StopWatch object is stored inside the study class because the StopWatch class is not serizable.
+The StopWatch object is stored inside the study class because the StopWatch class is not The StopWatch object is stored inside the study class because the StopWatch class is not serizable.
+.
 During the experiment the application is minimized (participant clicks the notification).
 Then event some Stopwatch object need to be paused. Inside \textbf{OnPause()} event listener the stopWatch is suspended,
 and it will resume again inside the \textbf{OnResume()} event listener.
 
-As seen in the class diagram, each one of tracked variable has its own \textit{stopWatch} object, for example \textit{stopWatchTTLQ} will track the time for TTLQ variable.
+As seen in the class diagram, each one of tracked variable has its own \textit{stopWatch} object, for example, \textit{stopWatchTTLQ} will track the time for TTLQ variable.
 To get the millisecond time of the stopwatch a \textbf{StopWatch.getTime()} method is called.
 Then to stored the tracked time, the \textbf{study.log()} method is called.
 This method pass two arguments; what variable to track and which stopwatch object is used to track it.
 for instance \textbf{study.log("TTLQ",stopWatchTTLQ)} will track the \textit{TTLQ} variable and use \textit{stopWatchTTLQ} to track the time.
-All of the tracked variable is then stored to the \textit{question} object inside the \textit{ActiveQuest} variable.
+All of the tracked variables are then stored to the \textit{question} object inside the \textit{ActiveQuest} variable.
 How each variable is tracked is explained further in the subsection below.
 The explanation of the variables are explained on table \ref{tab:trackedVarible}.
 
@@ -418,7 +420,7 @@ These variable is tracked inside the \textit{AnswerActivity}.
 \textit{StopWatchLink} then will be started, and it are used to track the time participant have spent on each web page inside the \textit{webview}.
 The mechanism of the tracking is shown in figure \ref{fig:webViewTrack}. Firstly, the prevUrl variable is initialized,
 this variable stored the previous link the \textit{webview} had opened. This \textit{webview} class has an event listener called \textbf{onPageFinished()}
- which will be called every time the web page has been finished loaded, for example when the participant clicks new  link and open a new web page.
+ which will be called every time the web page has been finished loaded, for example when the participant clicks a new link and open a new web page.
   Every time \textbf{onPageFinished()} is called and when the participant clicks the next button then \textit{updateVisitedLinks()} method is called.
   \textbf{updateVisitedLinks()} method then store the value of \textit{prevUrl}
  to visitedLinks variable and how long the participant spent on the web page to \textit{timeVisitedLinks}.
@@ -426,14 +428,14 @@ this variable stored the previous link the \textit{webview} had opened. This \te
 \subsection{TTLA and TTLFA}
 These variable are tracked on the \textbf{fillAnswerActivty}. \textit{TTLA} is tracked using \textit{StopWatchTTLA}, while
 \textit{TTLFA} is tracked differently because if there is more than one question then there will be multiple \textit{editText} for the answer field, and
-each one of them need to be tracked.
+each one of them needs to be tracked.
 
 \textit{stopWatchTTLFA} is made as a hashmap where the key is the id of the \textit{editText} element.
 The id is made from the index of the \textit{question} inside the \textit{activeQuest} variable.
 The value of the \textit{stopWatchTTLFA} is the stopwatch object correspond of each question and \textit{editText}.
 On each \textit{editText} element, the event listener called \textbf{OnFocusChangeListener()} is attached to it. This event listener will be called if there is a
 change of focus on the UI layout of the activity. For example, if the user clicks an editText then clicks another editText, then the event listener
- method get the id of which editText was active before. The id then stored inside the \textit{activeViewId} variable.
+ method gets the id of which editText was active before. The id then stored inside the \textit{activeViewId} variable.
 By using \textit{activeViewId} variable a stopwatch corresponding to the id will be picked from the hashmap.
 
 

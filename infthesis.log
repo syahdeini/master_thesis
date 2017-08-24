@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.28)  23 AUG 2017 12:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.28)  24 AUG 2017 14:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1019,9 +1019,7 @@ Overfull \hbox (4.16446pt too wide) in paragraph at lines 20--22
 Underfull \vbox (badness 6173) has occurred while \output is active []
 
  [10]
-Underfull \vbox (badness 1087) has occurred while \output is active []
-
- [11]
+[11]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [12])
@@ -1049,11 +1047,11 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ]
 [16]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 131.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 134.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 131.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 134.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 131.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 134.
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ú in font ptmr7t!
@@ -1100,75 +1098,75 @@ Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ù in font ptmr7t!
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 145.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 148.
  [17] [18]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [19]
-<resources/picture/framework_process.png, id=685, 1474.50874pt x 244.915pt>
+<resources/picture/framework_process.png, id=684, 1474.50874pt x 244.915pt>
 File: resources/picture/framework_process.png Graphic file (type png)
 
 <use resources/picture/framework_process.png>
 Package pdftex.def Info: resources/picture/framework_process.png used on input 
-line 209.
+line 212.
 (pdftex.def)             Requested size: 412.56497pt x 68.5234pt.
  [20 <./resources/picture/framework_process.png>]
-LaTeX Font Info:    Try loading font information for OMS+pcr on input line 279.
+LaTeX Font Info:    Try loading font information for OMS+pcr on input line 282.
 
  (/opt/texlive/2015/texmf-dist/tex/latex/psnfss/omspcr.fd
 File: omspcr.fd 
 )
 LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 279.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 282.
 
 
-LaTeX Warning: Float too large for page by 32.47064pt on input line 326.
+LaTeX Warning: Float too large for page by 32.47064pt on input line 329.
 
-[21] <resources/picture/quiz_Diagram.png, id=714, 767.86874pt x 608.2725pt>
+[21] <resources/picture/quiz_Diagram.png, id=713, 767.86874pt x 608.2725pt>
 File: resources/picture/quiz_Diagram.png Graphic file (type png)
 
 <use resources/picture/quiz_Diagram.png>
 Package pdftex.def Info: resources/picture/quiz_Diagram.png used on input line 
-348.
+351.
 (pdftex.def)             Requested size: 383.93343pt x 304.13551pt.
 
-<resources/picture/Quiz_activity.png, id=718, 529.98pt x 1111.15125pt>
+<resources/picture/Quiz_activity.png, id=717, 529.98pt x 1111.15125pt>
 File: resources/picture/Quiz_activity.png Graphic file (type png)
 
 <use resources/picture/Quiz_activity.png>
 Package pdftex.def Info: resources/picture/Quiz_activity.png used on input line
- 368.
+ 371.
 (pdftex.def)             Requested size: 211.98824pt x 444.45262pt.
 
-Overfull \hbox (10.70575pt too wide) in paragraph at lines 368--368
+Overfull \hbox (10.70575pt too wide) in paragraph at lines 371--371
 [][] 
  []
 
-<resources/picture/Quiz_Activity_2.png, id=719, 454.69875pt x 1334.9875pt>
+<resources/picture/Quiz_Activity_2.png, id=718, 454.69875pt x 1334.9875pt>
 File: resources/picture/Quiz_Activity_2.png Graphic file (type png)
 
 <use resources/picture/Quiz_Activity_2.png>
 Package pdftex.def Info: resources/picture/Quiz_Activity_2.png used on input li
-ne 369.
+ne 372.
 (pdftex.def)             Requested size: 159.14694pt x 467.25264pt.
 
-<resources/picture/Quiz_flow.png, id=720, 1364.09625pt x 906.38625pt>
+<resources/picture/Quiz_flow.png, id=719, 1364.09625pt x 906.38625pt>
 File: resources/picture/Quiz_flow.png Graphic file (type png)
 
 <use resources/picture/Quiz_flow.png>
-Package pdftex.def Info: resources/picture/Quiz_flow.png used on input line 380
+Package pdftex.def Info: resources/picture/Quiz_flow.png used on input line 383
 .
 (pdftex.def)             Requested size: 409.23204pt x 271.91797pt.
  [22] [23 <./resources/picture/quiz_Diagram.png>] <resources/picture/notication
-.png, id=738, 659.46375pt x 241.90375pt>
+.png, id=737, 659.46375pt x 241.90375pt>
 File: resources/picture/notication.png Graphic file (type png)
 
 <use resources/picture/notication.png>
 Package pdftex.def Info: resources/picture/notication.png used on input line 47
-5.
+8.
 (pdftex.def)             Requested size: 428.64635pt x 157.23557pt.
 
-Overfull \hbox (22.88136pt too wide) in paragraph at lines 475--476
+Overfull \hbox (22.88136pt too wide) in paragraph at lines 478--479
  [] 
  []
 
@@ -1187,7 +1185,7 @@ Package pdftex.def Info: resources/picture/class_diagram.png used on input line
  33.
 (pdftex.def)             Requested size: 440.54927pt x 288.17885pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 4060) has occurred while \output is active []
 
  [29
 
@@ -1200,16 +1198,22 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 1082) has occurred while \output is active []
 
  [31]
-[32] <resources/picture/Flowchart_.png, id=792, 715.67375pt x 1659.19875pt>
+[32]
+Overfull \hbox (2.07663pt too wide) in paragraph at lines 208--209
+[]\OT1/ptm/m/n/12 To have a fur-ther un-der-stand-ing about the ap-pli-ca-tion 
+flow, the ac-tiv-i-ties and method
+ []
+
+<resources/picture/Flowchart_.png, id=792, 715.67375pt x 1659.19875pt>
 File: resources/picture/Flowchart_.png Graphic file (type png)
 
 <use resources/picture/Flowchart_.png>
 Package pdftex.def Info: resources/picture/Flowchart_.png used on input line 21
-3.
+4.
 (pdftex.def)             Requested size: 286.26442pt x 663.66776pt.
 
 
-LaTeX Warning: Float too large for page by 30.42545pt on input line 219.
+LaTeX Warning: Float too large for page by 30.42545pt on input line 220.
 
 [33]
 <resources/picture/activityLifeCycle.png, id=804, 556.0775pt x 679.53876pt>
@@ -1217,16 +1221,16 @@ File: resources/picture/activityLifeCycle.png Graphic file (type png)
 
 <use resources/picture/activityLifeCycle.png>
 Package pdftex.def Info: resources/picture/activityLifeCycle.png used on input 
-line 237.
+line 238.
 (pdftex.def)             Requested size: 278.03807pt x 339.76855pt.
  [34]
 <runExperiment.png, id=819, 946.53625pt x 956.57375pt>
 File: runExperiment.png Graphic file (type png)
  <use runExperiment.png>
-Package pdftex.def Info: runExperiment.png used on input line 313.
+Package pdftex.def Info: runExperiment.png used on input line 314.
 (pdftex.def)             Requested size: 425.93738pt x 430.45421pt.
 
-Overfull \hbox (13.3724pt too wide) in paragraph at lines 313--314
+Overfull \hbox (13.3724pt too wide) in paragraph at lines 314--315
  [] 
  []
 
@@ -1235,37 +1239,37 @@ Underfull \vbox (badness 1308) has occurred while \output is active []
 
  [36]
 [37]
-Overfull \hbox (3.56625pt too wide) in paragraph at lines 405--410
+Overfull \hbox (3.56625pt too wide) in paragraph at lines 407--412
 \OT1/ptm/m/n/12 These vari-ables is tracked in-side the \OT1/ptm/m/it/12 ques-t
 ion-Ac-tiv-ity\OT1/ptm/m/n/12 . \OT1/ptm/m/it/12 Stop-WatchT-TLQ \OT1/ptm/m/n/1
 2 and \OT1/ptm/m/it/12 stop-WatchT-
  []
 
 
-Overfull \hbox (0.8183pt too wide) in paragraph at lines 417--425
+Overfull \hbox (0.8183pt too wide) in paragraph at lines 419--427
 \OT1/ptm/m/n/12 These vari-able is tracked in-side the \OT1/ptm/m/it/12 An-swer
 -Ac-tiv-ity\OT1/ptm/m/n/12 . \OT1/ptm/m/it/12 Stop-Watch-Link \OT1/ptm/m/n/12 t
 hen will be started,
  []
 
-[38]
-<resources/picture/notification_diagram.png, id=854, 1753.55125pt x 1037.8775pt
+[38] [39]
+<resources/picture/notification_diagram.png, id=859, 1753.55125pt x 1037.8775pt
 >
 File: resources/picture/notification_diagram.png Graphic file (type png)
  <use resources/picture/notification_diagram.png>
 Package pdftex.def Info: resources/picture/notification_diagram.png used on inp
-ut line 462.
+ut line 464.
 (pdftex.def)             Requested size: 613.75214pt x 363.26257pt.
- [39]
+
 <resources/picture/tracker_linkVisited.png, id=860, 966.61125pt x 444.66125pt>
 File: resources/picture/tracker_linkVisited.png Graphic file (type png)
 
 <use resources/picture/tracker_linkVisited.png>
 Package pdftex.def Info: resources/picture/tracker_linkVisited.png used on inpu
-t line 470.
+t line 472.
 (pdftex.def)             Requested size: 434.97105pt x 200.0957pt.
 
-Overfull \hbox (22.40608pt too wide) in paragraph at lines 470--471
+Overfull \hbox (22.40608pt too wide) in paragraph at lines 472--473
  [] 
  []
 
@@ -1287,12 +1291,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 61.
+               Default added (so using `tbp') on input line 60.
 
 [48]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 124.
+               Default added (so using `tbp') on input line 123.
 
 [49]
 <resources/evaluation/TTFLA_each_participant.png, id=924, 462.528pt x 346.896pt
@@ -1300,10 +1304,10 @@ LaTeX Warning: No positions in optional float specifier.
 File: resources/evaluation/TTFLA_each_participant.png Graphic file (type png)
  <use resources/evaluation/TTFLA_each_participant.png>
 Package pdftex.def Info: resources/evaluation/TTFLA_each_participant.png used o
-n input line 159.
+n input line 158.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-Overfull \hbox (24.98094pt too wide) in paragraph at lines 159--161
+Overfull \hbox (24.98094pt too wide) in paragraph at lines 158--160
  [][] 
  []
 
@@ -1312,10 +1316,10 @@ File: resources/evaluation/TTLFA_general.png Graphic file (type png)
 
 <use resources/evaluation/TTLFA_general.png>
 Package pdftex.def Info: resources/evaluation/TTLFA_general.png used on input l
-ine 166.
+ine 165.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-Overfull \hbox (24.98094pt too wide) in paragraph at lines 166--168
+Overfull \hbox (24.98094pt too wide) in paragraph at lines 165--167
  [][] 
  []
 
@@ -1329,7 +1333,7 @@ File: resources/evaluation/visitedLink_each_participant.png Graphic file (type
 png)
  <use resources/evaluation/visitedLink_each_participant.png>
 Package pdftex.def Info: resources/evaluation/visitedLink_each_participant.png 
-used on input line 176.
+used on input line 175.
 (pdftex.def)             Requested size: 397.77338pt x 298.33003pt.
 
 
@@ -1337,7 +1341,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 208.
+               Default added (so using `tbp') on input line 207.
 
 [50] [51 <./resources/evaluation/TTFLA_each_participant.png> <./resources/evalu
 ation/TTLFA_general.png>]
@@ -1348,38 +1352,35 @@ File: resources/evaluation/lookback_and_reading_time_studyAll.png Graphic file
 
 <use resources/evaluation/lookback_and_reading_time_studyAll.png>
 Package pdftex.def Info: resources/evaluation/lookback_and_reading_time_studyAl
-l.png used on input line 253.
+l.png used on input line 259.
 (pdftex.def)             Requested size: 397.77338pt x 298.33003pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-<resources/evaluation/frequency_lookback_study1.png, id=946, 462.528pt x 346.89
+ [52 <./resources/evaluation/visitedLink_each_participant.png>]
+<resources/evaluation/frequency_lookback_study1.png, id=953, 462.528pt x 346.89
 6pt>
 File: resources/evaluation/frequency_lookback_study1.png Graphic file (type png
 )
  <use resources/evaluation/frequency_lookback_study1.png>
 Package pdftex.def Info: resources/evaluation/frequency_lookback_study1.png use
-d on input line 264.
+d on input line 270.
 (pdftex.def)             Requested size: 206.28249pt x 154.71494pt.
 
-<resources/evaluation/frequency_lookback_study3.png, id=947, 462.528pt x 346.89
+<resources/evaluation/frequency_lookback_study3.png, id=954, 462.528pt x 346.89
 6pt>
 File: resources/evaluation/frequency_lookback_study3.png Graphic file (type png
 )
  <use resources/evaluation/frequency_lookback_study3.png>
 Package pdftex.def Info: resources/evaluation/frequency_lookback_study3.png use
-d on input line 271.
+d on input line 277.
 (pdftex.def)             Requested size: 206.28249pt x 154.71494pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[52 <./resources/evaluation/visitedLink_each_participant.png>] [53 <./resources
-/evaluation/lookback_and_reading_time_studyAll.png> <./resources/evaluation/fre
-quency_lookback_study1.png> <./resources/evaluation/frequency_lookback_study3.p
-ng>]) [54] [55]
+[53 <./resources/evaluation/lookback_and_reading_time_studyAll.png>]
+Underfull \vbox (badness 1917) has occurred while \output is active []
+
+ [54 <./resources/evaluation/frequency_lookback_study1.png> <./resources/evalua
+tion/frequency_lookback_study3.png>]) [55]
 \openout2 = `chapters/chap6.aux'.
 
  (./chapters/chap6.tex [56
@@ -1396,7 +1397,7 @@ Chapter 6.
 
  (./appendix2.tex
 Appendix A.
-<resources/picture/consent_form.png, id=995, 719.68875pt x 933.4875pt>
+<resources/picture/consent_form.png, id=993, 719.68875pt x 933.4875pt>
 File: resources/picture/consent_form.png Graphic file (type png)
 
 <use resources/picture/consent_form.png>
@@ -1414,7 +1415,7 @@ LaTeX Warning: Float too large for page by 7.19449pt on input line 9.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<resources/picture/information_sheet.png, id=996, 588.1975pt x 1020.81375pt>
+<resources/picture/information_sheet.png, id=994, 588.1975pt x 1020.81375pt>
 File: resources/picture/information_sheet.png Graphic file (type png)
 
 <use resources/picture/information_sheet.png>
@@ -1444,14 +1445,14 @@ ion_sheet.png>]
 
 ]
 Appendix B.
-<resources/FE/FE_1.png, id=1016, 359.3425pt x 607.26875pt>
+<resources/FE/FE_1.png, id=1013, 359.3425pt x 607.26875pt>
 File: resources/FE/FE_1.png Graphic file (type png)
 
 <use resources/FE/FE_1.png>
 Package pdftex.def Info: resources/FE/FE_1.png used on input line 8.
 (pdftex.def)             Requested size: 165.02347pt x 278.88371pt.
 
-<resources/FE/FE_set_properties.png, id=1017, 355.3275pt x 592.2125pt>
+<resources/FE/FE_set_properties.png, id=1014, 355.3275pt x 592.2125pt>
 File: resources/FE/FE_set_properties.png Graphic file (type png)
 
 <use resources/FE/FE_set_properties.png>
@@ -1459,14 +1460,14 @@ Package pdftex.def Info: resources/FE/FE_set_properties.png used on input line
 13.
 (pdftex.def)             Requested size: 165.02347pt x 275.04161pt.
 
-<resources/FE/INTRO.png, id=1018, 352.31625pt x 593.21625pt>
+<resources/FE/INTRO.png, id=1015, 352.31625pt x 593.21625pt>
 File: resources/FE/INTRO.png Graphic file (type png)
 
 <use resources/FE/INTRO.png>
 Package pdftex.def Info: resources/FE/INTRO.png used on input line 22.
 (pdftex.def)             Requested size: 165.02347pt x 277.86124pt.
 
-<resources/FE/select_category.png, id=1019, 346.29375pt x 607.26875pt>
+<resources/FE/select_category.png, id=1016, 346.29375pt x 607.26875pt>
 File: resources/FE/select_category.png Graphic file (type png)
 
 <use resources/FE/select_category.png>
@@ -1474,21 +1475,21 @@ Package pdftex.def Info: resources/FE/select_category.png used on input line 27
 .
 (pdftex.def)             Requested size: 165.02347pt x 289.39154pt.
 
-<resources/FE/quiz.png, id=1020, 351.3125pt x 582.175pt>
+<resources/FE/quiz.png, id=1017, 351.3125pt x 582.175pt>
 File: resources/FE/quiz.png Graphic file (type png)
 
 <use resources/FE/quiz.png>
 Package pdftex.def Info: resources/FE/quiz.png used on input line 36.
 (pdftex.def)             Requested size: 165.02347pt x 273.47127pt.
 
-<resources/FE/answer.png, id=1021, 354.32375pt x 609.27625pt>
+<resources/FE/answer.png, id=1018, 354.32375pt x 609.27625pt>
 File: resources/FE/answer.png Graphic file (type png)
 
 <use resources/FE/answer.png>
 Package pdftex.def Info: resources/FE/answer.png used on input line 41.
 (pdftex.def)             Requested size: 165.02347pt x 283.76607pt.
 
-<resources/FE/fillAnswer.png, id=1022, 351.3125pt x 591.20876pt>
+<resources/FE/fillAnswer.png, id=1019, 351.3125pt x 591.20876pt>
 File: resources/FE/fillAnswer.png Graphic file (type png)
 
 <use resources/FE/fillAnswer.png>
@@ -1524,45 +1525,33 @@ Package rerunfilecheck Warning: File `infthesis.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `infthesis.out':
-(rerunfilecheck)             Before: 5FD187AA13BCDFCF7AC4BC3E2CBE6057;5032
-(rerunfilecheck)             After:  D62EAB8E811ED0CB86D9855A3B361F75;5032.
+(rerunfilecheck)             Before: D62EAB8E811ED0CB86D9855A3B361F75;5032
+(rerunfilecheck)             After:  216EEF14FEEDBC3338B8F7C239BE69AC;5032.
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 231.
  ) 
 Here is how much of TeX's memory you used:
- 21926 strings out of 493089
- 397908 string characters out of 6103488
- 599068 words of memory out of 5000000
- 24635 multiletter control sequences out of 15000+600000
+ 21921 strings out of 493089
+ 397819 string characters out of 6103488
+ 599045 words of memory out of 5000000
+ 24634 multiletter control sequences out of 15000+600000
  53077 words of font info for 95 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,16n,78p,861b,1265s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{table.caption.30} has been referenced but does no
-t exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.29} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.36} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{appendix*.37} has been referenced but does not exis
-t, replaced by a fixed one
-
-{/opt/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</opt/texlive/2015/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/texlive/2015/texmf-dis
-t/fonts/type1/urw/courier/ucrr8a.pfb></opt/texlive/2015/texmf-dist/fonts/type1/
-urw/helvetic/uhvb8a.pfb></opt/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/
-uhvr8a.pfb></opt/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb><
-/opt/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/texlive/201
-5/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/texlive/2015/texmf-dist/fon
-ts/type1/urw/times/utmri8a.pfb>
-Output written on infthesis.pdf (80 pages, 1524673 bytes).
+{/opt/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</opt/texlive/2015/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/texlive/2015/texmf-d
+ist/fonts/type1/urw/courier/ucrr8a.pfb></opt/texlive/2015/texmf-dist/fonts/type
+1/urw/helvetic/uhvb8a.pfb></opt/texlive/2015/texmf-dist/fonts/type1/urw/helveti
+c/uhvr8a.pfb></opt/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb
+></opt/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/texlive/2
+015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/texlive/2015/texmf-dist/f
+onts/type1/urw/times/utmri8a.pfb>
+Output written on infthesis.pdf (80 pages, 1526902 bytes).
 PDF statistics:
- 1150 PDF objects out of 1200 (max. 8388607)
- 1002 compressed objects within 11 object streams
- 247 named destinations out of 1000 (max. 500000)
+ 1144 PDF objects out of 1200 (max. 8388607)
+ 997 compressed objects within 10 object streams
+ 243 named destinations out of 1000 (max. 500000)
  724 words of extra memory for PDF output out of 10000 (max. 10000000)
 
