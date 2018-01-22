@@ -1,0 +1,325 @@
+{
+  'study':
+  {
+    'pre_text':'<h1>Consent for Exempt Research</h1><h2>University of Edinburgh</h2><p>Title of Project: &nbsp;<b>"What was I meant to do again"</b><br/>(Exploration of event boundary on failure of prospective memory.)<br /><br/>Principal Investigator:&nbsp;Aldy Syahdeini, Dr. Maria Wolters, Catherine crompton.<br/><br/>Address:&nbsp;University of Edinburgh, School of Informatics, 11 Crichton Street , Midlothian, EH8 9LE.<br />Contact information:&nbsp;maria.wolters@ed.ac.uk, s1575408@sms.ed.ac.uk, s0675382@sms.ed.ac.uk</p><p>&nbsp;</p><p>You are being invited to volunteer to participate in a research study. Research studies include only people who voluntarily choose to take part. This summary explains information about this research.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;</p><p>The purpose of this research is to look at what happens when you need to go to a new website in order to look up some information. We will ask you to look up the answers to several questions, and log the web sites you visit. You may also get messages and reminders while you go through the questions. There will be eight questions in total. One or two question will be presented at a time. Each question will be followed by an information page that contains the answer. Look up the answer, and then go back to the application and type in the answer on the next page.&nbsp;</p><p>&nbsp;&nbsp;</p><p>Taking part in the research study is voluntary.&nbsp;<br />&nbsp;</p><p>&nbsp;</p>',
+    'post_text':'<p>In this study, we are interested in how people use their cell phones to gather information.&nbsp; As you go through this survey, you should use your phone as you would if you were looking up facts over lunch with a friend.&nbsp; Please do not use any tools other than your phone (e.g., pencil and paper or a nearby computer).<br /><br />Please leave all of your notifications on.&nbsp; <br /><br />Please do not use the "do not disturb" setting. <br /><br />For the purposes of this study, please do not use any voice-based search functions like "Siri" or "Okay, Google."<br /><br />Finally, we ask that you find answers to our questions using only the links we provide.</p>',
+    'num_exp': 1,
+    'study_name':'my study',
+    'study_id':123
+  },
+  'experiment':
+  [
+    {
+      'name':'experiment1',
+      'num_quesstion':1,
+      'max_presented_question':2,
+      'TTS':10,
+      'random_presented_question':true
+    }
+  ],
+  'category':
+  [
+    {
+      'id':'123',
+      'name':'movies',
+      'total_question':4,
+      'question_order':'RANDOM',
+      'questions':
+      [
+        {
+          'question_id':'1',
+          'text':'What is the original name of the titanic movie ?',
+          'link_answer':'https://www.simplemost.com/15-fun-facts-probably-didnt-know-titanic/',
+          'answer':'Planet ice'
+        },
+        {
+          'question_id':'2',
+          'text':'In lord of the ring, How tall is gandalf ?',
+          'link_answer':'https://www.phactual.com/14-fun-facts-about-the-lord-of-the-rings-the-fellowship-of-the-ring/',
+          'answer':'Seven foot'
+        },
+        {
+          'question_id':'3',
+          'text':'How many artist played both on game of thrones and harry potter ?',
+          'link_answer':' http://screenrant.com/best-facts-game-of-thrones-trivia/',
+          'answer':'9'
+        },
+        {
+          'question_id':'4',
+          'text':'How old is voldemort when he dies in the battle of hogwarts ?'  ,
+          'link_answer':'https://www.buzzfeed.com/ariellecalderon/facts-that-will-change-the-way-you-look-at-harry-potter?utm_term=.dqV4dmr5r#.ajox2DjQj',
+          'answer':'bumbelbee'
+        },
+        {
+          'question_id':'5',
+          'text':'How long serial “How i met your mother” is filmed ?',
+          'link_answer':'https://www.phactual.com/10-fun-facts-about-how-i-met-your-mother/',
+          'answer':'9 years'
+        },
+        {
+          'question_id':'6',
+          'text':'In Up movie. How many baloons are attached to carl’s house ?',
+          'link_answer':'https://filmschoolrejects.com/10-fun-facts-about-pixars-up-1749a61575ca/',
+          'answer':'10,297'
+        },
+        {
+          'question_id':'7',
+          'text':'Where does marvel get the idea of the black spiderman suit ?',
+          'link_answer':'http://screenrant.com/best-marvel-facts-trivia-movies-tv-comics-superheroes/',
+          'answer':'fan  or Randy.'
+        },
+        {
+          'question_id':'8',
+          'text':' What is the most expensive movie of all time ?',
+          'link_answer':'https://www.factretriever.com/hollywood-movies-facts',
+          'answer':'Avatar
+          '
+        },
+        {
+          'question_id':'9',
+          'text':'  How many academy award that UP movie nominated to ?',
+          'link_answer':'http://www.imdb.com/title/tt1049413/trivia',
+          'answer':'two'
+        },
+        {
+          'question_id':'10',
+          'text':'What is the most watched episode on show “How i met your mother” ?',
+          'link_answer':'https://ritely.com/how-i-met-your-mother-trivia/',
+          'answer':'The finale episode'
+        }
+      ]
+    }
+  ],
+  'post_exp':
+  {
+    'total_question':15,
+    'questions':
+    [
+      {
+        'question_id':'PQA1',
+        'text':'Often people go into a room to do something.  Though they know they intended to do something,they lose track of what they wanted to do. This same sort of thing can happen when using a smart phone, as well.  During the study, you may have clicked on a link, gone to the website, and then forgot what you intended to look up.  Did that happen to you at all during this study?',
+        'question_type':'MC',
+        'options':[
+          'Yes',
+          'No'
+        ]
+      },
+      {
+          'question_id':'PQA2',
+          'text':'During this study, did you ever look up an answer, then forget the answer before you were able to type it in?',
+          'question_type':'MC',
+          'options':[
+              'Yes',
+              'No'
+          ]
+      },
+      {
+          'question_id':'PQA3',
+          'text':'During the course of this study, how many cell phone notifications did you receive ?',
+          'question_type':'MC',
+          'options':[
+              '0',
+              '1',
+              '2',
+              '3 or more'
+      ]
+      },
+      {
+          'question_id':'PQA4',
+          'text':'How many notifications did you decide to click ?',
+          'question_type':'MC',
+          'options':[
+              '0',
+              '1',
+              '2',
+              '3 or more'
+          ]
+      },
+      {
+        'question_id':'PQA5',
+        'text':'As you were looking up information, did you ever follow a link you didn\'t need to follow, just out of interest ?',
+        'question_type':'MC',
+          'options':[
+          'Yes',
+          'No'
+          ]
+        },
+      {
+        'question_id':'PQA6',
+        'text':'During the study, did you read about or learn any new facts that were not answers to questions we asked ?',
+        'question_type':'MC',
+        'options':[
+            'Yes',
+            'No'
+        ]
+      },
+      {
+        'question_id':'PQ1',
+        'text':'How old are you ?',
+        'question_type':'TEXT'
+      },
+      {
+        'question_id':'PQ2',
+        'text':'What is your gender ?',
+        'question_type':'MC',
+        'options':[
+          'Male',
+          'Female',
+          'Neutral',
+          'Rather not say'
+        ]
+      },
+      {
+        'question_id':'PQ4',
+        'text':'What country are you come from ?',
+        'question_type':'TEXT'
+      },
+      {
+        'question_id':'PQ5',
+        'text':'Is English your native language',
+        'question_type':'MC',
+        'options':[
+          'YES',
+          'NO'
+        ]
+      },
+      {
+      'question_id':'PQ6',
+      'text':'How many years have you spoken English? If you are native speaker please leave blank.',
+      'question_type':'TEXT'
+      },
+
+      {
+        'question_id':'PQ7',
+        'text':'How difficult did you find the smartphone in this study ?',
+        'question_type':'MC',
+        'options':[
+          'Very hard',
+          'Hard',
+          'average',
+          'Easy',
+          'Very easy',
+        ]
+      },
+      {
+        'question_id':'PQ8',
+        'text':'What kind of phone are you normally use ?',
+        'question_type':'MC',
+        'options':[
+          'non-smartphone',
+          'iphone',
+          'android',
+          'Other'
+        ]
+      },{
+      'question_id':'PQ9',
+      'text':'How frequently do you use a smartphone ?',
+      'question_type':'MC',
+      'options':[
+        'Don\'t own one',
+        'Daily',
+        'Weekly',
+        'Mothly'
+      ]
+    }
+    ]
+  },
+  'notification':[
+
+    {
+      'app':'instagram',
+      'shift':1,
+      'phase':'quiz',
+      'timeToShow':600,
+      'url':'gal_gadot',
+      'titleText':'Wonderful Gal Dagot',
+      'msgText':'Gal dagot just post a new picture!'
+    },
+
+    {
+      'app':'twitter',
+      'shift':2,
+      'phase':'quiz',
+      'timeToShow':1000,
+      'url':'25073877',
+      'titleText':'Donald trump vs the world',
+      'msgText':'Donald trump post a controversy tweet again!'
+    },
+    {
+      'app':'web',
+      'shift':2,
+      'phase':'answer',
+      'timeToShow':1600,
+      'url':'http://www.edinburghnews.scotsman.com/our-region/edinburgh/city-centre/sixty-firefighters-tackle-hospital-fire-throughout-night-1-4454261',
+      'titleText':'Edinburgh Fire!',
+      'msgText':'There is a great fire in the city of edinbugh ! '
+    },
+    {
+      'app':'instagram',
+      'shift':4,
+      'phase':'answer',
+      'timeToShow':500,
+      'url':'emmawatson',
+      'titleText':'Beautiful emma watson',
+      'msgText':'Emma watson just posted a new picture'
+    },
+    {
+      'app':'web',
+      'shift':6,
+      'phase':'quiz',
+      'timeToShow':800,
+      'url':'https://www.whatuni.com/advice/choosing-a-uni/bizarre-university-facts/54017/',
+      'titleText':'Bizzare university fact in UK!',
+      'msgText':'Hey check this bizzare university fact !'
+    },
+    {
+      'app':'web',
+      'shift':6,
+      'phase':'answer',
+      'timeToShow':1900,
+      'url':'http://www.nme.com/blogs/nme-blogs/is-avril-lavigne-really-dead-759563',
+      'titleText':'Yup, she is dead!',
+      'msgText':'Do you know that artist avril lavigne is dead !'
+    },
+
+    {
+      'app':'twitter',
+      'shift':7,
+      'phase':'quiz',
+      'timeToShow':1100,
+      'url':'62513246',
+      'titleText':'JK Rowling',
+      'msgText':'Get a new information about newest harry potter books!'
+    }
+    ,
+    {
+      'app':'instagram',
+      'shift':8,
+      'phase':'quiz',
+      'timeToShow':300,
+      'url':'edinburghuniversity',
+      'titleText':'University edinburgh instagram',
+      'msgText':'University Edinburgh has post a new photo on the instagram'
+    },
+
+    {
+      'app':'web',
+      'shift':9,
+      'phase':'answer',
+      'timeToShow':1200,
+      'url':'http://www.todayifoundout.com/index.php/2013/06/25-amazing-facts/',
+      'titleText':'Short fun fact!',
+      'msgText':'Short fun fact that you need to know !'
+    },
+    {
+      'app':'web',
+      'shift':9,
+      'phase':'quiz',
+      'timeToShow':1000,
+      'url':'http://www.adidas.co.uk/outlet?cm_mmc=AdieSEM_Google-_-Sale-General-B-Exact-_-General-Discounts-X-General-_-adidas+discount&cm_mmca1=UK&cm_mmca2=e&ds_kid=43700007274011015&gclid=CjwKEAjwqcHLBRCq5uHTpLL12FISJAD6PgDIsDL4Rv_QadEYWOsQRzwC0MRoqZGRMW72BDzI_i8ljRoC2Hzw_wcB&gclsrc=aw.ds&dclid=CKi1_v-nmNUCFfQV0wodcXYG6Q',
+      'titleText':'Adidas discount!',
+      'msgText':'Don\'t miss 50% more discount from adidas ! '
+    }
+
+  ]
+}
